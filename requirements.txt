@@ -1,0 +1,11 @@
+anthropic
+google-play-scraper
+praw
+pandas
+python-dotenv
+tqdm
+app-store-scraper
+groq
+sentence-transformers
+streamlit
+plotly

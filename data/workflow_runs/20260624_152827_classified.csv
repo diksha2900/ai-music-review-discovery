@@ -1,0 +1,201 @@
+id,text,rating,published_at,source,is_discovery_related,theme,sentiment,key_quote
+fc956bf8-990e-4707-aeb9-b302b351854a,very baad,5,2026-06-23 15:27:32,play_store,False,not_discovery_related,negative,very baad
+1249eeb9-0c9c-4913-81b5-5d41c27fe503,too much ad,2,2026-06-23 15:27:05,play_store,False,not_discovery_related,negative,too much ad
+bb2d86d0-4778-4d06-b5d9-ee3f1d055051,mast hei,5,2026-06-23 15:26:09,play_store,False,not_discovery_related,neutral,
+0a89c3b0-babd-4eff-bbe6-c382746d77af,this app is vry good_😊😊😊😊😊,5,2026-06-23 15:25:31,play_store,False,not_discovery_related,positive,vry good
+12aca6ce-e3a5-4aa7-ba5b-d8beeaf1dec4,this is okk app only,1,2026-06-23 15:19:03,play_store,False,not_discovery_related,neutral,okk app
+038f337d-836e-4cff-a61b-f5905aaad408,really love this app,5,2026-06-23 15:18:54,play_store,False,not_discovery_related,positive,really love
+8b853139-32e3-4dbd-899b-fe6273d826a4,nice,5,2026-06-23 15:18:33,play_store,False,not_discovery_related,positive,nice
+86d5fc68-80f7-4192-9260-c399b9a96540,too many ads,4,2026-06-23 15:17:54,play_store,False,not_discovery_related,negative,too many ads
+d9213496-9cb6-4843-b423-a5336e09b870,good music quality,5,2026-06-23 15:13:57,play_store,False,not_discovery_related,positive,good music
+30330489-3f26-47d4-9a05-59b619cede35,poor and poor andpoor,1,2026-06-23 15:13:49,play_store,False,not_discovery_related,negative,poor
+321e1cb5-3374-42e6-a06f-32c3c1d09ad4,bahut acha hai song sab,5,2026-06-23 15:11:03,play_store,False,not_discovery_related,positive,bahut acha hai
+1d58ce43-88b2-407e-b3ed-d210bedbe7b7,"why did you guys take down ""incel"" by lil watermark and most songs of psych ward, vol. 1,2,3??? like you guys just rid of songs for no reason just cuz you all bored, literally lovely app but you guys just fart it up for no reason at all",1,2026-06-23 15:07:41,play_store,True,repetition_fatigue,negative,rid of songs
+d078f5bc-7737-4137-a2da-a803ca3eae6e,love it,5,2026-06-23 15:07:21,play_store,False,not_discovery_related,positive,love it
+c8521c20-ec97-43c5-a868-388675bbe863,Antara aplikasi langgan music yang mempunyai simpanan lagu & irama yang banyak! Terbaik Spotify🌟🌟,5,2026-06-23 15:07:12,play_store,True,discovery_effort,positive,simpanan lagu
+c86c9494-9771-4418-a376-d761f9333790,I have been using Spotify Premium since last 8 years and I have never been disappointed. The only problem with the App is its login feature where you can have a specific ID and there is complexity to find your list account.,5,2026-06-23 15:05:41,play_store,False,not_discovery_related,neutral,
+caab67df-5f52-4826-85aa-29b586cb750c,outstanding performance 👏,5,2026-06-23 15:02:35,play_store,False,not_discovery_related,positive,outstanding
+07bdb777-3b6a-473f-9852-b022523a84ea,"It keeps asking to get premium and it has a set a very small limit for the number of songs i can play of my choice, I cannot skip songs not i can forward them without premium.",1,2026-06-23 15:02:08,play_store,True,discovery_effort,negative,small limit
+63b14039-2eb5-4c78-976c-c56db2ddf756,no Spotify on this phone,1,2026-06-23 15:02:05,play_store,False,not_discovery_related,negative,no Spotify
+02442acb-8b32-4a61-8329-cafcdfff7b73,f u c k. app,1,2026-06-23 15:01:20,play_store,False,not_discovery_related,negative,f u c k
+a7ac34a1-808d-4dec-b78a-8d911e3c13a6,too many ads,4,2026-06-23 15:00:11,play_store,False,not_discovery_related,negative,too many ads
+d9b26d31-f8cd-4bb0-b0d3-a7c08dde7cb5,recently crashes constantly,1,2026-06-23 14:57:33,play_store,False,not_discovery_related,negative,crashes constantly
+e8212e97-4d80-4ef7-b775-e00674637d4f,"While I've loved Spotify for years, I find radio stations being flooded with AI generated music. There's no way to filter it out and discover only genuine new human artists. It makes the music I do hear seem cheap, like I'm listening elavator music. Please create a filter for AI content.",3,2026-06-23 14:57:19,play_store,True,discovery_effort,negative,filter it out
+d4b1135e-e7f4-4db2-ad30-e1cc9fed2b9c,super,5,2026-06-23 14:54:06,play_store,False,not_discovery_related,positive,super
+682f8558-87be-432d-a3e8-87dacc1b754d,cool app,5,2026-06-23 14:53:59,play_store,False,not_discovery_related,positive,cool app
+78bc770a-3c28-48df-9f19-eb295e1d1a7f,goat,5,2026-06-23 14:50:02,play_store,False,not_discovery_related,positive,goat
+e97ca919-105f-4bb3-8957-3fd7c589957d,I like having all my music available on one platform but the app is relatively frequently just not working - official app having server issues and not loading anything other than downloaded stuff on regular basis.,3,2026-06-23 14:48:08,play_store,False,not_discovery_related,negative,not working
+6f7ec89f-5166-4cc2-a0d4-2f9003f54418,"Great, but too many pauses",5,2026-06-23 14:43:59,play_store,False,not_discovery_related,negative,too many pauses
+1d042cac-c422-4752-8cc5-18db24036405,The best music application in this world,5,2026-06-23 14:40:55,play_store,False,not_discovery_related,positive,The best
+cf28af87-b523-4c40-b169-6a3416d7546e,One of the best streaming apps for music...Personally I think the lyrics should be displayed under the music videos for easy reference. Thanks,5,2026-06-23 14:38:51,play_store,False,not_discovery_related,positive,One of the best
+64e04329-511e-4884-a3c3-4a449aca8aab,"Whether I'm driving, working, or just chilling, this app always sets the perfect mood.",5,2026-06-23 14:38:19,play_store,True,context_mismatch,positive,perfect mood
+5e709020-90e4-4394-b652-4a59c5c9d967,it's working very good,5,2026-06-23 14:36:18,play_store,False,not_discovery_related,positive,
+8eaab380-f3ee-4832-894a-0db8a809be75,I give my God the praise while listening to spoty and its music .,5,2026-06-23 14:35:23,play_store,False,not_discovery_related,positive,
+2f608e1f-c0f7-4ed2-ad2f-2b54071473d1,Spotify is the best music app I can listen the music offline also,5,2026-06-23 14:34:36,play_store,False,not_discovery_related,positive,
+03b4ddfb-7a15-4280-aa93-cde0f19f8498,really good 👍🏽,5,2026-06-23 14:33:06,play_store,False,not_discovery_related,positive,
+5141c9c3-a638-42f9-a5c2-e9212216ce1f,"great app but went down from a 5 star because randomly the music just stops. the app continues ""playing"" the song(the timer continues) but no music comes out. I'm not sure if this is a sign to quit listening to music but if it is lord I'm listening 💓✌️",3,2026-06-23 14:32:56,play_store,False,not_discovery_related,negative,music just stops
+804887d9-f892-42bf-9673-4b368ece41ca,"ofc the best for everything from music to podcasts, but broke enough to not make it premium so I don't get interrupted by ads 😔.",5,2026-06-23 14:32:40,play_store,False,not_discovery_related,positive,
+01562793-af86-4687-b2c0-0dc093aebe0c,keeps crashing after update.pls fix this.,1,2026-06-23 14:31:39,play_store,False,not_discovery_related,negative,keeps crashing
+aa80610a-cd21-4cfd-abc4-18f9464ae844,"first 10 minutes it was all going good but after some time i get so annoyed 😠 the app get so tolerated, because it is again and again when i am clicking on the song that i want to listen and it is again and again saying that to get premium",1,2026-06-23 14:29:54,play_store,True,repetition_fatigue,negative,again and again
+aed7a3ef-f40f-427c-bd91-f3edc94a4c83,Spotify music and podcasts,5,2026-06-23 14:29:18,play_store,False,not_discovery_related,neutral,
+4c695a71-a562-4d0d-a7c5-1bb45ddaab8c,its good,5,2026-06-23 14:29:01,play_store,False,not_discovery_related,positive,
+fe0cfd5a-582b-488d-9709-59d238a496b2,good,4,2026-06-23 14:28:54,play_store,False,not_discovery_related,positive,
+557ab693-1e10-4f67-b061-18c513e91ae1,"Unusable after a few latest updates 👎. Such a mess, something went wrong.. 😅👎",1,2026-06-23 14:28:42,play_store,False,not_discovery_related,negative,Such a mess
+fed0e95a-3814-42a9-a581-69f109effdcc,WHERE'S CROSSSFADEEE FOR THE FREEE USERSS PLEASEEEE BRING IT BACK❤️ 🤕,3,2026-06-23 14:27:08,play_store,False,not_discovery_related,negative,BRING IT BACK
+e9542dc9-31e2-4694-b984-e4945588cfd5,"apps getting worse, getting way more ads too. yall dont even pay small artist properly, all bs.",1,2026-06-23 14:22:27,play_store,False,not_discovery_related,negative,all bs
+f57cc2d4-23ed-4b58-9d62-968e37acf0e1,best,5,2026-06-23 14:21:11,play_store,False,not_discovery_related,positive,
+375ed8c0-11b1-40e3-8267-d2e2866c5aac,keeps crashing!!!,1,2026-06-23 14:20:30,play_store,False,not_discovery_related,negative,keeps crashing
+7cb1dc05-520e-4f84-b1c7-569ac8db27f7,The most convenient and straightforward music streaming platform you can find today...,5,2026-06-23 14:20:28,play_store,False,not_discovery_related,positive,most convenient
+ce36bbb6-49ff-4b9b-91b3-e81c4fdacf7c,💗👏🏼,5,2026-06-23 14:13:28,play_store,False,not_discovery_related,positive,
+23b8fe63-f0f6-4649-beaa-6b21ded5f352,I just like the app,5,2026-06-23 14:13:11,play_store,False,not_discovery_related,positive,I just like
+f4421ecc-1671-4aea-822b-306b066d99a8,i really love this app.. I love to hear songs while studying and this app .,5,2026-06-23 14:11:51,play_store,False,not_discovery_related,positive,I really love
+2b432fb5-c254-4a68-bb66-1c2793b51c69,bro I love this sm cause u can play without on that app and you can choose any sounds u like tho in every single vibes and likes,5,2026-06-23 14:10:43,play_store,False,not_discovery_related,positive,I love this
+81d175ae-551b-4f9c-a0a6-c4f247b0fd19,premium ke bookh h is me,1,2026-06-23 14:08:50,play_store,False,not_discovery_related,negative,
+63c174c6-9fe3-4f4b-80ef-84464e13d7de,"perfect for me, as a person who is hooked to music while studying, perfect when I need to work on my tab but want the music to keep going tho i would say there are a whole lot of ads which breaks the flow, if u could reduce it, it would be a great fix. thanks Spotify!! 🌷💫",5,2026-06-23 14:04:37,play_store,False,not_discovery_related,positive,perfect for me
+e64886ac-1774-4168-96f8-4ebc775d4d41,"Love it, background music for free.",5,2026-06-23 14:02:44,play_store,False,not_discovery_related,positive,Love it
+98fe3add-2ead-415a-936f-76df996884ee,amazing,5,2026-06-23 14:01:48,play_store,False,not_discovery_related,positive,amazing
+7851b0c3-c6a3-40f7-a839-a763f914eeda,Release Spotify lite,1,2026-06-23 13:55:21,play_store,False,not_discovery_related,neutral,Release Spotify
+b5cd22ad-ca25-4117-972d-9bd581a7ea41,o stars if possible,1,2026-06-23 13:54:41,play_store,False,not_discovery_related,negative,o stars
+6245afe7-7d02-4450-97bd-4bf759ab7879,"I've been a Spotify premium member for years and honestly thinking about just canceling my subscription. The shuffle plays the same songs in the same order over and over. I've tried going into settings to fix it and it just won't stop. My playlist has almost 1.5k songs on it, there's absolutely no reason it should be playing the same stuff over and over again. Do better for charging people $15/month and not properly paying the artists that make the music.",1,2026-06-23 13:50:02,play_store,True,repetition_fatigue,negative,same songs
+223dd77d-558d-41eb-b020-5114d44b5b3b,"1 star due to the fact the if I am paying for premium, 19.99 btw, I expect to be able to listen to my downloaded audio books even though I have run out of my 15 listening hours. it's ridiculous that I have to pay 12 ish dollars to add more listening hours just to listen to audiobooks that I have chosen to to listen to offline. my downloaded audio books should not be able to be deducted my monthly hours. Please fix this.",1,2026-06-23 13:43:25,play_store,False,not_discovery_related,negative,ridiculous
+88aaa9fe-7006-45e8-9064-1cb617907e52,best,5,2026-06-23 13:42:28,play_store,False,not_discovery_related,positive,best
+b11e5660-5e87-4a32-bc48-9e593e29fab3,this app is very good quality songs but this app not giving to set ringtone without buying premium so I think that would be a problem please remove that problem and to free for ringtone,5,2026-06-23 13:38:48,play_store,False,not_discovery_related,negative,not giving
+5ef849e5-392a-4d4e-8d95-53531c17204a,Very good,5,2026-06-23 13:34:40,play_store,False,not_discovery_related,positive,Very good
+e52ba094-c508-4221-834a-6be7e75cd859,so much ad,1,2026-06-23 13:34:18,play_store,False,not_discovery_related,negative,so much ad
+e0d34752-a617-4452-a346-ed4545af619b,i wish i could play my files in here...,5,2026-06-23 13:32:23,play_store,False,not_discovery_related,negative,i wish
+8ca2f040-a60f-4b1b-8846-184665f54f83,"Absolutely everything is there, somewhere",5,2026-06-23 13:28:40,play_store,True,discovery_effort,positive,everything is there
+e6a782ee-8922-4ac9-9b27-7139e0c6d429,enjoying it,5,2026-06-23 13:28:24,play_store,False,not_discovery_related,positive,enjoying it
+d6cbbbd4-8cd6-44bb-9e2c-51dbefadea2a,normal but they gives many ads it's not good that we have to use always premium,4,2026-06-23 13:27:26,play_store,False,not_discovery_related,negative,many ads
+4ac66637-3502-41f3-8ebe-ef986108ade3,because you can listen to all of the songs that you like and really good,5,2026-06-23 13:24:15,play_store,True,discovery_effort,positive,all of the songs
+c37f0408-8482-46ab-a222-882aa6c78953,great,5,2026-06-23 13:22:56,play_store,False,not_discovery_related,positive,great
+4054545d-97a3-4bf0-9561-b01bb524650a,good app for listening music,5,2026-06-23 13:17:31,play_store,False,not_discovery_related,positive,good app
+52fa3319-848a-4561-a7e3-cf97ae7563d3,The app is not giving me stress I love their energy,4,2026-06-23 13:14:18,play_store,False,not_discovery_related,positive,I love
+88532d23-c949-4111-9abb-e57ea039845a,No 1 high widget.,1,2026-06-23 13:08:45,play_store,False,not_discovery_related,neutral,
+6cbcf74f-66d2-4de0-a0d0-0f3f56697b56,too many ads what the heck app is this! decrease ads,1,2026-06-23 13:06:04,play_store,False,not_discovery_related,negative,too many ads
+7c78db55-08b3-46e5-808a-8022227e640a,there so tuff and gold,5,2026-06-23 13:02:52,play_store,False,not_discovery_related,positive,so tuff
+8c042571-01fe-4b62-988b-5d67f7989bbf,awesome when I'm at work and wanting to listen to some tunes!,5,2026-06-23 13:01:58,play_store,False,not_discovery_related,positive,awesome
+5c037582-c348-451c-b61f-22be5c02a2b7,i am very enjoying the playlist that spot I gives me🥰,4,2026-06-23 12:59:59,play_store,True,recommendation_quality,positive,I am enjoying
+bc9c5354-f8b0-4ddd-8619-14d34fcd612f,A wonderful app! affordable. specially for students. ❤️,5,2026-06-23 12:51:03,play_store,False,not_discovery_related,positive,wonderful app
+0c5c0f37-e20e-4177-934f-e1f31869081a,love this apps 👏❤️,5,2026-06-23 12:43:30,play_store,False,not_discovery_related,positive,love this
+b7cdf6c7-0e00-48b6-ad87-675a24d59713,one of the most,5,2026-06-23 12:42:21,play_store,False,not_discovery_related,neutral,
+f481abca-a398-42f2-903b-5f6709f4c7cc,I like this app. it give unexpected experience,5,2026-06-23 12:41:16,play_store,True,discovery_effort,positive,unexpected experience
+1f8e2c16-6014-4430-9ec6-aea58ec5b3fb,I can't get on the app it just says it's loading,1,2026-06-23 12:37:29,play_store,False,not_discovery_related,negative,loading
+50ec53ee-6b03-4518-bf25-d7e53d8ea047,Error message saying the app has a big and closes continuously.,1,2026-06-23 12:36:13,play_store,False,not_discovery_related,negative,closes continuously
+ea257600-0eec-4bd3-9e85-4ada52854a4b,it's not that bad if u have premium,4,2026-06-23 12:33:11,play_store,False,not_discovery_related,neutral,not that bad
+9a32b765-e6d9-4baa-827d-398aa9aee86b,nice app though too much ads,4,2026-06-23 12:28:29,play_store,False,not_discovery_related,neutral,too much ads
+7ec5f43d-7fa2-4909-8b1d-bf232165890c,i may have a little been slow on this but now that I found out that I can put songs onto my queue it kinda makes it up for the thing.,3,2026-06-23 12:28:22,play_store,True,discovery_effort,positive,put songs onto my queue
+b01f06b6-f7a8-44b9-8c1c-e86022df9c92,love it,5,2026-06-23 12:28:16,play_store,False,not_discovery_related,positive,love it
+e1bb57b9-71fe-45d4-9b1e-658712f1c8eb,very good,5,2026-06-23 12:28:10,play_store,False,not_discovery_related,positive,very good
+1cede09c-84e1-49e9-a560-3f95a162a781,🫡🫡🫡🫡🫡🫡🫡🫡,5,2026-06-23 12:17:08,play_store,False,not_discovery_related,positive,
+e1e57165-5f4f-489f-acf4-0c8aface38b9,"Spotify is a normal music app, what I like about it that others don't have is the end of the year wrapped, but not allowing someone to even play the song they want is total nonesense, I'm done with them, there audiomack,musix, and a lot of other music app. there's nothing special about Spotify.",3,2026-06-23 12:16:55,play_store,True,trust_algorithm_distrust,negative,not allowing someone
+8ba87e9d-24f6-4cc3-bc08-c687653e752a,too poor cannot play song on repeat and adds and 6 skip per hour 🤮,1,2026-06-23 12:16:21,play_store,False,not_discovery_related,negative,too poor
+837da486-703b-4d70-afce-519554d74219,kenapa time aku pasang lagu jadi putih screen wasap aku,1,2026-06-23 12:14:37,play_store,False,not_discovery_related,negative,kenapa time aku
+c5605d19-0cef-4bb3-b6f4-d409ed2e6d00,I use this almost daily especially while gaming. the cost for ad free is ridiculous now. not to mention when you choose to go free on it the ads pop up every few songs and it's SEVERAL ads at once. oh my favorite part is when the ads break the app and your music doesn't play anymore. love that,1,2026-06-23 12:14:32,play_store,False,not_discovery_related,negative,ads pop up
+44553bb0-4ab2-4e72-8eee-4e4053f766ab,good,5,2026-06-23 12:13:01,play_store,False,not_discovery_related,positive,good
+b060a489-0072-4acf-8790-e85926a36c21,"pretty okay, it has gone crazy the last year to where i have to undownload then redownload to work it but i love if non the less",3,2026-06-23 12:11:21,play_store,False,not_discovery_related,positive,i love
+dc095414-0cd3-47bb-a80f-121286489cff,love using it but the last few days it's crashing randomly no matter what I do,4,2026-06-23 12:11:21,play_store,False,not_discovery_related,negative,crashing randomly
+59cd36a9-261d-4604-8608-e4bd175afa33,"The app is great but it tries to force you into getting premium with all the extra songs not in a Playlist, the ads, and the ability to not loop or choose the order of the songs",3,2026-06-23 12:10:35,play_store,True,repetition_fatigue,negative,force you
+e8029544-3c8f-4ab0-87da-5787cb9a99fb,I don't want to see podcasts but it can't be removed or even hidden from right at the TOP of the app every time I open it.,1,2026-06-23 12:10:20,play_store,True,context_mismatch,negative,can't be removed
+9ae945e3-672e-4ed8-add8-0abbc1b9735a,addddddds are play in every time and if you do skip they disappear the buttons but music is good,1,2026-06-23 12:10:14,play_store,False,not_discovery_related,neutral,ads are play
+140634b0-b1c0-4d4f-82a2-4f0943599156,"bro, I am a student, I wish to pay the premium but I can't cos, i don't have money 🙏🤧 and too many advertisements and limited version to access the songs, like I can skip upto limit and choose upto certain limit😭 I hope you work on free version to get more better rather than making the free version degraded day by day 🥺😣",3,2026-06-23 12:08:50,play_store,True,trust_algorithm_distrust,negative,too many ads
+c4dc5f27-3ee0-4ebb-903b-9b70f3b3b45d,I can't update it,2,2026-06-23 12:08:36,play_store,False,not_discovery_related,negative,can't update
+404f776f-7015-43be-b041-be323a740fe0,worst music app ever you cant even listen what you want you cant skip music ads are too long you cant play your playlist in order its basically a radio,1,2026-06-23 12:08:06,play_store,False,not_discovery_related,negative,worst music app
+756d4d63-b07b-464c-8374-24507d3ae3e6,abe aaj on kyon Nahin ho raha main star to pure diye isko on dene isko on rahane mein itni der ki lag Rahi hai to on hi nahin ho raha bhai isko on karo Kisi Tarah 👍,5,2026-06-23 12:06:02,play_store,False,not_discovery_related,negative,
+d9d15e6d-d7a0-4282-9f5e-88430b1e08f9,currently top 3 Apps in my phone,4,2026-06-23 12:05:37,play_store,False,not_discovery_related,positive,top 3 Apps
+0b27a707-55aa-4c0c-b25d-37c8d2a143e4,"Music is EVERYTHING. It makes me calm, relaxed, and just be in my little small world! I love how I get to do my own music playlist!! I would use this everywhere I go! Literally all the songs one needs/knows are here. The same goes for the podcasts! EVERYTHING is on Spotify with entertaining playlists made by so many people! It is easy and fun to use!! Best app for music/podcasts!!",5,2026-06-23 12:03:12,play_store,True,discovery_effort,positive,make my own
+c044bad8-25e0-4b6f-940e-2bb20873c683,great music experience,5,2026-06-23 12:02:22,play_store,False,not_discovery_related,positive,great music
+c4081713-39aa-423f-8459-2455545180ea,cool app for streaming music,5,2026-06-23 12:00:33,play_store,False,not_discovery_related,positive,cool app
+c55469b5-5a1c-44c4-b354-8d5fcea7cbe3,this app is best song app,5,2026-06-23 12:00:31,play_store,False,not_discovery_related,positive,best song
+5eeca7a1-0dbd-438e-8822-56aeed9e0fb4,enjoy the prime of the app. no commercials,5,2026-06-23 11:59:58,play_store,False,not_discovery_related,positive,no commercials
+8bdc3938-3b0a-4de0-867d-ea8907ba505b,"Spotify is garbage app, TBH",1,2026-06-23 11:59:46,play_store,False,not_discovery_related,negative,garbage app
+f0ab49d2-8767-4aa9-ace2-23c11f5edd7b,"The free version is unusable, every 3 to 1 songs 2 ads every ad 30 seconds . That is terrible for average user . Also the data saver option is just useless it doesn't make a noticeable difference in your mobile data usage. But overall it is a good experience if you are patient and don't care so much .",3,2026-06-23 11:59:24,play_store,False,not_discovery_related,neutral,good experience
+ccc5b4e7-e678-4aa2-9360-105180127601,fantastic,5,2026-06-23 11:56:47,play_store,False,not_discovery_related,positive,fantastic
+0d54ca61-d949-4ec1-a894-ea69cf96d499,very good 👍 to be a long night 🌉,5,2026-06-23 11:56:43,play_store,False,not_discovery_related,positive,very good
+92fe364c-c6b8-49bb-96d1-41ae31398b93,😶,5,2026-06-23 11:55:06,play_store,False,not_discovery_related,neutral,
+a4789898-c590-4523-b487-051dce46392e,"free version is middling at bea but premium deserves 5 stars, the ability to import playlists from other apps and ive had a lot of fun with the playlist mix feature",5,2026-06-23 11:54:43,play_store,True,discovery_effort,positive,playlist mix
+5a3c8ffc-e643-4191-ac3e-a512e8a3f65f,"maybe the ads are little too much ? but it's not like before, i just hope they can reduce the ads ~",5,2026-06-23 11:52:05,play_store,False,not_discovery_related,negative,too much
+6fb3435b-59bb-47e9-bcbf-f604054b0d55,💯% perfect,5,2026-06-23 11:51:40,play_store,False,not_discovery_related,positive,💯% perfect
+136230ca-11b3-4f69-b413-ce7385356957,this aap was very very good and I like this aap,5,2026-06-23 11:47:51,play_store,False,not_discovery_related,positive,very good
+a7b3b836-05cb-4462-8642-659ce82471df,why every time i open the app it's always offline even if my connection is good.,2,2026-06-23 11:46:10,play_store,False,not_discovery_related,negative,always offline
+71223ab1-5239-429a-9874-44691e10c515,very good app for music and podcast,5,2026-06-23 11:41:04,play_store,False,not_discovery_related,positive,very good
+e41ea986-c50f-4ce9-8dee-ef7183a56123,pretty good,5,2026-06-23 11:39:55,play_store,False,not_discovery_related,positive,pretty good
+4f9c9535-7981-4dfc-b2cf-3aab362ba7ae,pay to listen 🙂,1,2026-06-23 11:37:49,play_store,False,not_discovery_related,positive,
+c2f09d4c-0547-468f-abe5-eecd33eb4290,I am enjoying with Spotify with primium otherwise you know,5,2026-06-23 11:37:15,play_store,False,not_discovery_related,positive,
+df3f0b07-9481-4c21-8ee6-ff5325fdbbba,very nice,5,2026-06-23 11:36:43,play_store,False,not_discovery_related,positive,very nice
+0840a2ee-2df1-4ed6-9583-c14a91e21a38,"its always crashing nowadays making it annoying , especially when you want to use it for long distances....and always repeats the same songs in any playlist , even if your playlist has over 300 songs",1,2026-06-23 11:34:25,play_store,True,repetition_fatigue,negative,always repeats
+b579592d-6bc7-40a6-b06e-778ac9333515,ti many addd,1,2026-06-23 11:34:21,play_store,False,not_discovery_related,negative,
+bb5ecb1c-db9c-41c4-bd23-b521ef0ab024,using experience is so poor ads are more than music it's so disrupting,1,2026-06-23 11:34:09,play_store,False,not_discovery_related,negative,ads are more
+a8bae12a-b57e-4521-9650-2077f7e44123,super grok is awesome and Apple Music is Amazing and so Spotify is Fabulous! 👍 😍,5,2026-06-23 11:33:17,play_store,False,not_discovery_related,positive,
+ae0cee62-a395-4de2-b545-f4b329afe939,good 👍😊😊,5,2026-06-23 11:32:42,play_store,False,not_discovery_related,positive,good
+3f00382d-7bbc-4936-a305-da5341f9e9ba,i used to like it but the free restrictions are really strict now I can't play any songs that I want to,3,2026-06-23 11:29:35,play_store,False,not_discovery_related,negative,
+23eec1e0-b217-426b-b5a4-ccd4174b4b00,i like this and it help me get less stress,5,2026-06-23 11:28:59,play_store,False,not_discovery_related,positive,
+545345cc-ee69-4521-8ab6-a1a3f8da9a51,Excellent,5,2026-06-23 11:28:35,play_store,False,not_discovery_related,positive,
+d8ae539d-88fa-4734-8fc7-0efe6d71509d,Beautiful,5,2026-06-23 11:24:42,play_store,False,not_discovery_related,positive,
+2ce5daee-179b-4952-bbf1-40de89c4abc2,wonderful,5,2026-06-23 11:24:34,play_store,False,not_discovery_related,positive,
+1c34a961-e93f-4e74-8e1d-4e48a8335e54,"A music and podcast streaming service. Pros: Large music library, excellent recommendation algorithm. Cons: Free version has limitations, artist payment issues. Best for: Music, podcasts, entertainment.",5,2026-06-23 11:23:51,play_store,True,recommendation_quality,positive,excellent recommendation
+e4dd9f0c-5777-41cd-a602-75e573e21d50,very good,5,2026-06-23 11:18:17,play_store,False,not_discovery_related,positive,
+b37b19e8-1e75-4eb2-af4d-f0f3893c552f,best app for my life,5,2026-06-23 11:16:49,play_store,False,not_discovery_related,positive,
+7bb730ac-1f22-408e-905b-e3b9a5961883,can i be honest? it.. kinda sucks. we're trying to listen to music...5 30 second ads genuinely sucks. it used to be at MOST 2 and now its 5? its ridiculous💔 we dont even really get 15 minutes before ads come most of the time. 15 minutes is kinda dumb too because thats like 3 songs? 4 at most? before 2 minutes of dumb advertisements in your ears when you're just trying to vibe. if we got more music time before ads I wouldn't complain. 30 mins would be so much better. I'm begging. please extend.,3,2026-06-23 11:16:29,play_store,False,not_discovery_related,negative,kinda sucks
+60898f4c-616e-477c-a514-c851903b59e9,"best streaming music app ever used. smart, easy and useful",5,2026-06-23 11:16:24,play_store,False,not_discovery_related,positive,
+a68d8f38-02a4-40d4-b2f8-fb48cc47666f,may be expensive but worth it at least for me,5,2026-06-23 11:14:17,play_store,False,not_discovery_related,positive,
+ccb5effe-3911-406c-9d11-6a9aac39e490,how's hell now we can't even replay our music audiomack is better than you i just and to relax after a stressful day and click on play button and its buy premium,1,2026-06-23 11:11:48,play_store,False,not_discovery_related,negative,is better than you
+e39b7f40-234f-4b81-ab0d-6be141555f9b,Great music place,4,2026-06-23 11:09:39,play_store,False,not_discovery_related,positive,Great music
+c19cde42-96b0-45b3-8b1e-6d1c790fe453,3rd class,1,2026-06-23 11:09:20,play_store,False,not_discovery_related,negative,3rd class
+5937dd15-d404-4e6a-9fad-1fd027e168ce,best app to ever exist,5,2026-06-23 11:04:54,play_store,False,not_discovery_related,positive,best app
+4a4a4ad8-2763-4253-a688-3cbfe63f2b9b,"yall think youre funny, dont you. desktop you CANNOT repeat one song anymore without being interrupted by FOUR ADS. you used to enable repeat one and not deal with ANY ads. and suddenly its ad central up in here. YOU DO NOT NEED ADS LIKE THAT. YOU ARE INVASIVE. YOU ARE A MULTI-MILLION COMPANY AND YOURE PULLING THIS. im not using spotify anymore except for playlist creation (which i wont listen to) and im pulling my stuff back over to basic youtube so i can repeat my songs in peace.",1,2026-06-23 10:59:19,play_store,False,not_discovery_related,negative,invasive
+3ea79d94-d739-4508-b5e6-192b8c1e1081,"too much long ads, so many limitations. I personally like the old version better. It feels like they're really desperate to make people buy the premium version.",1,2026-06-23 10:58:57,play_store,False,not_discovery_related,negative,too much ads
+73173854-e970-49d3-9f21-ec2398fbcac5,pay to use,1,2026-06-23 10:58:40,play_store,False,not_discovery_related,negative,pay to use
+d716d39d-de87-49c4-9fd1-9ee55949b4c4,great,5,2026-06-23 10:48:17,play_store,False,not_discovery_related,positive,great
+019adf8e-70e7-4fe6-b76f-901fe062339f,The music sound quality i didn't get from anywhere. Magic Shuffle works good most of the time. Some musics are not available Even though it's in likes. And some musics are not available at all. overall it's a satisfied experience. 1 year 6 months offers can be a bit cheaper maybe.,4,2026-06-23 10:44:59,play_store,True,discovery_effort,neutral,Magic Shuffle
+832ed3a7-6d35-4574-9ae3-9b9f37928ff9,Return the ability for users to change the music to the parts they like and I'll give you five stars,2,2026-06-23 10:39:08,play_store,True,context_mismatch,negative,change music
+bb8c6dc7-e259-404d-9688-3ddba490c024,very good and sound out put,5,2026-06-23 10:36:13,play_store,False,not_discovery_related,positive,very good
+b990b923-2006-4f65-ae96-e865cab4cf92,"I have created 3 playlists that I listen to almost all the time, --- XHAON'S : VIDES XHAON'S : Bangla band XHAON'S: HINDI",5,2026-06-23 10:32:47,play_store,False,not_discovery_related,neutral,
+7f46b1f2-bd6e-43aa-af57-6bf4f57755e6,great app good 👍,5,2026-06-23 10:31:13,play_store,False,not_discovery_related,positive,great app
+fee2cd33-931d-47be-bda3-a50f8a967c7f,I love the new feature of constantly crashing the app. Please keep messing with a previously functional app to make it worse.,1,2026-06-23 10:28:22,play_store,False,not_discovery_related,negative,constantly crashing
+1ba17239-cb82-4965-8416-78108c4c091d,commercials between ever song,2,2026-06-23 10:26:11,play_store,False,not_discovery_related,negative,commercials
+a7bed040-012c-4f8b-9709-eef9cbb238d3,very bad,1,2026-06-23 10:23:51,play_store,False,not_discovery_related,negative,very bad
+c905c330-e175-42c8-a4b6-643f4d66c2b7,for the price paid. disgusted with the app. Spotify cant decide which device to play on without having a meltdown. when resyncing to my original device it goes back about a dozen songs. plus yall have billed me for premium. but im still getting ads. definitely wouldnt recommend spotify to anyone with these current issues,1,2026-06-23 10:18:01,play_store,False,not_discovery_related,negative,disgusted
+23c1bae9-5f9d-4d5f-81dc-d44d01fe9755,this is the single least performant app I have ever used. uses more power in the background than YouTube does in the foreground which really doesn't make any sense,1,2026-06-23 10:16:35,play_store,False,not_discovery_related,negative,least performant
+4eceb9f2-0a6f-4e1e-bb0c-922774be0a5a,"giving 1 star just to come in notice . I will update the same later to 5 . as I find the app great except the recent trouble . since past 1 week I am facing problem with Spotify aap . every day I have to clear the cache storage to use the app again otherwise it is not functioning . incase I minimize the app yesterday and when I again open the app after 10/12 hours , it is not functioning . I am using Google Pixel 7a , android 16",1,2026-06-23 10:13:12,play_store,False,not_discovery_related,neutral,app great
+1098d3b4-6b84-4840-b468-5413b44292a0,the app mostly doesn't open pls fix the bug,1,2026-06-23 10:12:54,play_store,False,not_discovery_related,negative,doesn't open
+1a8daf40-96db-4c04-9d2f-8d4980559b47,good,5,2026-06-23 10:11:04,play_store,False,not_discovery_related,positive,good
+c8e51259-87a1-48fb-a92d-b8d1d9f810ac,yesterday I was debited for my monthly subscription on the 22nd and in the early hours of the 23rd I was debited yet again pls this is me requesting an official refund and the matter should be quickly looked into,1,2026-06-23 10:11:01,play_store,False,not_discovery_related,negative,requesting an official refund
+512e0038-c2f8-4c7f-85e0-71c86336a02f,great app for listening to music but should be no ads.,5,2026-06-23 10:10:28,play_store,False,not_discovery_related,positive,great app
+5a958813-7fd3-49d0-9fcc-92e5ca3d788d,I rate Spotify 5stars best and excellent,5,2026-06-23 10:09:29,play_store,False,not_discovery_related,positive,5stars
+b9b2fb10-b957-4597-b177-4c3f1cca2d1e,good but extra Ads,4,2026-06-23 10:05:05,play_store,False,not_discovery_related,negative,extra Ads
+ab7a5e00-59c7-4e76-b4de-b20b06949267,what a good app,5,2026-06-23 10:04:20,play_store,False,not_discovery_related,positive,good app
+bcfb140e-d7ea-45cd-9423-472342bb67da,good,5,2026-06-23 10:04:08,play_store,False,not_discovery_related,positive,good
+6d513c76-20b1-4bf7-afde-b1c10ccc7a2f,trash app,1,2026-06-23 10:01:51,play_store,False,not_discovery_related,negative,trash app
+09b034fb-877b-499d-b428-f60bbf540235,very bad,1,2026-06-23 10:01:37,play_store,False,not_discovery_related,negative,very bad
+21473e9b-2072-4f3f-b0e3-e3706474517e,ok,5,2026-06-23 10:00:14,play_store,False,not_discovery_related,neutral,
+e5294c72-157e-4c63-a5f1-3b8ca1b8812e,great choices,5,2026-06-23 09:56:18,play_store,True,recommendation_quality,positive,great choices
+3cbda7c3-365c-43bc-b9c4-6ddc77106eb2,is good but I don't have premen,5,2026-06-23 09:53:56,play_store,False,not_discovery_related,neutral,
+398e7635-f300-4192-b8c4-6ad9410a3819,it is great but needs more songs,4,2026-06-23 09:53:48,play_store,True,discovery_effort,negative,needs more songs
+4812661a-060f-4027-8ee7-1cb1f1c02a52,useless ads every seconds,1,2026-06-23 09:48:21,play_store,False,not_discovery_related,negative,useless ads
+791753c7-7e69-4080-a07d-bfac21af2159,Iam harassed of Spotify it is saying me continuously to take premium membership o,1,2026-06-23 09:42:58,play_store,False,not_discovery_related,negative,harassed
+96eafd3c-3b10-4a21-8522-c06424b047a0,"Fantastic App, 👍 I've always loved being able to listen to your Shyt while also scrolling the Internet, or working remotely whatever, Gardening which is my Jam!! 😜 But 5 +5 =💯🔥 ....",5,2026-06-23 09:42:42,play_store,True,recommendation_quality,positive,I've always loved
+e7ace6da-d085-4267-a353-9cadaab90156,It's very nice,5,2026-06-23 09:42:10,play_store,False,not_discovery_related,positive,very nice
+469d0bdf-23b3-403d-94b9-fa7412e451e6,it's amazing 😍,5,2026-06-23 09:40:28,play_store,False,not_discovery_related,positive,it's amazing
+e99d298b-4227-4c44-b0ff-964e731e49a1,App keeps crushing in between plays.,1,2026-06-23 09:40:15,play_store,False,not_discovery_related,negative,keeps crushing
+2f862a97-aaed-414a-9201-248e305c25a1,Constant updates that generally just make things worse and more annoying. Spotify playlists are 90% music that is already in my own playlists. So what exactly is the benefit there. New widget is probably the worse thing they've put out in years. Zero functionality. Most of the time it doesn't even load or else it continuously directs me straight to some random podcast episode even though I'm actively listening to music. oh yeah and of course the price has gone up several times in a year.,2,2026-06-23 09:38:01,play_store,True,repetition_fatigue,negative,90% music already
+33d13f78-8b52-4159-b9d9-0a2eddd55e29,"I don't have premium but I get alot of ads, I get 2-4 adds after one song. I get the same ads over and over. But it's still a great app for listening to music on, there's plenty of podcasts to listen to, you can even make your own playlists and add any song to it! Still an amazing app! I changed my mind a bit, recently I've been getting 5 ads after one song I've uninstalled and reinstalled the app and it's not helping I've been trying to listen to a certain song and can't due to skips.",3,2026-06-23 09:36:21,play_store,True,repetition_fatigue,neutral,same ads over
+22799f63-e116-46c9-b7cd-606c0acda405,best app for Android and iPhone,5,2026-06-23 09:36:14,play_store,False,not_discovery_related,positive,best app
+6dab6436-0379-4a28-9681-6185a18da63d,very good app for song or naat,5,2026-06-23 09:33:48,play_store,False,not_discovery_related,positive,very good
+61b38147-a38e-4630-a06e-bc1b655dfabf,d music is cool,5,2026-06-23 09:31:01,play_store,False,not_discovery_related,positive,d music
+ad6bb25c-e81e-4c1d-a7c0-636dddc26e3e,I have used Spotify for years now but despite having good experiences in the past suddenly Spotify has become bugged and strange. I play a song. the app closes. I press play app closes. press skip app closes. I thought it was my phone at first but no other app is doing it. very disappointed.,1,2026-06-23 09:23:07,play_store,False,not_discovery_related,negative,very disappointed
+6fcdcc22-5e04-4c0d-acec-8db2e1b302f7,good only if you pay for premium. if you don't have premium it isn't too bad besides the app not letting you choose your song or what order you want your music.,3,2026-06-23 09:22:53,play_store,True,discovery_effort,neutral,choose your song
+deaf35f9-6ffd-4b3a-82df-f8ecdf3e3007,adds are coming again and again.,2,2026-06-23 09:22:44,play_store,False,not_discovery_related,negative,adds are coming
+51e9ff04-688e-423e-97a3-b7b07215482e,I really like this music app we can't skip the ads and the ads is so long I will the spotify to give skip so that we can listen to the song.,3,2026-06-23 09:22:24,play_store,True,discovery_effort,negative,can't skip
+136916b1-2624-441c-87f8-ad5b1031edc4,very nice but ads are so boring 😴,5,2026-06-23 09:21:04,play_store,False,not_discovery_related,neutral,ads are boring
+88199402-5f51-4345-976f-c5ab53a56bdf,best music app,5,2026-06-23 09:20:48,play_store,False,not_discovery_related,positive,best music
+23e3319c-3467-4eb0-b54b-55a5a146a62a,"Easy to discover new music and create playlists for every mood. The sound quality is good, and the recommendations usually match my taste.",5,2026-06-23 09:20:12,play_store,True,recommendation_quality,positive,Easy to discover
+e72ac06d-7b0d-4b01-9b22-5594de2e8e59,excellent 👌🏽,5,2026-06-23 09:18:18,play_store,False,not_discovery_related,positive,excellent
+bccb652c-3a74-43d2-a693-244891ea594e,good,4,2026-06-23 09:17:21,play_store,False,not_discovery_related,positive,good
+e15cdbf4-b611-4975-9a46-7d6ce50adcbe,Spotify has songs apple music don't 😌 and they don't charge me for no reason. Been using Spotify for years never disappoints.,5,2026-06-23 09:16:25,play_store,True,recommendation_quality,positive,never disappoints
+3a19728f-1efa-4578-b96d-5eee83eb28f6,super,5,2026-06-23 09:13:44,play_store,False,not_discovery_related,positive,super
+00bfcaaf-bab9-473c-84b5-a107d3dca3cd,too many ads basically unusable if you don't have premium,1,2026-06-23 09:13:11,play_store,False,not_discovery_related,negative,too many ads
+38b47224-6fa0-46d5-bf23-4200cd270107,nothing but like it 👍,3,2026-06-23 09:07:50,play_store,False,not_discovery_related,positive,like it
+1963b400-fcc7-44e5-bebe-b6607355ad86,great app was a Pandora user for years glad I finally switched. love the A.I. stations,5,2026-06-23 09:06:39,play_store,True,recommendation_quality,positive,love the A.I.
+d1afb900-37ba-42ba-9d1c-e66331723c9b,It's so nice,5,2026-06-23 09:02:47,play_store,False,not_discovery_related,positive,so nice
+e7ac2c9d-7533-420b-ab06-ef56f80874e6,"I don't like it anymore, don't play anything after a certain time .",1,2026-06-23 09:02:08,play_store,True,context_mismatch,negative,don't play anything
+ce743536-4173-4fdc-b9e0-009a05389ca2,"There are still a few areas that could be improved such as getting the lyrics right and syncing them and also making the search function more intuitive instead of just looking for the title. otherwise, it's great. the library section allows me to make a number of listings.",5,2026-06-23 09:01:10,play_store,True,discovery_effort,neutral,could be improved
