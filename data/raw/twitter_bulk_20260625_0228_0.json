@@ -1,0 +1,1244 @@
+ok: true
+schema_version: '1'
+data:
+- id: '2069065508658307413'
+  text: '@JDNebusiness vraie question, quelles sont les nouveautés chez Spotify ?
+
+
+    J''ai l''impression que l''app stagne depuis plusieurs années.
+
+
+    Ou même régresse, je suis déçu de mes Discover Weekly Playlist maintenant, alors
+    qu''elles me faisaient découvrir plein de tracks avant...'
+  author:
+    id: '9777902'
+    name: Antoine Frankart
+    screenName: eMeRiKa
+    profileImageUrl: https://pbs.twimg.com/profile_images/1962824472005681152/wLC6x1rl_normal.jpg
+    verified: true
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 104
+    bookmarks: 0
+  createdAt: Mon Jun 22 14:30:33 +0000 2026
+  createdAtLocal: 2026-06-22 20:00
+  createdAtISO: '2026-06-22T14:30:33+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: fr
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069814574329827637'
+  text: 'Anyone else feel like @Spotify music has completely flatlined? 😩
+
+
+    All my Discover Weekly, radio stations, and suggestions are just the same sounding
+    songs on repeat. Zero variety anymore.
+
+
+    Seriously considering switching to @AppleMusic. Anyone else noticing this? https://t.co/4Z6c370JYl'
+  author:
+    id: '1234854300603432961'
+    name: Peter 🇺🇸
+    screenName: monkieboy99
+    profileImageUrl: https://pbs.twimg.com/profile_images/2000945007503831040/T0qu_xQf_normal.jpg
+    verified: true
+  metrics:
+    likes: 25
+    retweets: 0
+    replies: 27
+    quotes: 0
+    views: 1959
+    bookmarks: 1
+  createdAt: Wed Jun 24 16:07:04 +0000 2026
+  createdAtLocal: 2026-06-24 21:37
+  createdAtISO: '2026-06-24T16:07:04+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLl1YnnbgAAj-B8.jpg
+    width: 690
+    height: 370
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069650265322532933'
+  text: '@alexxyzd @ihabs11_ here''s my ratings, which one and stuck are pretty good
+    but i wouldn''t listen to them on the regular https://t.co/TMkwYK89h9'
+  author:
+    id: '1549231741096845314'
+    name: AVG.X.USR
+    screenName: PumpKingRBLX
+    profileImageUrl: https://pbs.twimg.com/profile_images/2056941945423851520/tMXGOUgk_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 6
+    bookmarks: 0
+  createdAt: Wed Jun 24 05:14:10 +0000 2026
+  createdAtLocal: 2026-06-24 10:44
+  createdAtISO: '2026-06-24T05:14:10+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLjf0a9XYAA3BcC.jpg
+    width: 289
+    height: 350
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069223759093870971'
+  text: Discover Weekly refreshed 👀 How are we feeling about this week's picks?
+  author:
+    id: '17230018'
+    name: Spotify
+    screenName: Spotify
+    profileImageUrl: https://pbs.twimg.com/profile_images/1793315484961591301/DiEXUJEV_normal.jpg
+    verified: true
+  metrics:
+    likes: 304
+    retweets: 17
+    replies: 72
+    quotes: 5
+    views: 138782
+    bookmarks: 5
+  createdAt: Tue Jun 23 00:59:23 +0000 2026
+  createdAtLocal: 2026-06-23 06:29
+  createdAtISO: '2026-06-23T00:59:23+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069825301798887911'
+  text: Hey @Spotify whoever made my discover weekly this week needs to be taken out
+    back and beaten with a large wrench
+  author:
+    id: '1819062715115094016'
+    name: Amari Trilliams
+    screenName: TwoKeysUrinal
+    profileImageUrl: https://pbs.twimg.com/profile_images/2065479624277020673/NXzE4Jab_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 52
+    bookmarks: 0
+  createdAt: Wed Jun 24 16:49:42 +0000 2026
+  createdAtLocal: 2026-06-24 22:19
+  createdAtISO: '2026-06-24T16:49:42+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069794738467660093'
+  text: '@Spotify the new widget is complete ass, forcing everyone to use is even
+    worse. Fix it'
+  author:
+    id: '2659550571'
+    name: Bayern Stan 🇩🇪🇸🇳
+    screenName: Santa_Lenin
+    profileImageUrl: https://pbs.twimg.com/profile_images/1744397162643963904/wmDq1qdv_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 63
+    bookmarks: 0
+  createdAt: Wed Jun 24 14:48:15 +0000 2026
+  createdAtLocal: 2026-06-24 20:18
+  createdAtISO: '2026-06-24T14:48:15+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069833908061884627'
+  text: '@dollhevan not to ruin the party but it''s normal for new spotify profiles
+    to take a while before they''re findable in search. when i looked it up a few
+    hours after it came out, i had to click into it through a playlist.'
+  author:
+    id: '1452612223965216778'
+    name: bee 🇺🇸🇲🇦🇰🇷🇳🇴
+    screenName: midzygene
+    profileImageUrl: https://pbs.twimg.com/profile_images/2065637621976432640/Mu0nFLjE_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 81
+    bookmarks: 0
+  createdAt: Wed Jun 24 17:23:53 +0000 2026
+  createdAtLocal: 2026-06-24 22:53
+  createdAtISO: '2026-06-24T17:23:53+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069820822043210128'
+  text: '@TheNewsAgents Anyone having issues getting issues on Spotify? Seems to get
+    a big delay in episodes appearing. Yesterday''s didn''t appear until today'
+  author:
+    id: '22673314'
+    name: Matt Turner-Allen
+    screenName: matt_ta_87
+    profileImageUrl: https://pbs.twimg.com/profile_images/1869871070464847872/C1dK5Yvz_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 36
+    bookmarks: 0
+  createdAt: Wed Jun 24 16:31:54 +0000 2026
+  createdAtLocal: 2026-06-24 22:01
+  createdAtISO: '2026-06-24T16:31:54+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069608038223269937'
+  text: '@a_guadallama it takes a while, but its mid at best. that and it being more
+    difficult to find new music are its biggest weaknesses'
+  author:
+    id: '2857555219'
+    name: alby
+    screenName: ILLUMlNAUGHTY
+    profileImageUrl: https://pbs.twimg.com/profile_images/2065308462142107648/ElW4XVgo_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 101
+    bookmarks: 0
+  createdAt: Wed Jun 24 02:26:22 +0000 2026
+  createdAtLocal: 2026-06-24 07:56
+  createdAtISO: '2026-06-24T02:26:22+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069794109292757082'
+  text: New @SpotifyUK widget is dogshit. There. I said it.
+  author:
+    id: '279168218'
+    name: Greg
+    screenName: gergmh
+    profileImageUrl: https://pbs.twimg.com/profile_images/1585930153456181248/Cg4k3Mv4_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 7
+    bookmarks: 0
+  createdAt: Wed Jun 24 14:45:45 +0000 2026
+  createdAtLocal: 2026-06-24 20:15
+  createdAtISO: '2026-06-24T14:45:45+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069799868256636935'
+  text: '@SpotifyStatus Have tried all the fixes and it works for a day then just
+    stops again the following day. There''s no issues with my phone otherwise its
+    only the @Spotify app that''s buggy. I''ve got 50% taken off my bill bit I shouldn''t
+    have to pay for an app I have to uninstall and reinstall daily'
+  author:
+    id: '425401976'
+    name: Keith Gilligan
+    screenName: CeiteachG
+    profileImageUrl: https://pbs.twimg.com/profile_images/2061144307881451521/RnnpW6DR_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 16
+    bookmarks: 0
+  createdAt: Wed Jun 24 15:08:38 +0000 2026
+  createdAtLocal: 2026-06-24 20:38
+  createdAtISO: '2026-06-24T15:08:38+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069822766656733356'
+  text: '@nixedintentions Tinkering with the algo for discover section atm, You''re
+    going to notice a lot of things off for about a week, I had 0 plays yesterday
+    because it was only recommending 5 artists on shuffle play 😂'
+  author:
+    id: '1324860051522248704'
+    name: 𝔊𝔯𝔦𝔪𝔣𝔢𝔩
+    screenName: GrimfelOfficial
+    profileImageUrl: https://pbs.twimg.com/profile_images/2063994411483123712/1ArvFevY_normal.jpg
+    verified: true
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 25
+    bookmarks: 0
+  createdAt: Wed Jun 24 16:39:37 +0000 2026
+  createdAtLocal: 2026-06-24 22:09
+  createdAtISO: '2026-06-24T16:39:37+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069384181579481098'
+  text: SpotifyのDiscover Weeklyがここ2〜3週間くらいで急激にイマイチになったんだけどなんかレコメンドのロジック変わったのかな…
+  author:
+    id: '5007601'
+    name: メルセデスベン子
+    screenName: nomolk
+    profileImageUrl: https://pbs.twimg.com/profile_images/2004527443105992705/mGwAhq9E_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 561
+    bookmarks: 0
+  createdAt: Tue Jun 23 11:36:50 +0000 2026
+  createdAtLocal: 2026-06-23 17:06
+  createdAtISO: '2026-06-23T11:36:50+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: ja
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069499873179640300'
+  text: '@Spotify why is your shuffle either broken or so crap it doesn’t work properly?
+    I’ve got a couple of large playlists of lost of things I like. I shouldn’t get
+    a repeat track for days yet I get about 2.5 hours of that playlist and then it
+    repeats and done get me started on “smart”'
+  author:
+    id: '102725678'
+    name: James Scott
+    screenName: tallicaboy
+    profileImageUrl: https://pbs.twimg.com/profile_images/616272941/TB_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 38
+    bookmarks: 0
+  createdAt: Tue Jun 23 19:16:33 +0000 2026
+  createdAtLocal: 2026-06-24 00:46
+  createdAtISO: '2026-06-23T19:16:33+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069696109061005480'
+  text: This useless spotify update has a fvcking bug I can't even listen to music
+    without the app exiting
+  author:
+    id: '1438753565246468098'
+    name: °-° 🇯🇵🇵🇹🇳🇴🇳🇱
+    screenName: zedyuuu
+    profileImageUrl: https://pbs.twimg.com/profile_images/2032941474824822784/djmRnVKR_normal.jpg
+    verified: false
+  metrics:
+    likes: 2
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 131
+    bookmarks: 0
+  createdAt: Wed Jun 24 08:16:20 +0000 2026
+  createdAtLocal: 2026-06-24 13:46
+  createdAtISO: '2026-06-24T08:16:20+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068813382094913801'
+  text: "4th year of career on the charts \n\nBad Boy\n— #172. Spotify WW \n— #1.\
+    \ Melon\n— #1. Genie\n— #1. Bugs \n\nBoompala \n— #177. Spotify WW\n— #36. Melon\
+    \ \n— #77. Genie \n— #6. Bugs\n\nPut some respect on RV’s name le sseratuba stan\
+    \ https://t.co/Z31e8YXoWf"
+  author:
+    id: '1981428905119797252'
+    name: Tia Cheng Xie 🍋
+    screenName: liapositions
+    profileImageUrl: https://pbs.twimg.com/profile_images/2066614255634337792/GaLGP2w8_normal.jpg
+    verified: false
+  metrics:
+    likes: 686
+    retweets: 67
+    replies: 19
+    quotes: 4
+    views: 19467
+    bookmarks: 27
+  createdAt: Sun Jun 21 21:48:41 +0000 2026
+  createdAtLocal: 2026-06-22 03:18
+  createdAtISO: '2026-06-21T21:48:41+00:00'
+  media:
+  - type: video
+    url: https://video.twimg.com/ext_tw_video/1953481668469063680/pu/vid/avc1/1024x576/_F10qKFg9_5cEIEL.mp4?tag=12
+    width: 1024
+    height: 576
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  quotedTweet:
+    id: '2068489663237460049'
+    text: '@chaesmarts name 5 red velvet bsides cuz i cant even name 5 of their title
+      tracks'
+    author:
+      screenName: hrts2jmn
+      name: riri
+- id: '2069442908013592855'
+  text: "Spotify global: day 11\n\nHoneybee —  3,554,013 (non-single)\n\nGet him back!\
+    \  — 3,140,755 (3rd single)\nBad idea right? — 3,476,826 (2nd single) \n https://t.co/CbPxV91TBZ"
+  author:
+    id: '1951447448536358914'
+    name: BRITNEYBIT
+    screenName: anse_fr45968
+    profileImageUrl: https://pbs.twimg.com/profile_images/2045445708560650240/jmFt7nX0_normal.jpg
+    verified: false
+  metrics:
+    likes: 983
+    retweets: 48
+    replies: 8
+    quotes: 5
+    views: 24024
+    bookmarks: 75
+  createdAt: Tue Jun 23 15:30:12 +0000 2026
+  createdAtLocal: 2026-06-23 21:00
+  createdAtISO: '2026-06-23T15:30:12+00:00'
+  media:
+  - type: video
+    url: https://video.twimg.com/ext_tw_video/1511381387621842950/pu/vid/782x662/xva6pF5MddRS1_iL.mp4?tag=12
+    width: 782
+    height: 662
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069886106867470709'
+  text: '@42CEO_ they are always so behind why is skrilla in here and they get random
+    artists that ain’t really like that like compared to what we used to get in 2016-2017
+    this is utter garbage other than slayr'
+  author:
+    id: '1643969306575749122'
+    name: ar
+    screenName: ArsenicVinigar
+    profileImageUrl: https://pbs.twimg.com/profile_images/2032905533917671424/Lg15NQMb_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 24
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:51:19 +0000 2026
+  createdAtLocal: 2026-06-25 02:21
+  createdAtISO: '2026-06-24T20:51:19+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069887788732838014'
+  text: '@GreyArchiveBTS7 Yes; same for me. I had finished my L3 in time, but I have
+    a few albums left... 5/6 hours with no update.'
+  author:
+    id: '1978899561050492929'
+    name: Xplore | BTS ARIRANG ⛵️
+    screenName: Xplore78
+    profileImageUrl: https://pbs.twimg.com/profile_images/2007879620188651521/d9aIsr4x_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 1
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:58:00 +0000 2026
+  createdAtLocal: 2026-06-25 02:28
+  createdAtISO: '2026-06-24T20:58:00+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069202360916746680'
+  text: So we’re just not going to go more than a week without another infuriating
+    bug huh @Spotify @SpotifyCares
+  author:
+    id: '240488003'
+    name: Chip Tamplin
+    screenName: chizrocker88
+    profileImageUrl: https://pbs.twimg.com/profile_images/1116703594915475456/W2HiduO2_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 47
+    bookmarks: 0
+  createdAt: Mon Jun 22 23:34:21 +0000 2026
+  createdAtLocal: 2026-06-23 05:04
+  createdAtISO: '2026-06-22T23:34:21+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069457288046194994'
+  text: This Spotify reserved is a mess are you kidding me
+  author:
+    id: '1779301659161559040'
+    name: Liv
+    screenName: d81041jj6
+    profileImageUrl: https://pbs.twimg.com/profile_images/1790569699727560704/Hp-WiTvz_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 105
+    bookmarks: 0
+  createdAt: Tue Jun 23 16:27:20 +0000 2026
+  createdAtLocal: 2026-06-23 21:57
+  createdAtISO: '2026-06-23T16:27:20+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069810335255605410'
+  text: They tryna make bad bunny relevant by all means son😭😂
+  author:
+    id: '1590629495433830401'
+    name: xxl✩
+    screenName: hatedubem
+    profileImageUrl: https://pbs.twimg.com/profile_images/2044159212633169920/VwQmIWOj_normal.jpg
+    verified: true
+  metrics:
+    likes: 68
+    retweets: 1
+    replies: 7
+    quotes: 0
+    views: 1210
+    bookmarks: 0
+  createdAt: Wed Jun 24 15:50:13 +0000 2026
+  createdAtLocal: 2026-06-24 21:20
+  createdAtISO: '2026-06-24T15:50:13+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  quotedTweet:
+    id: '2069801633387618658'
+    text: 'Odds for the top artist on Spotify this year:
+
+
+      Bad Bunny        80%
+
+      Drake                  14%
+
+      Taylor Swift      8% https://t.co/Zy3alZ0WA9'
+    author:
+      screenName: Kalshi_Music
+      name: Kalshi Music
+- id: '2069081051734167881'
+  text: 'Fortnite Discovery blocked my island from its initial content testing because
+    another creator updated their island and got into the New and Updated rows first.
+    They ended up claiming the game title, even though it was available when I published.
+    I released my game a day before their update, but they were pushed into the rows
+    before I was.
+
+
+    I worked on this game for months in my spare time. Seeing it dead on launch because
+    of bad luck and the way Discovery works sucks pretty hard, especially after investing
+    time and money into it.
+
+
+    @FNCreate @Flak #UEFN'
+  author:
+    id: '852725265776001025'
+    name: Percy
+    screenName: PercyFNCreative
+    profileImageUrl: https://pbs.twimg.com/profile_images/2048565386002759680/VCo1QeuA_normal.jpg
+    verified: true
+  metrics:
+    likes: 47
+    retweets: 1
+    replies: 2
+    quotes: 0
+    views: 6170
+    bookmarks: 10
+  createdAt: Mon Jun 22 15:32:19 +0000 2026
+  createdAtLocal: 2026-06-22 21:02
+  createdAtISO: '2026-06-22T15:32:19+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLbXZYHakAAVS4_.jpg
+    width: 1273
+    height: 584
+  - type: photo
+    url: https://pbs.twimg.com/media/HLbX05ja8AA-EPO.jpg
+    width: 1099
+    height: 457
+  - type: photo
+    url: https://pbs.twimg.com/media/HLbYBaHbcAAT6OQ.jpg
+    width: 1073
+    height: 789
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  quotedTweet:
+    id: '2069050060432671157'
+    text: '@PercyFNCreative @ToraUEFN Bad timing to post your map https://t.co/DQTgymWzYZ'
+    author:
+      screenName: BiboPlayer
+      name: biboplayer
+- id: '2069799791572251019'
+  text: '@AlexaTorre1nhz @spotify_data @PopDataMusic unfortunately it happens like
+    every week too. they can’t even hide it on a monday update'
+  author:
+    id: '1463597978736893960'
+    name: Grayson
+    screenName: GraysonRapp1
+    profileImageUrl: https://pbs.twimg.com/profile_images/2052213285395513344/AgWfgRQH_normal.jpg
+    verified: true
+  metrics:
+    likes: 2
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 202
+    bookmarks: 0
+  createdAt: Wed Jun 24 15:08:19 +0000 2026
+  createdAtLocal: 2026-06-24 20:38
+  createdAtISO: '2026-06-24T15:08:19+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069072764292431891'
+  text: dios que buen invento el descubrimiento semanal de spotify quien programó
+    esa verga
+  author:
+    id: '1833053909985751040'
+    name: ִֶָ💮
+    screenName: POLIM0RFISMO
+    profileImageUrl: https://pbs.twimg.com/profile_images/2057870542816854016/w0bzlw9H_normal.jpg
+    verified: false
+  metrics:
+    likes: 4
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 92
+    bookmarks: 0
+  createdAt: Mon Jun 22 14:59:23 +0000 2026
+  createdAtLocal: 2026-06-22 20:29
+  createdAtISO: '2026-06-22T14:59:23+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: es
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069806571140378987'
+  text: '@SpotifyCares @Spotify It is slow to respond, that is if responds without
+    taking forever to refresh. It also crashes a lot and requires re-adding the widget
+    for it to work.
+
+    This is all before mentioning how next/previous buttons are unavailable in a 4×1
+    configuration - poor design choice.'
+  author:
+    id: '2659550571'
+    name: Bayern Stan 🇩🇪🇸🇳
+    screenName: Santa_Lenin
+    profileImageUrl: https://pbs.twimg.com/profile_images/1744397162643963904/wmDq1qdv_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 30
+    bookmarks: 0
+  createdAt: Wed Jun 24 15:35:16 +0000 2026
+  createdAtLocal: 2026-06-24 21:05
+  createdAtISO: '2026-06-24T15:35:16+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068407379184513163'
+  text: 'Hey @SpotifyUK if you''re going to charge people like 13 quid &amp; underpay
+    artists- make the fuck sure your app works.
+
+
+    It''s been weeks now where it randomly tells me I''m not subscribed when I try
+    to add searched songs or click on one in the shuffle, unless I skip songs to reach
+    it.'
+  author:
+    id: '358928523'
+    name: Shaz
+    screenName: NotThatShaz
+    profileImageUrl: https://pbs.twimg.com/profile_images/2054948792781201408/AoRp5UqQ_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 234
+    bookmarks: 0
+  createdAt: Sat Jun 20 18:55:23 +0000 2026
+  createdAtLocal: 2026-06-21 00:25
+  createdAtISO: '2026-06-20T18:55:23+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069854087576002790'
+  text: bad bunny collecting spotify records https://t.co/92x1E6bfhS
+  author:
+    id: '1450095035832094720'
+    name: pop culture gal
+    screenName: allurequinn
+    profileImageUrl: https://pbs.twimg.com/profile_images/1788714414553935873/V0ty-Lho_normal.jpg
+    verified: true
+  metrics:
+    likes: 20
+    retweets: 3
+    replies: 1
+    quotes: 0
+    views: 1474
+    bookmarks: 4
+  createdAt: Wed Jun 24 18:44:05 +0000 2026
+  createdAtLocal: 2026-06-25 00:14
+  createdAtISO: '2026-06-24T18:44:05+00:00'
+  media:
+  - type: video
+    url: https://video.twimg.com/ext_tw_video/1553846782760714245/pu/vid/640x578/PpBDZcsJ4hBSuhir.mp4?tag=12
+    width: 640
+    height: 578
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  quotedTweet:
+    id: '2069801633387618658'
+    text: 'Odds for the top artist on Spotify this year:
+
+
+      Bad Bunny        80%
+
+      Drake                  14%
+
+      Taylor Swift      8% https://t.co/Zy3alZ0WA9'
+    author:
+      screenName: Kalshi_Music
+      name: Kalshi Music
+- id: '2069887601406853305'
+  text: '@ladywhoissmart i prefer shaving cause if you just do it every morning before
+    it grows back lots It''s Just Not That Bad compared to Weekly Pain and Agony'
+  author:
+    id: '1611747681692487681'
+    name: beejwhwidbe sjsk
+    screenName: faggotloser99
+    profileImageUrl: https://pbs.twimg.com/profile_images/2042080449942441984/xVvKUTpZ_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 2
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:57:15 +0000 2026
+  createdAtLocal: 2026-06-25 02:27
+  createdAtISO: '2026-06-24T20:57:15+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068389098436297153'
+  text: https://t.co/VAhGad6iGa
+  author:
+    id: '1470734366204735492'
+    name: Afina Official
+    screenName: afinaio
+    profileImageUrl: https://pbs.twimg.com/profile_images/2068144986806202368/LGYfVxad_normal.jpg
+    verified: true
+  metrics:
+    likes: 20
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 397197
+    bookmarks: 3
+  createdAt: Sat Jun 20 17:42:44 +0000 2026
+  createdAtLocal: 2026-06-20 23:12
+  createdAtISO: '2026-06-20T17:42:44+00:00'
+  media: []
+  urls:
+  - http://x.com/i/article/2067583136880373760
+  isRetweet: false
+  retweetedBy: null
+  lang: zxx
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  articleTitle: That Perfect Zero. Why the Tampering Signal Decides Everything — and
+    Why Most Antidetects Fail It
+- id: '2068604602576949521'
+  text: spotify fix your damn app like why has it been more than a week of me trying
+    to open the app and it's just a fucking black screen, emptying cache does nothing
+    everytime i just have to uninstall reinstall for it to work for maybe a few hours
+    if i'm lucky it's pmo
+  author:
+    id: '877247536104431617'
+    name: Clem🌷❤️‍🔥
+    screenName: moo_vie_
+    profileImageUrl: https://pbs.twimg.com/profile_images/2052023302512664576/SGwaWul3_normal.jpg
+    verified: false
+  metrics:
+    likes: 4
+    retweets: 2
+    replies: 0
+    quotes: 0
+    views: 226
+    bookmarks: 0
+  createdAt: Sun Jun 21 07:59:04 +0000 2026
+  createdAtLocal: 2026-06-21 13:29
+  createdAtISO: '2026-06-21T07:59:04+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069518895061364923'
+  text: "@Spotify Rebel by @lecrae \n\nBut I never left his music journey. I stuck\
+    \ with him. We went on the journey together."
+  author:
+    id: '1939753954021113856'
+    name: Brettley
+    screenName: bcanders116
+    profileImageUrl: https://pbs.twimg.com/profile_images/2066989439243431936/oMz1YTrJ_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 7
+    bookmarks: 0
+  createdAt: Tue Jun 23 20:32:09 +0000 2026
+  createdAtLocal: 2026-06-24 02:02
+  createdAtISO: '2026-06-23T20:32:09+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069601477773967804'
+  text: i'm so close to quitting spotify. the company itself is trash in general but
+    the shuffle feature is still atrocious ohh my GOD. be good at something damn!!!!
+  author:
+    id: '3256360838'
+    name: 𓆩𑣿𓆪
+    screenName: fairiehachi
+    profileImageUrl: https://pbs.twimg.com/profile_images/2068907718031663104/KnVUtpj9_normal.jpg
+    verified: false
+  metrics:
+    likes: 5
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 148
+    bookmarks: 0
+  createdAt: Wed Jun 24 02:00:18 +0000 2026
+  createdAtLocal: 2026-06-24 07:30
+  createdAtISO: '2026-06-24T02:00:18+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068337949905735831'
+  text: 'For the first time since dropping ''ICEMAN'', Bad Bunny has surpassed Drake
+    on the Top Artists Global Spotify chart on June 19.
+
+
+    Drake remains at #2. https://t.co/ZInHbIb6fR'
+  author:
+    id: '2055689096274587648'
+    name: Drake Spotify Data
+    screenName: DrakeSpotify
+    profileImageUrl: https://pbs.twimg.com/profile_images/2055712668426649600/dRNp1UiU_normal.jpg
+    verified: true
+  metrics:
+    likes: 439
+    retweets: 11
+    replies: 10
+    quotes: 0
+    views: 10721
+    bookmarks: 11
+  createdAt: Sat Jun 20 14:19:29 +0000 2026
+  createdAtLocal: 2026-06-20 19:49
+  createdAtISO: '2026-06-20T14:19:29+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLQ2Z2BWwAAV1-n.jpg
+    width: 926
+    height: 918
+  - type: photo
+    url: https://pbs.twimg.com/media/HLQ2Z1_XoAAJUo2.jpg
+    width: 1198
+    height: 1192
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069191192475214163'
+  text: my spotify discover weekly sucks now, half the songs i've already heard 🫩
+  author:
+    id: '1242488420'
+    name: hanna⁷ IS SEEING BTS
+    screenName: arceusblitz1
+    profileImageUrl: https://pbs.twimg.com/profile_images/1942118039300018176/o-BEXV9l_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 11
+    bookmarks: 0
+  createdAt: Mon Jun 22 22:49:58 +0000 2026
+  createdAtLocal: 2026-06-23 04:19
+  createdAtISO: '2026-06-22T22:49:58+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068928370113643002'
+  text: "This is bit of a personal gripe for me. When I started my applications for\
+    \ graduate and masters schools, it was so overwhelming. There's GRE, TOEFL, SOPs,\
+    \ LORs etc and every country's (and even different universities in the same country)\
+    \ application seems to follow some different procedures and guidelines. \n\nI\
+    \ felt a bit lost there. \n\nSo I decided to try out consulting agencies. But\
+    \ they didn't have a clue about what I am trying to do and wanted to push me towards\
+    \ universities I had no interest in applying to (I am guessing they were getting\
+    \ commissions). \nSeeing the lack of value and exorbitant costs I decided not\
+    \ to go with any consulting agency. It was not worth it. \n\nBut I was still overwhelmed\
+    \ and needed clarity. After asking a lot of questions from my seniors and peers,\
+    \ reading countless guides, reddit threads, youtube videos, making dozens of spreadsheets,\
+    \ and 6-8 months of hustle, things started to make sense. \n\nMy mails were getting\
+    \ better, my SOPs were not generic and had clarity and gradually professors started\
+    \ showing interest in my cold emails. \n\nThen I realised that this whole journey\
+    \ is not impossible, just very confusing and overwhelming for those who have just\
+    \ started. And the study abroad consulting industry is a big elaborate scam. \n\
+    \nThat's when I decided to set my eyes on how to fix this problem (one I had faced\
+    \ and suffered personally from). \n\nTogether with @Aryann_7, I am happy to announce\
+    \ that we are starting Enrolia Private Beta Cohort, completely free for the whole\
+    \ application cycle, for students who want to study abroad, but don't have the\
+    \ luxury to go with expensive consulting agencies. \nWe will help all students/applicants\
+    \ in gaining the confidence to apply, write cold emails that gets replies, draft\
+    \ stellar SOPs, apply for scholarships, shortlist universities and professors\
+    \ that are fit for them. On top we are not taking commissions from any university,\
+    \ ever!\nWe will have weekly sessions over discord and solve all doubts asynchronously\
+    \ in the channels. Also we will bringing a lot of current students and alumni\
+    \ from top schools to solve student's doubts. \n\nPeople who are genuinely in\
+    \ need of something like this and are ready to put it in the effort are welcome\
+    \ to apply. We will not hand hold but actually teach the applicants how to traverse\
+    \ through this whole process without feeling overwhelmed, and if they get stuck,\
+    \ we are there to help them. \n\nDue to limited manpower, we can only open up\
+    \ this cohort for upto 250 students in this cycle.\n\nVisit https://t.co/eUM5tKxIKZ\
+    \ to apply. We will be reading each and every application manually. \n\nFor others,\
+    \ please spread the word, so that this post reaches to students who are genuinely\
+    \ in need. Students who otherwise would give up on their dreams to study abroad."
+  author:
+    id: '1815005190904307712'
+    name: Kartik Mandar
+    screenName: kartik_mandar
+    profileImageUrl: https://pbs.twimg.com/profile_images/1943726526274670592/23Gj_faK_normal.jpg
+    verified: true
+  metrics:
+    likes: 91
+    retweets: 6
+    replies: 2
+    quotes: 1
+    views: 45654
+    bookmarks: 29
+  createdAt: Mon Jun 22 05:25:36 +0000 2026
+  createdAtLocal: 2026-06-22 10:55
+  createdAtISO: '2026-06-22T05:25:36+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069039435362996539'
+  text: "@spotify is wank considering how much you pay for it…\n\nWhy does it skip\
+    \ like a scratched CD when trying to connect via Bluetooth?\n\nAlso, why does\
+    \ it randomly close the app? \n\nLastly, why does it take so long to load when\
+    \ not on WiFi? Other apps are fine, just #Spotify"
+  author:
+    id: '935183642'
+    name: Herbie 🎶
+    screenName: StevenHerbert3
+    profileImageUrl: https://pbs.twimg.com/profile_images/1515406921150476294/KfVmCagN_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 47
+    bookmarks: 0
+  createdAt: Mon Jun 22 12:46:56 +0000 2026
+  createdAtLocal: 2026-06-22 18:16
+  createdAtISO: '2026-06-22T12:46:56+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068457263291895899'
+  text: '@SpotifyCares @Spotify really loving this new update that nukes my queue
+    after 3 tracks every time. Why even give me the feature if you have no intentions
+    of making it work?'
+  author:
+    id: '1555730437812932608'
+    name: 🍀Lucky Mech Pilot🍀
+    screenName: CanadiaAmp
+    profileImageUrl: https://pbs.twimg.com/profile_images/2037851548987064320/FYVygK1X_normal.jpg
+    verified: false
+  metrics:
+    likes: 2
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 74
+    bookmarks: 0
+  createdAt: Sat Jun 20 22:13:36 +0000 2026
+  createdAtLocal: 2026-06-21 03:43
+  createdAtISO: '2026-06-20T22:13:36+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '1864314408349917621'
+  text: apparently spotify laid off a lot of workers and used AI to create the wrapped
+    this year instead no wonder it sucks… https://t.co/jRvbHW9qGq
+  author:
+    id: '1090428846183251969'
+    name: Noah 🩻
+    screenName: weremytown13
+    profileImageUrl: https://pbs.twimg.com/profile_images/1380574344368119811/dks3B79r_normal.jpg
+    verified: false
+  metrics:
+    likes: 218538
+    retweets: 15571
+    replies: 435
+    quotes: 2532
+    views: 12194464
+    bookmarks: 3296
+  createdAt: Wed Dec 04 14:22:46 +0000 2024
+  createdAtLocal: 2024-12-04 19:52
+  createdAtISO: '2024-12-04T14:22:46+00:00'
+  media:
+  - type: animated_gif
+    url: https://video.twimg.com/tweet_video/Gd9gEitWwAAGa4r.mp4
+    width: 220
+    height: 220
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069442198530142679'
+  text: '@SpotifyStatus Songs playing at slower speeds, randomly skipping to the next
+    song with like 20 seconds left. So annoying'
+  author:
+    id: '240488003'
+    name: Chip Tamplin
+    screenName: chizrocker88
+    profileImageUrl: https://pbs.twimg.com/profile_images/1116703594915475456/W2HiduO2_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 128
+    bookmarks: 0
+  createdAt: Tue Jun 23 15:27:23 +0000 2026
+  createdAtLocal: 2026-06-23 20:57
+  createdAtISO: '2026-06-23T15:27:23+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+

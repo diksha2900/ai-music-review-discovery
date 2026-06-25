@@ -1,0 +1,1357 @@
+ok: true
+schema_version: '1'
+data:
+- id: '2067953450856718564'
+  text: 'Great news! Your album has been submitted to stores.
+
+    album title: Cold Summer
+
+    Number of songs: 2
+
+    Stores: Amazon, Anghami, Apple Music, MediaNet, Boomplay, Deezer, Instagram/Facebook,
+    Adaptr, Flo, YouTube Music, iHeartRadio, Claro Música, iTunes, Joox, Kuack Media,
+    NetEase, Qobuz, Pandora, Saavn, Snapchat, Spotify, Tencent, Tidal and TikTok &
+    other ByteDance stores'
+  author:
+    id: '1606447050161532928'
+    name: Born Stunna
+    screenName: JuanDoss5
+    profileImageUrl: https://pbs.twimg.com/profile_images/1904310625758793728/uoBWt33o_normal.jpg
+    verified: true
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 64
+    bookmarks: 0
+  createdAt: Fri Jun 19 12:51:38 +0000 2026
+  createdAtLocal: 2026-06-19 18:21
+  createdAtISO: '2026-06-19T12:51:38+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068929294332834140'
+  text: OMG I JUST FOUND A VERY BEAUTIFUL GEM Y’ALL  https://t.co/CO6EuxKXEy
+  author:
+    id: '77442114'
+    name: ًً
+    screenName: woriwoen
+    profileImageUrl: https://pbs.twimg.com/profile_images/2055264021499273216/9OjJy9OO_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 7
+    bookmarks: 0
+  createdAt: Mon Jun 22 05:29:17 +0000 2026
+  createdAtLocal: 2026-06-22 10:59
+  createdAtISO: '2026-06-22T05:29:17+00:00'
+  media: []
+  urls:
+  - https://open.spotify.com/track/1dAxx6cJv1Ba8hfZiCTzaR?si=Oh4YrHcRT8erNCEPicBBhA
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '1821568867136929805'
+  text: "This achievement is pretty huge coz there's no streaming culture in India\
+    \ and also not the entirety of the public uses Spotify. \nMany people still uses\
+    \ Jiosaavn or Gaana or Wynk app to listen  music."
+  author:
+    id: '1347480464232120320'
+    name: Luluu
+    screenName: miss_andriee
+    profileImageUrl: https://pbs.twimg.com/profile_images/1974054563079438337/5vEU76FA_normal.jpg
+    verified: false
+  metrics:
+    likes: 1997
+    retweets: 315
+    replies: 17
+    quotes: 6
+    views: 27143
+    bookmarks: 36
+  createdAt: Thu Aug 08 15:27:15 +0000 2024
+  createdAtLocal: 2024-08-08 20:57
+  createdAtISO: '2024-08-08T15:27:15+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  quotedTweet:
+    id: '1821519128424841529'
+    text: Arijit Singh becomes the most followed artist in the world on Spotify, surpassing
+      Taylor Swift! https://t.co/EbYrqMQ82a
+    author:
+      screenName: i_CHITTARANJAN1
+      name: chittaranjan
+- id: '2068951176620675192'
+  text: 'Listen "Shymolima"
+
+
+    Available on Spotify, iTunes/Apple Music, Amazon Prime Music, YouTube Music, JioSaavn,
+    Gaana, Shazam, Deezer, Facebook Music, SoundCloud, SnapChat, Anghami, Tidal and
+    etc.
+
+
+    Available for Instagram Reels
+
+    Available for YouTube Shorts
+
+
+    #tridivborah #assamesesong https://t.co/Vf7aRaWWqT'
+  author:
+    id: '928915469490298880'
+    name: National Music Assamese
+    screenName: NM_Assamese
+    profileImageUrl: https://pbs.twimg.com/profile_images/1985967040017154048/GrQjsVPC_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 51
+    bookmarks: 0
+  createdAt: Mon Jun 22 06:56:14 +0000 2026
+  createdAtLocal: 2026-06-22 12:26
+  createdAtISO: '2026-06-22T06:56:14+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLZkH3bbUAAu-rA.jpg
+    width: 2560
+    height: 2560
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069360365851546015'
+  text: '@JioSaavn   launches ‘music profile’ to turn listening habits into a shareable
+    persona
+
+
+    Read Full Article:
+
+    https://t.co/4IlJuhhasC'
+  author:
+    id: '114752673'
+    name: Indiantelevision.com
+    screenName: ITVNewz
+    profileImageUrl: https://pbs.twimg.com/profile_images/1126103287202107393/nC7fF7d9_normal.png
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 35
+    bookmarks: 0
+  createdAt: Tue Jun 23 10:02:12 +0000 2026
+  createdAtLocal: 2026-06-23 15:32
+  createdAtISO: '2026-06-23T10:02:12+00:00'
+  media: []
+  urls:
+  - https://indiantelevision.com/iworld/jiosaavn-launches-music-profile-to-turn-listening-habits-into-a-shareable-persona/
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069461659979223089'
+  text: '@AUNKAR_RANJAN @gaana Use @Spotify or @youtubemusic'
+  author:
+    id: '3236600514'
+    name: Pranjal Agrawal
+    screenName: mrpranjalzz
+    profileImageUrl: https://pbs.twimg.com/profile_images/955525727926890496/6lIEyltC_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 21
+    bookmarks: 0
+  createdAt: Tue Jun 23 16:44:43 +0000 2026
+  createdAtLocal: 2026-06-23 22:14
+  createdAtISO: '2026-06-23T16:44:43+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069351751707455893'
+  text: "eppdu songs ante Spotify lu wynk lu Yt music lu apple Music lu ani mobiles\
+    \ vintunam gani \nAsalu songs kosam Gemini music, Maa music Hindi lo 9xm channel\
+    \ petti vinne days masth untunde  \U0001F61E"
+  author:
+    id: '1909106624586829824'
+    name: iSAI
+    screenName: WasteoftimeRam
+    profileImageUrl: https://pbs.twimg.com/profile_images/2058553311419310081/hiC53aUA_normal.jpg
+    verified: true
+  metrics:
+    likes: 138
+    retweets: 19
+    replies: 2
+    quotes: 8
+    views: 181644
+    bookmarks: 18
+  createdAt: Tue Jun 23 09:27:58 +0000 2026
+  createdAtLocal: 2026-06-23 14:57
+  createdAtISO: '2026-06-23T09:27:58+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: et
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067861525415837988'
+  text: "\U0001F3B5 Swachh Hoshiarpur is now streaming on Spotify, Apple Music, YouTube\
+    \ Music, Amazon Music, JioSaavn &amp; more! Listen, share and support. \U0001F64F\
+    ❤️ #SwachhHoshiarpur #karandeepsingh \n#song #swachhbharat #awarenesssong \n#applemusic\
+    \ #spotify #listennow #musicrelease #newmusic"
+  author:
+    id: '705081782043959296'
+    name: Karandeep Singh
+    screenName: karandeep_85
+    profileImageUrl: https://pbs.twimg.com/profile_images/1224963874069209088/LjqZqgf6_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 2
+    quotes: 0
+    views: 17
+    bookmarks: 0
+  createdAt: Fri Jun 19 06:46:21 +0000 2026
+  createdAtLocal: 2026-06-19 12:16
+  createdAtISO: '2026-06-19T06:46:21+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069833908061884627'
+  text: '@dollhevan not to ruin the party but it''s normal for new spotify profiles
+    to take a while before they''re findable in search. when i looked it up a few
+    hours after it came out, i had to click into it through a playlist.'
+  author:
+    id: '1452612223965216778'
+    name: bee 🇺🇸🇲🇦🇰🇷🇳🇴
+    screenName: midzygene
+    profileImageUrl: https://pbs.twimg.com/profile_images/2065637621976432640/Mu0nFLjE_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 109
+    bookmarks: 0
+  createdAt: Wed Jun 24 17:23:53 +0000 2026
+  createdAtLocal: 2026-06-24 22:53
+  createdAtISO: '2026-06-24T17:23:53+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069461444211712192'
+  text: "@lavaiosa thank yoü so much! ^^ here’s my spotify link \n\nhttps://t.co/pMz9M6wOjk"
+  author:
+    id: '1912479687823253504'
+    name: ja ୨ৎ
+    screenName: hereonoe
+    profileImageUrl: https://pbs.twimg.com/profile_images/2044986498328772608/G61mhqFO_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 62
+    bookmarks: 0
+  createdAt: Tue Jun 23 16:43:51 +0000 2026
+  createdAtLocal: 2026-06-23 22:13
+  createdAtISO: '2026-06-23T16:43:51+00:00'
+  media: []
+  urls:
+  - https://open.spotify.com/user/31lc2ppdqxlpxryx2lqbplbyb3te?si=48pM6GMTR4e3IZAFyy8OHA
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067953459928953338'
+  text: 'The rain is here, and so is Megh Anurag
+
+
+    YOUTUBE - https://t.co/c6YwcBavK0
+
+    SPOTIFY - https://t.co/QFmIx3qih5
+
+    JIOSAAVN - https://t.co/Uq7PfDlzwx
+
+    AMAZON MUSIC - https://t.co/O8du2z94c1
+
+    APPLE MUSIC - https://t.co/itRvCCPcFz
+
+    GAANA - https://t.co/yPo48UtKFQ https://t.co/n0NUbkUUBk'
+  author:
+    id: '1441048539656646662'
+    name: Vishwak Banerjee
+    screenName: theguitarmanV
+    profileImageUrl: https://pbs.twimg.com/profile_images/2050911323056414720/baVruhcy_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 54
+    bookmarks: 0
+  createdAt: Fri Jun 19 12:51:40 +0000 2026
+  createdAtLocal: 2026-06-19 18:21
+  createdAtISO: '2026-06-19T12:51:40+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLLYtS8acAAo8f6.jpg
+    width: 1080
+    height: 1080
+  urls:
+  - https://surl.li/viojtj
+  - https://surl.li/lcmgyk
+  - https://surl.li/ygwqgn
+  - https://surl.li/oesiej
+  - https://surl.li/unnusx
+  - https://surl.li/lmyngz
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069034846425653261'
+  text: 'just redescovered this song and holy shit.
+
+    https://t.co/WFythehyDv'
+  author:
+    id: '1244845258044780544'
+    name: ᯓ✦ Saturn ౨ৎ || SAW XLOV
+    screenName: yawnziwoo
+    profileImageUrl: https://pbs.twimg.com/profile_images/2036733151679246336/XLspmBbj_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 9
+    bookmarks: 0
+  createdAt: Mon Jun 22 12:28:42 +0000 2026
+  createdAtLocal: 2026-06-22 17:58
+  createdAtISO: '2026-06-22T12:28:42+00:00'
+  media: []
+  urls:
+  - https://open.spotify.com/track/3l0xiWlpSRfE9zEw4QhzFB?si=d62f3dd0bad641a8
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069421576618217804'
+  text: JioSaavn Launches New ‘Music Profile’ Feature; Lets Users Express Their ‘Music
+    Persona’. https://t.co/uQmY69hPrS
+  author:
+    id: '1578639327277748224'
+    name: Amit kumar
+    screenName: AmitKum77471879
+    profileImageUrl: https://pbs.twimg.com/profile_images/2010413420403884032/8kd9JZP__normal.jpg
+    verified: true
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 2
+    bookmarks: 0
+  createdAt: Tue Jun 23 14:05:26 +0000 2026
+  createdAtLocal: 2026-06-23 19:35
+  createdAtISO: '2026-06-23T14:05:26+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLgP88laQAAu5UY.jpg
+    width: 1125
+    height: 1143
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069367361094726054'
+  text: 'There’s a side of you that only shows up in what you listen to!
+
+
+    Based on your listening journey, Music Persona reveals your musical tags, top
+    artists, songs & genres, playlists from your Top Hits, and more.
+
+
+    Visit your profile and check your Music Persona.
+
+
+    #MusicPersona #Persona #NewFeature #Music'
+  author:
+    id: '14263778'
+    name: JioSaavn
+    screenName: JioSaavn
+    profileImageUrl: https://pbs.twimg.com/profile_images/1554117719338889218/7ukLbkjC_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 782
+    bookmarks: 0
+  createdAt: Tue Jun 23 10:30:00 +0000 2026
+  createdAtLocal: 2026-06-23 16:00
+  createdAtISO: '2026-06-23T10:30:00+00:00'
+  media:
+  - type: video
+    url: https://video.twimg.com/amplify_video/2069329503512670208/vid/avc1/1080x1080/_o9ts7U_PS-sWN3q.mp4?tag=28
+    width: 1080
+    height: 1080
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067541994579034591'
+  text: listening to this while it’s getting bright outside is nice https://t.co/CwYXIa6M6x
+  author:
+    id: '1911778670584156160'
+    name: ain🧃 (35/100)
+    screenName: GooningBot5000
+    profileImageUrl: https://pbs.twimg.com/profile_images/2069657976407785472/zx2VeHHH_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 43
+    bookmarks: 0
+  createdAt: Thu Jun 18 09:36:39 +0000 2026
+  createdAtLocal: 2026-06-18 15:06
+  createdAtISO: '2026-06-18T09:36:39+00:00'
+  media: []
+  urls:
+  - https://open.spotify.com/track/4DoFmJKTQsWqjVgoXC7zOs?si=dc_yl4BYRqON7WlgffUzOA
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068371266390618292'
+  text: "Just dicovered SongsDNA from @Spotify  \n\nWhat a lovely feature for those\
+    \ music exploration sessions \U0001FAF0\U0001F3FB https://t.co/8RhL79OjYv"
+  author:
+    id: '243884145'
+    name: Bhupesh Pangti
+    screenName: bpangti
+    profileImageUrl: https://pbs.twimg.com/profile_images/1972296286540861440/iqLru8QC_normal.jpg
+    verified: true
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 56
+    bookmarks: 0
+  createdAt: Sat Jun 20 16:31:53 +0000 2026
+  createdAtLocal: 2026-06-20 22:01
+  createdAtISO: '2026-06-20T16:31:53+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLRUsxnWkAA3k50.jpg
+    width: 1080
+    height: 2412
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067508529293070516'
+  text: '"LAIJAM"
+
+
+    Available on Spotify, iTunes/Apple Music, Amazon Prime Music, YouTube Music, JioSaavn,
+    Gaana, Shazam, Deezer, Facebook Music, SoundCloud, SnapChat, Anghami, Tidal and
+    etc.
+
+
+    Available for Instagram Reels
+
+    Available for YouTube Shorts https://t.co/67dURqbkfi'
+  author:
+    id: '1370048372845940738'
+    name: National Music Bodo
+    screenName: NM_Bodo
+    profileImageUrl: https://pbs.twimg.com/profile_images/1370048498788311043/hyJuEI_L_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 3
+    bookmarks: 0
+  createdAt: Thu Jun 18 07:23:40 +0000 2026
+  createdAtLocal: 2026-06-18 12:53
+  createdAtISO: '2026-06-18T07:23:40+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLFEDN_bUAAXFiw.jpg
+    width: 2048
+    height: 2048
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068259668162752787'
+  text: '🎵 In Front Of Me – Indrajeet Gill
+
+
+    Agar vibe pasand aaye to poora gaana zaroor suniye.
+
+
+    🎧 Available on: Spotify, Apple Music, YouTube Music, Amazon Music, JioSaavn aur
+    sabhi major streaming platforms.
+
+
+    #InFrontOfMe #NewMusic #NowStreaming #viral #IndependentArtist #MusicLovers https://t.co/h0vqiThrUm'
+  author:
+    id: '1962482652080226304'
+    name: Indrajeet Gill
+    screenName: iindrajeetgill
+    profileImageUrl: https://pbs.twimg.com/profile_images/1964983369566924800/roNVie-B_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 16
+    bookmarks: 0
+  createdAt: Sat Jun 20 09:08:25 +0000 2026
+  createdAtLocal: 2026-06-20 14:38
+  createdAtISO: '2026-06-20T09:08:25+00:00'
+  media:
+  - type: video
+    url: https://video.twimg.com/ext_tw_video/2068259587615293440/pu/vid/avc1/1280x720/67ElqJ4eJI5OtFsc.mp4?tag=12
+    width: 1280
+    height: 720
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068634656438972702'
+  text: Yar mera Spotify ka subscription khatam ho geya hai 😭. Koi mujhe gaana suna
+    sakta hai keya ?
+  author:
+    id: '1747128040990318592'
+    name: SUBH
+    screenName: Subh_Subh_
+    profileImageUrl: https://pbs.twimg.com/profile_images/2048046753421930496/vLeelyKg_normal.jpg
+    verified: true
+  metrics:
+    likes: 7
+    retweets: 0
+    replies: 4
+    quotes: 2
+    views: 867
+    bookmarks: 0
+  createdAt: Sun Jun 21 09:58:30 +0000 2026
+  createdAtLocal: 2026-06-21 15:28
+  createdAtISO: '2026-06-21T09:58:30+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: hi
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '1388109167085293576'
+  text: "All 8 Music Platforms: \n➀ Apple Music (#10) \n➁ Spotify (#9)\n➂ Musixmatch\
+    \ (#6)\n➃ Gaana (#9) \n➄ JioSaavn (#8) \n➅ Wynk Music (#9) \n➆ Deezer (#7) \n\
+    ➇ Last FM (#9)"
+  author:
+    id: '1364182252880498689'
+    name: Jungkook Graphs
+    screenName: jungkookgraphs
+    profileImageUrl: https://pbs.twimg.com/profile_images/1594238898879991808/PFDBgV36_normal.jpg
+    verified: false
+  metrics:
+    likes: 71
+    retweets: 36
+    replies: 0
+    quotes: 0
+    views: 0
+    bookmarks: 0
+  createdAt: Fri Apr 30 12:33:09 +0000 2021
+  createdAtLocal: 2021-04-30 18:03
+  createdAtISO: '2021-04-30T12:33:09+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '1764568067500322873'
+  text: 'Streaming Links : Obbane Shiva Obbane Yuva
+
+
+    ♪ Wynk Music: https://t.co/44gs7BffP4
+
+    ♪ Spotify Music: https://t.co/IIWYDuE0TV
+
+    ♪ JioSaavn: https://t.co/4Pz7jKgVcU
+
+    ♪ Gaana Music: https://t.co/BOx8j2NIs0
+
+    ♪ Hungama Music : https://t.co/rARluKmqgM
+
+
+    #Yuva #YuvaRajkumar #YuvaOnMarch29 https://t.co/G56vEThrRS'
+  author:
+    id: '1282730013695938560'
+    name: Jai Kushi
+    screenName: Jai_Kushi
+    profileImageUrl: https://pbs.twimg.com/profile_images/1863798948470951936/dXtpkboi_normal.jpg
+    verified: false
+  metrics:
+    likes: 182
+    retweets: 33
+    replies: 0
+    quotes: 0
+    views: 1661
+    bookmarks: 0
+  createdAt: Mon Mar 04 08:26:26 +0000 2024
+  createdAtLocal: 2024-03-04 13:56
+  createdAtISO: '2024-03-04T08:26:26+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/GH0BTCLbIAA2ZZI.jpg
+    width: 1284
+    height: 1586
+  urls:
+  - http://tinyurl.com/d93njnpk
+  - http://tinyurl.com/29eaj683
+  - http://tinyurl.com/mrx9yfja
+  - http://tinyurl.com/mryc5n6m
+  - http://tinyurl.com/7d7krdsu
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067953731434668514'
+  text: 'The rain is here, and so is Megh Anurag
+
+
+    YOUTUBE - https://t.co/c6YwcBavK0
+
+
+    SPOTIFY - https://t.co/QFmIx3qih5
+
+
+    JIOSAAVN - https://t.co/Uq7PfDlzwx
+
+
+    AMAZON MUSIC - https://t.co/O8du2z94c1
+
+
+    APPLE MUSIC - https://t.co/itRvCCPcFz
+
+
+    GAANA - https://t.co/yPo48UtKFQ https://t.co/SfnLuENHCI'
+  author:
+    id: '1441048539656646662'
+    name: Vishwak Banerjee
+    screenName: theguitarmanV
+    profileImageUrl: https://pbs.twimg.com/profile_images/2050911323056414720/baVruhcy_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 98
+    bookmarks: 0
+  createdAt: Fri Jun 19 12:52:44 +0000 2026
+  createdAtLocal: 2026-06-19 18:22
+  createdAtISO: '2026-06-19T12:52:44+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLLY9H5agAAv9SG.jpg
+    width: 1080
+    height: 1080
+  urls:
+  - https://surl.li/viojtj
+  - https://surl.li/lcmgyk
+  - https://surl.li/ygwqgn
+  - https://surl.li/oesiej
+  - https://surl.li/unnusx
+  - https://surl.li/lmyngz
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067543201636835614'
+  text: '#NowPlaying "Saathiya Nahin Jana" from Aya Sawan Jhoom Ke on @jiosaavn! #LetsPlay
+
+    https://t.co/rvxkiDaqfI'
+  author:
+    id: '280851039'
+    name: hemal
+    screenName: hemalmodiusa
+    profileImageUrl: https://pbs.twimg.com/profile_images/735858848813223936/iq8EXNMs_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 24
+    bookmarks: 0
+  createdAt: Thu Jun 18 09:41:27 +0000 2026
+  createdAtLocal: 2026-06-18 15:11
+  createdAtISO: '2026-06-18T09:41:27+00:00'
+  media: []
+  urls:
+  - https://www.jiosaavn.com/s/song/hindi/aya-sawan-jhoom-ke/saathiya-nahin-jana/MlgSczFDTWc?referrer=utm_medium=twitter
+  isRetweet: false
+  retweetedBy: null
+  lang: hi
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069368918066770116'
+  text: JioSaavn Launches New ‘Music Profile’ Feature; Lets Users Express Their ‘Music
+    Persona’. https://t.co/Z1R0C42UEx
+  author:
+    id: '1445250390782398465'
+    name: 𝑺𝒂𝒎𝒂𝒓𝒕𝒉 𝑨𝒓𝒐𝒓𝒂
+    screenName: techfryerr
+    profileImageUrl: https://pbs.twimg.com/profile_images/2066267864882122752/IbwUIa-7_normal.jpg
+    verified: true
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 9
+    bookmarks: 0
+  createdAt: Tue Jun 23 10:36:11 +0000 2026
+  createdAtLocal: 2026-06-23 16:06
+  createdAtISO: '2026-06-23T10:36:11+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLfgCHsa8AApss9.jpg
+    width: 1452
+    height: 1475
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '1717170492036030856'
+  text: "@ishanagarwal24 It's as good as removing the free tier now. The market is\
+    \ simple now\n\nSound Quality? Apple\nDiscovery? Spotify\n\nWatch YouTube a lot?\
+    \ YT music\nAmazon Prime subscriber? Amazon music \n\nDon't wanna spend? Wynk/Jiosaavn/Gaana"
+  author:
+    id: '932228141350731776'
+    name: Abhinav
+    screenName: tylerdurden__69
+    profileImageUrl: https://pbs.twimg.com/profile_images/1733992926596788224/qsa-CiyR_normal.jpg
+    verified: false
+  metrics:
+    likes: 4
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 484
+    bookmarks: 0
+  createdAt: Wed Oct 25 13:25:23 +0000 2023
+  createdAtLocal: 2023-10-25 18:55
+  createdAtISO: '2023-10-25T13:25:23+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069102190732665030'
+  text: '#NowPlaying ''Sapphire'' from Sapphire @JioSaavn! #OurSoundtrack https://t.co/aGdJovWjoX'
+  author:
+    id: '883928623501131776'
+    name: '@রোমা ভট্টাচার্য'
+    screenName: myfoot21
+    profileImageUrl: https://pbs.twimg.com/profile_images/2067082353479229440/_z1TOYvY_normal.jpg
+    verified: false
+  metrics:
+    likes: 2
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 43
+    bookmarks: 0
+  createdAt: Mon Jun 22 16:56:18 +0000 2026
+  createdAtLocal: 2026-06-22 22:26
+  createdAtISO: '2026-06-22T16:56:18+00:00'
+  media: []
+  urls:
+  - https://www.jiosaavn.com/s/song/english/sapphire/sapphire/PR0KdD1cfUA?referrer=svn_source=share&svn_medium=com.twitter.android&utm_source=share&utm_medium=com.twitter.android
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069089189531124121'
+  text: "enga kondu vandhu nirutheerke paatheeya :') \n\nhttps://t.co/23zWjDci1x"
+  author:
+    id: '1363108775100485634'
+    name: Vishu⁷ 🥢
+    screenName: Vishh_Priya
+    profileImageUrl: https://pbs.twimg.com/profile_images/2053744127108599808/-OlfpC71_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 13
+    bookmarks: 0
+  createdAt: Mon Jun 22 16:04:39 +0000 2026
+  createdAtLocal: 2026-06-22 21:34
+  createdAtISO: '2026-06-22T16:04:39+00:00'
+  media: []
+  urls:
+  - https://open.spotify.com/track/6sPW145Y3LSXd4p1LjBOcS?si=gGpDQoslS-qojSOEBVVaCw&context=spotify%3Asearch%3Aidha
+  isRetweet: false
+  retweetedBy: null
+  lang: hi
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '1669354365528977410'
+  text: "Only a foreigner can use such bs to think anyone here knows Hadbeyn. She\
+    \ has nowhere on YouTube (India's most used platform). Nowhere in local platforms\
+    \ like JioSaavn, Wynk, Gaana or even Spotify India. \nIt's super embarrassing\
+    \ on jio Saavn https://t.co/VwcbkeELEs"
+  author:
+    id: '1619234411148644352'
+    name: Rudra
+    screenName: Oreburghrudru
+    profileImageUrl: https://pbs.twimg.com/profile_images/1931055290977230848/kbsy2hCj_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 158
+    bookmarks: 0
+  createdAt: Thu Jun 15 14:41:10 +0000 2023
+  createdAtLocal: 2023-06-15 20:11
+  createdAtISO: '2023-06-15T14:41:10+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/Fyq8tAJaQAMBZVh.jpg
+    width: 1080
+    height: 1703
+  - type: photo
+    url: https://pbs.twimg.com/media/Fyq8tAQaIAI2xMs.jpg
+    width: 1080
+    height: 1828
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  quotedTweet:
+    id: '1669029010079195146'
+    text: "Deepika Padukone (India’s biggest celebrity) &amp; Ranveer Singh are the\
+      \ face of Ivy Park and constantly promote the brand\n\nBollywoods biggest dancer\
+      \ Nora Fatehi recently did an MV which was inspired by Beyoncé’s “Mine” music\
+      \ video \n\nPriyanka Chopra was at the RWT last week"
+    author:
+      screenName: shadesofro
+      name: roro 🍉
+- id: '2069408927754953199'
+  text: "JioSaavn, India’s leading audio streaming platform, has launched a new feature\
+    \ called ‘Music Profile’ to make music listening more personalized and engaging...\n\
+    Read More At:-  https://t.co/0VMuGW0Vkr\n@JioSaavn  \n#Latestupdates #followformoreupdates\
+    \ #music #listening #launched"
+  author:
+    id: '1141617278456254464'
+    name: Aavishkar Media Group
+    screenName: AavishkarMedia
+    profileImageUrl: https://pbs.twimg.com/profile_images/1555822323470843904/nz9IXc7M_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 11
+    bookmarks: 0
+  createdAt: Tue Jun 23 13:15:10 +0000 2026
+  createdAtLocal: 2026-06-23 18:45
+  createdAtISO: '2026-06-23T13:15:10+00:00'
+  media: []
+  urls:
+  - https://www.indianbroadcastingworld.com/jiosaavn-launches-music/
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '1431188581612097540'
+  text: 'The music album of #Shershaah is taking everyone by storm as its ruling the
+    roost across all streaming platforms, be it YouTube, Wynk Music, Spotify, Gaana
+    and Jio Saavn not only in India but globally
+
+
+    https://t.co/EjHVzbNB5g'
+  author:
+    id: '3493778174'
+    name: SidharthM Universe
+    screenName: SidMUniverse
+    profileImageUrl: https://pbs.twimg.com/profile_images/1255904793937055748/1D2yyTvy_normal.jpg
+    verified: false
+  metrics:
+    likes: 72
+    retweets: 16
+    replies: 0
+    quotes: 1
+    views: 0
+    bookmarks: 3
+  createdAt: Fri Aug 27 09:35:22 +0000 2021
+  createdAtLocal: 2021-08-27 15:05
+  createdAtISO: '2021-08-27T09:35:22+00:00'
+  media: []
+  urls:
+  - https://mediabrief.com/shershaahs-soundtrack-leads-top-charts/
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069304900648116386'
+  text: 'Your Music Profile reveals the real you and gives everyone else a window
+    into who you are!
+
+
+    Now you can showcase your followed artists, discover the artists you and your
+    friends both love, and explore the latest releases from the artists you follow.
+
+
+    Visit your Music Profile now!
+
+
+    #MusicProfile #Profile #NewFeature #Music'
+  author:
+    id: '14263778'
+    name: JioSaavn
+    screenName: JioSaavn
+    profileImageUrl: https://pbs.twimg.com/profile_images/1554117719338889218/7ukLbkjC_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 912
+    bookmarks: 0
+  createdAt: Tue Jun 23 06:21:48 +0000 2026
+  createdAtLocal: 2026-06-23 11:51
+  createdAtISO: '2026-06-23T06:21:48+00:00'
+  media:
+  - type: video
+    url: https://video.twimg.com/amplify_video/2069304551870709760/vid/avc1/1080x1080/ierdqErSaUSCrkTm.mp4?tag=28
+    width: 1080
+    height: 1080
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069125767955451958'
+  text: '#WeekofGeorgeMichael https://t.co/ysvrzHTw7Q #MakeItBig @GeorgeMichael @ajridgeley
+    @WhamOfficial_ @BIGHIT_MUSIC @Music @UMG @AppleMusic @youtubemusic @amazonmusic
+    @Vevo @gaana @JioSaavn @Spotify #tuesdayvibe'
+  author:
+    id: '90562152'
+    name: Debabrata Ghosh
+    screenName: imdeb76
+    profileImageUrl: https://pbs.twimg.com/profile_images/773837263289458688/Gyk-_Cwx_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 38
+    bookmarks: 0
+  createdAt: Mon Jun 22 18:30:00 +0000 2026
+  createdAtLocal: 2026-06-23 00:00
+  createdAtISO: '2026-06-22T18:30:00+00:00'
+  media: []
+  urls:
+  - https://youtu.be/izGwDsrQ1eQ?si=dxE-E-6W4CL57PVT
+  isRetweet: false
+  retweetedBy: null
+  lang: qme
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '1699390136285602134'
+  text: 'Thank you so much @RedFMIndia for having me in your show #RedFmIndies 🥰🙏
+
+    Check out the full song on YouTube and other music streaming platforms like Spotify,
+    Wynk, Gaana, iTunes, Saavn etc
+
+    https://t.co/pfuvyjsSDa https://t.co/6KUTB3dE3R'
+  author:
+    id: '1116641282669998083'
+    name: Divesh Darshan
+    screenName: DiveshDarshan12
+    profileImageUrl: https://pbs.twimg.com/profile_images/2015401711746404353/jTGS_zCP_normal.jpg
+    verified: false
+  metrics:
+    likes: 67
+    retweets: 21
+    replies: 20
+    quotes: 5
+    views: 3335
+    bookmarks: 2
+  createdAt: Wed Sep 06 11:52:36 +0000 2023
+  createdAtLocal: 2023-09-06 17:22
+  createdAtISO: '2023-09-06T11:52:36+00:00'
+  media:
+  - type: video
+    url: https://video.twimg.com/ext_tw_video/1699389937714348033/pu/vid/avc1/720x720/dRvBweSsLpAb_ZzA.mp4?tag=12
+    width: 720
+    height: 720
+  urls:
+  - https://youtu.be/p9ezFHhtjU0?si=fFAaUIdYqUSJwrcD
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '1552291919408951296'
+  text: "#DivineSong by Saint Gurmeet Ram Rahim Ji insan.\n\nYoutube:\nhttps://t.co/oie4ifGkk6\n\
+    Spotify:\nhttps://t.co/G6jF2sNrTs\nSaavn:\nhttps://t.co/wzkjMQzr4g\nWynk:\nhttps://t.co/oMtFNeqCoV\n\
+    Boomplay:\nhttps://t.co/WiHFCJiVLL\nGaana: \nhttps://t.co/VQyjX8bNzV\nApple Music:\n\
+    https://t.co/KCmAri7txu"
+  author:
+    id: '102599349'
+    name: Sourabh Dhingra
+    screenName: sourabhrnbdj
+    profileImageUrl: https://pbs.twimg.com/profile_images/673933046052073472/3xq1ur6E_normal.jpg
+    verified: false
+  metrics:
+    likes: 26
+    retweets: 39
+    replies: 3
+    quotes: 1
+    views: 0
+    bookmarks: 0
+  createdAt: Wed Jul 27 13:56:48 +0000 2022
+  createdAtLocal: 2022-07-27 19:26
+  createdAtISO: '2022-07-27T13:56:48+00:00'
+  media: []
+  urls:
+  - https://www.youtube.com/c/SaintMSGInsan
+  - https://open.spotify.com/track/6VanIHSDfVX6xlxwOpaatu?si=O80MbHKiQ_qhNt8iq2fidw&context=spotify%3Asearch
+  - https://www.saavn.com/s/song/hindi/Paap-Chhupake-Punya-Dikhake/Paap-Chhupake-Punya-Dikhake/BFkqYkN7BVU?referrer=utm_medium=whatsapp&utm_source=whatsapp
+  - https://open.wynk.in/6bZznM6LTrb
+  - https://bit.ly/PaapChhupakeAtBoomPlay
+  - https://gaana.com/song/paap-chhupake-punya-dikhake
+  - https://music.apple.com/in/album/paap-chhupake-punya-dikhake-single/1636115953
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068558486443872459'
+  text: "@Sillycorns Used Gaana &amp; JioSaavn for years. Gaana lost me long ago,\
+    \ and JioSaavn is only there for JioTunes now.\n\nSince 2022, Apple Music has\
+    \ been my main app for audio quality and my library. \nAs a YouTube Premium user,\
+    \ I use YT Music daily too.\n\nApple Music = quality\nYT Music = discovery"
+  author:
+    id: '1432016368757473282'
+    name: The MAD Guy
+    screenName: The_MAD_BaaLak
+    profileImageUrl: https://pbs.twimg.com/profile_images/2022173477768417280/kOMS4SsZ_normal.jpg
+    verified: false
+  metrics:
+    likes: 7
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 1269
+    bookmarks: 0
+  createdAt: Sun Jun 21 04:55:49 +0000 2026
+  createdAtLocal: 2026-06-21 10:25
+  createdAtISO: '2026-06-21T04:55:49+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069822927164559445'
+  text: 'Tu ... kab yeh jaanegi… kab yeh maanegi
+
+    https://t.co/Luo75JV9jm'
+  author:
+    id: '1618609245691281408'
+    name: తార మేఘచంద్రిక
+    screenName: sensbl_occurenc
+    profileImageUrl: https://pbs.twimg.com/profile_images/2066115691577831424/P1HG2SNP_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 80
+    bookmarks: 0
+  createdAt: Wed Jun 24 16:40:15 +0000 2026
+  createdAtLocal: 2026-06-24 22:10
+  createdAtISO: '2026-06-24T16:40:15+00:00'
+  media: []
+  urls:
+  - https://open.spotify.com/track/0T24T41ZMfp5pMGU02mFu3?si=0PTvbXjMTJWktmMU-R78og
+  isRetweet: false
+  retweetedBy: null
+  lang: in
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069106018391564676'
+  text: 'Now Streaming: पायल पायल छम छम रे ❤️ | प्रेमात पाडणारं भन्नाट मराठी-इंग्लिश
+    रॅप गाणं. Available on Spotify, Gaana, Youtube and 150+ stores. Listen now. Set
+    the caller tune and make your callers enjoy the wait.
+
+
+    https://t.co/kHxrRcQwVR https://t.co/5jkMnf4Ko1'
+  author:
+    id: '1449088602'
+    name: Aura Rhymes
+    screenName: AuraRhymes
+    profileImageUrl: https://pbs.twimg.com/profile_images/2056032181995360257/EesljvgD_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 5
+    bookmarks: 0
+  createdAt: Mon Jun 22 17:11:31 +0000 2026
+  createdAtLocal: 2026-06-22 22:41
+  createdAtISO: '2026-06-22T17:11:31+00:00'
+  media:
+  - type: video
+    url: https://video.twimg.com/ext_tw_video/2069105715231522816/pu/vid/avc1/720x720/pFatNqYASZEN7A01.mp4?tag=12
+    width: 720
+    height: 720
+  urls:
+  - https://youtube.com/shorts/IE-50Z8q1Ek?feature=share
+  isRetweet: false
+  retweetedBy: null
+  lang: und
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068630588643557881'
+  text: 'Which music streaming app do you use?
+
+
+    👉Spotify
+
+    👉YouTube Music
+
+    👉Apple Music
+
+    👉JioSaavn https://t.co/soz4Taimin'
+  author:
+    id: '950950601961062400'
+    name: TrakinTech
+    screenName: TrakinTech
+    profileImageUrl: https://pbs.twimg.com/profile_images/1861360697466335232/Cx0nqslC_normal.jpg
+    verified: true
+  metrics:
+    likes: 237
+    retweets: 12
+    replies: 107
+    quotes: 4
+    views: 18617
+    bookmarks: 11
+  createdAt: Sun Jun 21 09:42:20 +0000 2026
+  createdAtLocal: 2026-06-21 15:12
+  createdAtISO: '2026-06-21T09:42:20+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLVAjspbkAEGHlM.jpg
+    width: 980
+    height: 980
+  - type: photo
+    url: https://pbs.twimg.com/media/HLVAjt3a8AEunWj.jpg
+    width: 512
+    height: 512
+  - type: photo
+    url: https://pbs.twimg.com/media/HLVAjtgacAAwbnu.jpg
+    width: 652
+    height: 626
+  - type: photo
+    url: https://pbs.twimg.com/media/HLVAju3aEAARrMp.jpg
+    width: 477
+    height: 467
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067895996147695839'
+  text: Omg I love this Spotify feature, sijai notice. Tells you where the artist
+    will be performing https://t.co/jHkcTvDpSy
+  author:
+    id: '1247194258517491712'
+    name: Shawry For Shelves :-)
+    screenName: biggmammaaaaaaa
+    profileImageUrl: https://pbs.twimg.com/profile_images/1954641144794554368/hsDsSiqZ_normal.jpg
+    verified: false
+  metrics:
+    likes: 11
+    retweets: 4
+    replies: 0
+    quotes: 2
+    views: 791
+    bookmarks: 0
+  createdAt: Fri Jun 19 09:03:19 +0000 2026
+  createdAtLocal: 2026-06-19 14:33
+  createdAtISO: '2026-06-19T09:03:19+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLKkcfsW8AA5SCZ.jpg
+    width: 945
+    height: 2048
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067816217549963301'
+  text: 'Randomly found this version. Thanks to youtube 😁
+
+    https://t.co/144mSbIvjt'
+  author:
+    id: '83296177'
+    name: Ayu Prasasti
+    screenName: ayuyeay
+    profileImageUrl: https://pbs.twimg.com/profile_images/2021254766958100480/_6jfLFey_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 25
+    bookmarks: 0
+  createdAt: Fri Jun 19 03:46:19 +0000 2026
+  createdAtLocal: 2026-06-19 09:16
+  createdAtISO: '2026-06-19T03:46:19+00:00'
+  media: []
+  urls:
+  - https://open.spotify.com/track/1Ztka7fCyxUv46FW1mZH9T?si=iVm-ZmxxRluDVBwuORojQw
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+

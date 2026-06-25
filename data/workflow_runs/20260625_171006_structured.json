@@ -1,0 +1,30 @@
+[
+  {
+    "theme": "Recommendation Quality",
+    "count": 6,
+    "root_cause": "Algorithm fails to understand user preferences, leading to irrelevant recommendations. This causes user frustration.",
+    "user_behavior": "Users expect personalized and relevant recommendations, but are instead met with disappointing suggestions.",
+    "representative_quote": "worst recommendations"
+  },
+  {
+    "theme": "Repetition Fatigue",
+    "count": 1,
+    "root_cause": "Lack of music variety leads to user dissatisfaction. Limited song selection causes repetition.",
+    "user_behavior": "Users are listening to the same playlist or radio station repeatedly, causing fatigue.",
+    "representative_quote": "same songs"
+  },
+  {
+    "theme": "Discovery Effort",
+    "count": 3,
+    "root_cause": "Algorithm prioritizes popularity over discovery, limiting user exploration. This leads to a lack of diverse recommendations.",
+    "user_behavior": "Users are seeking new and diverse content, but the platform is not providing adequate suggestions.",
+    "representative_quote": "can't show me similar"
+  },
+  {
+    "theme": "Algorithm Trust/Distrust",
+    "count": 2,
+    "root_cause": "Users have varying levels of trust in the algorithm's suggestions. This affects their overall experience.",
+    "user_behavior": "Users exhibit skepticism or enthusiasm towards the algorithm's recommendations, influencing engagement.",
+    "representative_quote": "things I think are stupid"
+  }
+]

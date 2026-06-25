@@ -23,7 +23,7 @@ while len(all_reviews) < TARGET_COUNT:
     result, continuation_token = reviews(
         APP_ID,
         lang='en',
-        country='us',
+        country='in',
         sort=Sort.NEWEST,
         count=200,
         continuation_token=continuation_token

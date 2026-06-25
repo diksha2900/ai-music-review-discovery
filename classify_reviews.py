@@ -29,6 +29,8 @@ THEMES = [
     "context_mismatch",
     "not_discovery_related"
 ]
+VALID_THEMES = set(THEMES)
+CLASSIFY_COLS = ['is_discovery_related', 'theme', 'sentiment', 'key_quote']
 
 SYSTEM_PROMPT = f"""You are analyzing user feedback about Spotify for a product research project on music discovery behavior.
 
@@ -52,6 +54,7 @@ Theme definitions:
 
 Return ONLY a JSON array of these objects, one per review, in the same order given. No other text, no markdown formatting, no explanation."""
 
+
 def classify_batch(reviews_batch):
     numbered_reviews = "\n\n".join(
         [f"Review {i+1}: {text[:500]}" for i, text in enumerate(reviews_batch)]
@@ -74,73 +77,94 @@ def classify_batch(reviews_batch):
         return json.loads(content)
     except Exception as e:
         print(f"  Batch error: {e}")
-        return None  # None = stop entirely (likely quota wall); [] would mean "tried but failed"
+        return None
 
-print("Loading unified feedback...")
-source_df = pd.read_csv('data/unified_feedback.csv')
-source_df['text'] = source_df['text'].fillna('').astype(str)
-source_df = source_df[source_df['text'].str.strip() != '']
-source_df = source_df.reset_index(drop=True)
 
-# Resume logic: if a classified file already exists, load it and only
-# work on rows that don't have a theme yet.
-if os.path.exists(OUTPUT_PATH):
-    print("Found existing classified file — resuming...")
-    df = pd.read_csv(OUTPUT_PATH)
-    # Make sure it has the same number of rows as the source (in case source grew)
-    if len(df) != len(source_df):
-        print("  Source data size changed — merging carefully by text match...")
-        df = source_df.merge(
-            df[['text', 'is_discovery_related', 'theme', 'sentiment', 'key_quote']],
-            on='text', how='left'
+def load_working_dataframe():
+    print("Loading unified feedback...")
+    source_df = pd.read_csv('data/unified_feedback.csv')
+    source_df['text'] = source_df['text'].fillna('').astype(str)
+    source_df = source_df[source_df['text'].str.strip() != '']
+    source_df = source_df.reset_index(drop=True)
+
+    base_cols = [c for c in source_df.columns if c not in CLASSIFY_COLS]
+    df = source_df[base_cols].copy()
+
+    if os.path.exists(OUTPUT_PATH):
+        print("Found existing classified file — resuming...")
+        classified_df = pd.read_csv(OUTPUT_PATH)
+        classified_df = classified_df.drop_duplicates(subset=['id'], keep='last')
+        for col in CLASSIFY_COLS:
+            if col not in classified_df.columns:
+                classified_df[col] = None
+
+        df = df.merge(
+            classified_df[['id'] + CLASSIFY_COLS],
+            on='id',
+            how='left',
         )
-else:
-    df = source_df.copy()
-    for col in ['is_discovery_related', 'theme', 'sentiment', 'key_quote']:
-        df[col] = None
+    else:
+        for col in CLASSIFY_COLS:
+            df[col] = None
 
-remaining_mask = df['theme'].isna()
-remaining_indices = df[remaining_mask].index.tolist()
+    invalid = df['theme'].notna() & ~df['theme'].isin(VALID_THEMES)
+    df.loc[invalid, CLASSIFY_COLS] = None
+    return df
 
-print(f"Total records: {len(df)}")
-print(f"Already classified: {len(df) - len(remaining_indices)}")
-print(f"Remaining to classify: {len(remaining_indices)}\n")
 
-if len(remaining_indices) == 0:
-    print("✅ Nothing left to classify — all done already!")
-else:
-    stopped_early = False
+def needs_classification(df):
+    return (
+        df['theme'].isna()
+        | (df['theme'] == '')
+        | (~df['theme'].isin(VALID_THEMES))
+    )
 
-    for start in tqdm(range(0, len(remaining_indices), BATCH_SIZE)):
-        batch_indices = remaining_indices[start:start + BATCH_SIZE]
-        batch_texts = df.loc[batch_indices, 'text'].tolist()
 
-        results = classify_batch(batch_texts)
+def main():
+    df = load_working_dataframe()
+    remaining_mask = needs_classification(df)
+    remaining_indices = df[remaining_mask].index.tolist()
 
-        if results is None:
-            print("\n⚠️  Stopping due to API error (likely daily quota reached).")
-            print("Progress so far has been saved. Re-run this script later to continue.")
-            stopped_early = True
-            break
+    print(f"Total records: {len(df)}")
+    print(f"Already classified: {len(df) - len(remaining_indices)}")
+    print(f"Remaining to classify: {len(remaining_indices)}\n")
 
-        for r in results:
-            idx_in_batch = r.get('index', 0) - 1
-            if 0 <= idx_in_batch < len(batch_indices):
-                real_idx = batch_indices[idx_in_batch]
-                df.at[real_idx, 'is_discovery_related'] = r.get('is_discovery_related', False)
-                df.at[real_idx, 'theme'] = r.get('theme', 'not_discovery_related')
-                df.at[real_idx, 'sentiment'] = r.get('sentiment', 'neutral')
-                df.at[real_idx, 'key_quote'] = r.get('key_quote', '')
+    if len(remaining_indices) == 0:
+        print("✅ Nothing left to classify — all done already!")
+    else:
+        stopped_early = False
+        for start in tqdm(range(0, len(remaining_indices), BATCH_SIZE)):
+            batch_indices = remaining_indices[start:start + BATCH_SIZE]
+            batch_texts = df.loc[batch_indices, 'text'].tolist()
 
-        # Save progress after every batch, so we never lose work
-        df.to_csv(OUTPUT_PATH, index=False)
-        time.sleep(1)
+            results = classify_batch(batch_texts)
+            if results is None:
+                print("\n⚠️  Stopping due to API error (likely daily quota reached).")
+                print("Progress so far has been saved. Re-run this script later to continue.")
+                stopped_early = True
+                break
 
-    if not stopped_early:
-        print("\n✅ All records classified!")
+            for r in results:
+                idx_in_batch = r.get('index', 0) - 1
+                if 0 <= idx_in_batch < len(batch_indices):
+                    real_idx = batch_indices[idx_in_batch]
+                    df.at[real_idx, 'is_discovery_related'] = r.get('is_discovery_related', False)
+                    df.at[real_idx, 'theme'] = r.get('theme', 'not_discovery_related')
+                    df.at[real_idx, 'sentiment'] = r.get('sentiment', 'neutral')
+                    df.at[real_idx, 'key_quote'] = r.get('key_quote', '')
 
-still_missing = df['theme'].isna().sum()
-print(f"\nFinal state: {len(df) - still_missing} classified, {still_missing} remaining")
-print(f"\nDiscovery-related: {df['is_discovery_related'].sum()} / {len(df)}")
-print(f"\nTheme breakdown:")
-print(df['theme'].value_counts())
+            df.to_csv(OUTPUT_PATH, index=False)
+            time.sleep(1)
+
+        if not stopped_early:
+            print("\n✅ All records classified!")
+
+    still_missing = needs_classification(df).sum()
+    print(f"\nFinal state: {len(df) - still_missing} classified, {still_missing} remaining")
+    print(f"\nDiscovery-related: {df['is_discovery_related'].sum()} / {len(df)}")
+    print(f"\nTheme breakdown:")
+    print(df['theme'].value_counts())
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,1163 @@
+ok: true
+schema_version: '1'
+data:
+- id: '2068982339955249266'
+  text: Listen to all ayrastarr's 10 popular songs on Spotify and come back for other
+    recommendations 🙂
+  author:
+    id: '2053761785035882496'
+    name: Abdullateef
+    screenName: Abdul_light0
+    profileImageUrl: https://pbs.twimg.com/profile_images/2061490689171447808/8ZOwD4vf_normal.jpg
+    verified: true
+  metrics:
+    likes: 17
+    retweets: 2
+    replies: 0
+    quotes: 0
+    views: 274
+    bookmarks: 0
+  createdAt: Mon Jun 22 09:00:04 +0000 2026
+  createdAtLocal: 2026-06-22 14:30
+  createdAtISO: '2026-06-22T09:00:04+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  quotedTweet:
+    id: '2068968989829603820'
+    text: I need to listen to new music. Any recommendations?
+    author:
+      screenName: thickredhead44
+      name: Oliviaabbxo
+- id: '2069885569753084375'
+  text: '@ishipstarwars Your playlist is super fire!! If you accept suggestions, could
+    you be so kind to add Moscow Mule by Bad Bunny? It''s very beach vibes 🥰🥰🥰
+
+    If not that''s totally okay!!'
+  author:
+    id: '59586648'
+    name: Stephanie 🌔🪐
+    screenName: Fannii94
+    profileImageUrl: https://pbs.twimg.com/profile_images/1357787231071596545/SdahSVAR_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 30
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:49:11 +0000 2026
+  createdAtLocal: 2026-06-25 02:19
+  createdAtISO: '2026-06-24T20:49:11+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069518673690173444'
+  text: Qué onda con mi algoritmo de Spotify que sólo conoce St. Jimmy, Whatsername
+    y Give me novacaine
+  author:
+    id: '84463508'
+    name: Aura Cisneros
+    screenName: aurix_sky
+    profileImageUrl: https://pbs.twimg.com/profile_images/1916968457683267584/uOJMIVNq_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 4
+    bookmarks: 0
+  createdAt: Tue Jun 23 20:31:16 +0000 2026
+  createdAtLocal: 2026-06-24 02:01
+  createdAtISO: '2026-06-23T20:31:16+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: es
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069550281163997260'
+  text: '@seauxheauxy When I tweeted that, I had only played like 1.5 hours of a 6
+    hour long playlist. I heard at least 10 songs twice. Then it played the last several
+    songs I added in chronological order. Idk what their algorithm be on lol'
+  author:
+    id: '74334002'
+    name: Niecy Nyash
+    screenName: hairy_fraud
+    profileImageUrl: https://pbs.twimg.com/profile_images/2065552195202772992/tgsmLp-h_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 17
+    bookmarks: 0
+  createdAt: Tue Jun 23 22:36:52 +0000 2026
+  createdAtLocal: 2026-06-24 04:06
+  createdAtISO: '2026-06-23T22:36:52+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069156641853853744'
+  text: "@DwinTheStoic 2/\nSpotify is the main money source for music now.  \nBut\
+    \ streams don’t pay equally worldwide.  \n1M streams in Nigeria = $300.  \n1M\
+    \ streams in Sweden = $10,000.  \nThat’s 33x difference for the same song."
+  author:
+    id: '92025547'
+    name: 'Mateen ''Korede Taomu - #Doer'
+    screenName: iammrkore
+    profileImageUrl: https://pbs.twimg.com/profile_images/1639210673082122242/sHU8MsDo_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 41
+    bookmarks: 0
+  createdAt: Mon Jun 22 20:32:41 +0000 2026
+  createdAtLocal: 2026-06-23 02:02
+  createdAtISO: '2026-06-22T20:32:41+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069263119822598257'
+  text: ai o spotify na opçao de repetir menos no aleatorio repetindo as mesmas musicas
+    todos os dias recua fascista recua
+  author:
+    id: '1628145116366897152'
+    name: '...'
+    screenName: polyalphabethic
+    profileImageUrl: https://pbs.twimg.com/profile_images/2054953383870513153/_i9mE7bX_normal.jpg
+    verified: false
+  metrics:
+    likes: 3
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 124
+    bookmarks: 0
+  createdAt: Tue Jun 23 03:35:47 +0000 2026
+  createdAtLocal: 2026-06-23 09:05
+  createdAtISO: '2026-06-23T03:35:47+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: pt
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067719359338881416'
+  text: '@aaaaasssstro I’m blaming it on the algorithm always recommending or queueing
+    the same music every time no matter what 🫩'
+  author:
+    id: '1261413055130488833'
+    name: GIO
+    screenName: The_Giog
+    profileImageUrl: https://pbs.twimg.com/profile_images/2066528460751638528/BtvTLfx1_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 2
+    quotes: 0
+    views: 494
+    bookmarks: 0
+  createdAt: Thu Jun 18 21:21:26 +0000 2026
+  createdAtLocal: 2026-06-19 02:51
+  createdAtISO: '2026-06-18T21:21:26+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069156702394478685'
+  text: "@SpotifyCares \n\U0001F3A7 Turn up the volume and discover something new\
+    \ today!\n\nAmazing music deserves to be heard, and this track is definitely worth\
+    \ your time. Check it out and share your thoughts.\n\n\U0001F3B5 Listen on Spotify:\n\
+    \ https://t.co/1gTH9jMpwK\n\n#SpotifyPromotion #IndependentMusic"
+  author:
+    id: '2000614148921815040'
+    name: Astrid Tracy
+    screenName: AstridTrac61355
+    profileImageUrl: https://pbs.twimg.com/profile_images/2000623455759142913/8Z2ENyok_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 1
+    replies: 0
+    quotes: 0
+    views: 3
+    bookmarks: 1
+  createdAt: Mon Jun 22 20:32:55 +0000 2026
+  createdAtLocal: 2026-06-23 02:02
+  createdAtISO: '2026-06-22T20:32:55+00:00'
+  media: []
+  urls:
+  - https://open.spotify.com/track/0c8rHtztiQzOC3orq6TCTa?si=pya3-GWrT36QRlESHTlOkw
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069527332948173002'
+  text: '@Spotify City of Evil by Avenged Sevenfold, literally made me listen to music.'
+  author:
+    id: '1254902801471279116'
+    name: DxtxKrxsh
+    screenName: DxtxKrxsh
+    profileImageUrl: https://pbs.twimg.com/profile_images/2069449477555916801/elC7at5M_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 35
+    bookmarks: 0
+  createdAt: Tue Jun 23 21:05:40 +0000 2026
+  createdAtLocal: 2026-06-24 02:35
+  createdAtISO: '2026-06-23T21:05:40+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069456422547419355'
+  text: You can merge multiple playlist together on Spotify now. Finally
+  author:
+    id: '37305255'
+    name: Jus’B
+    screenName: JusBOfficial
+    profileImageUrl: https://pbs.twimg.com/profile_images/2006264994971664384/rgwTAZM-_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 38
+    bookmarks: 0
+  createdAt: Tue Jun 23 16:23:54 +0000 2026
+  createdAtLocal: 2026-06-23 21:53
+  createdAtISO: '2026-06-23T16:23:54+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069244858506805399'
+  text: '@Spotify Pretty good !
+
+
+    Hope my song hits the Discover Weekly soon as well !
+
+
+    https://t.co/1viAKOlEHK'
+  author:
+    id: '44601712'
+    name: Dr. Nash
+    screenName: nashlib
+    profileImageUrl: https://pbs.twimg.com/profile_images/1823523087603900416/VNosmNEd_normal.jpg
+    verified: true
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 227
+    bookmarks: 0
+  createdAt: Tue Jun 23 02:23:13 +0000 2026
+  createdAtLocal: 2026-06-23 07:53
+  createdAtISO: '2026-06-23T02:23:13+00:00'
+  media: []
+  urls:
+  - https://open.spotify.com/track/16b5pZ5wVxo0ot7W2u7So0?si=PaQTzOAhRE-DzemxEGf8mQ
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069518052140442006'
+  text: "@Spotify Taylor Swift: 1989\nRihanna: Anti \nLady Gaga: The Fame \n\n\U0001FAD6\
+    ☕️\U0001FAD6"
+  author:
+    id: '1776040939607240704'
+    name: SomeDudeWhoLikesTaylor
+    screenName: TaylorsWarship
+    profileImageUrl: https://pbs.twimg.com/profile_images/1955997365376040962/aEY8nHsw_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 33
+    bookmarks: 0
+  createdAt: Tue Jun 23 20:28:48 +0000 2026
+  createdAtLocal: 2026-06-24 01:58
+  createdAtISO: '2026-06-23T20:28:48+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069499873179640300'
+  text: '@Spotify why is your shuffle either broken or so crap it doesn’t work properly?
+    I’ve got a couple of large playlists of lost of things I like. I shouldn’t get
+    a repeat track for days yet I get about 2.5 hours of that playlist and then it
+    repeats and done get me started on “smart”'
+  author:
+    id: '102725678'
+    name: James Scott
+    screenName: tallicaboy
+    profileImageUrl: https://pbs.twimg.com/profile_images/616272941/TB_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 38
+    bookmarks: 0
+  createdAt: Tue Jun 23 19:16:33 +0000 2026
+  createdAtLocal: 2026-06-24 00:46
+  createdAtISO: '2026-06-23T19:16:33+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069789056293093619'
+  text: '@unirespecter Even if the content wasn’t getting worse, the algorithm is
+    terrible now. I’m pretty sure they did a reset of recommendations at the beginning
+    of the year because it’s taken forever to get anywhere close to seeing stuff I’m
+    actually interested in'
+  author:
+    id: '1198442318275190784'
+    name: 🔮
+    screenName: retardcelebrity
+    profileImageUrl: https://pbs.twimg.com/profile_images/1622462581758623745/0NXy0GD8_normal.jpg
+    verified: false
+  metrics:
+    likes: 3
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 155
+    bookmarks: 0
+  createdAt: Wed Jun 24 14:25:40 +0000 2026
+  createdAtLocal: 2026-06-24 19:55
+  createdAtISO: '2026-06-24T14:25:40+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069464932966625729'
+  text: The Rediscover Weekly playlist on Spotify is so clutch
+  author:
+    id: '2336257968'
+    name: ¤
+    screenName: drooouh
+    profileImageUrl: https://pbs.twimg.com/profile_images/1990658494123683841/t0SPqn4__normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 7
+    bookmarks: 0
+  createdAt: Tue Jun 23 16:57:43 +0000 2026
+  createdAtLocal: 2026-06-23 22:27
+  createdAtISO: '2026-06-23T16:57:43+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067555865817965031'
+  text: spotify really has the worst recommendations 🥀
+  author:
+    id: '1965630699228332032'
+    name: sohini
+    screenName: KurkureSchezwan
+    profileImageUrl: https://pbs.twimg.com/profile_images/2067404075831025664/oO8tMXG0_normal.jpg
+    verified: false
+  metrics:
+    likes: 19
+    retweets: 1
+    replies: 5
+    quotes: 0
+    views: 484
+    bookmarks: 0
+  createdAt: Thu Jun 18 10:31:46 +0000 2026
+  createdAtLocal: 2026-06-18 16:01
+  createdAtISO: '2026-06-18T10:31:46+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068027336260259943'
+  text: 'Apple Music has a very shitty algorithm ,
+
+    You just have to make your own playlist or else na frustration'
+  author:
+    id: '221943699'
+    name: Oluwatobi
+    screenName: tushtee
+    profileImageUrl: https://pbs.twimg.com/profile_images/1389982507555295233/O1uaJME3_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 33
+    bookmarks: 0
+  createdAt: Fri Jun 19 17:45:13 +0000 2026
+  createdAtLocal: 2026-06-19 23:15
+  createdAtISO: '2026-06-19T17:45:13+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068870980173217820'
+  text: It really bugs me on Spotify when I like only certain songs from an artist,
+    so I try to make a radio from one of them, and then it plays songs like the whole
+    artist’s library. Why can’t it show me similar to one specific song?
+  author:
+    id: '3663238692'
+    name: Cameron 🦬
+    screenName: Camshill99
+    profileImageUrl: https://pbs.twimg.com/profile_images/1890461161562218496/_gvxbRH5_normal.jpg
+    verified: false
+  metrics:
+    likes: 2
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 42
+    bookmarks: 0
+  createdAt: Mon Jun 22 01:37:34 +0000 2026
+  createdAtLocal: 2026-06-22 07:07
+  createdAtISO: '2026-06-22T01:37:34+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068203862008471615'
+  text: '@ThatEricAlper That''s one of my complaints with Apple Music. Their radio
+    feature used to be phenomenal where I wouldn''t hear the same song for weeks.
+    Now I will get the same song 3-4 times in the same day.'
+  author:
+    id: '28937452'
+    name: AviationGuy
+    screenName: davidvlynn
+    profileImageUrl: https://pbs.twimg.com/profile_images/1464485285413068804/ITDXQohp_normal.jpg
+    verified: true
+  metrics:
+    likes: 2
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 177
+    bookmarks: 0
+  createdAt: Sat Jun 20 05:26:40 +0000 2026
+  createdAtLocal: 2026-06-20 10:56
+  createdAtISO: '2026-06-20T05:26:40+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069524283081027735'
+  text: '@Spotify Limp Bizkit’s Chocolate Starfish and the Hot Dog Flavored Water'
+  author:
+    id: '300465878'
+    name: Gokhan Jimo Kosar
+    screenName: GJimoKosar
+    profileImageUrl: https://pbs.twimg.com/profile_images/2023472740091510784/YrEpxk3M_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 7
+    bookmarks: 0
+  createdAt: Tue Jun 23 20:53:33 +0000 2026
+  createdAtLocal: 2026-06-24 02:23
+  createdAtISO: '2026-06-23T20:53:33+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069524488840978580'
+  text: '@Spotify The great divide, un verano sin ti and born to die/paradise'
+  author:
+    id: '1066711455179948032'
+    name: 🌙
+    screenName: gem_pisc
+    profileImageUrl: https://pbs.twimg.com/profile_images/2047227434525683712/Cc5XOLyh_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 28
+    bookmarks: 0
+  createdAt: Tue Jun 23 20:54:22 +0000 2026
+  createdAtLocal: 2026-06-24 02:24
+  createdAtISO: '2026-06-23T20:54:22+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069004693653573838'
+  text: My Spotify's been playing the same three songs on repeat for a week. It's
+    a very specific kind of hell.
+  author:
+    id: '3569541683'
+    name: Omar Khalil Samir
+    screenName: heyomarkhalil
+    profileImageUrl: https://pbs.twimg.com/profile_images/2033692579112632320/9IFVrpsj_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 4
+    bookmarks: 0
+  createdAt: Mon Jun 22 10:28:53 +0000 2026
+  createdAtLocal: 2026-06-22 15:58
+  createdAtISO: '2026-06-22T10:28:53+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069072764292431891'
+  text: dios que buen invento el descubrimiento semanal de spotify quien programó
+    esa verga
+  author:
+    id: '1833053909985751040'
+    name: ִֶָ💮
+    screenName: POLIM0RFISMO
+    profileImageUrl: https://pbs.twimg.com/profile_images/2057870542816854016/w0bzlw9H_normal.jpg
+    verified: false
+  metrics:
+    likes: 4
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 92
+    bookmarks: 0
+  createdAt: Mon Jun 22 14:59:23 +0000 2026
+  createdAtLocal: 2026-06-22 20:29
+  createdAtISO: '2026-06-22T14:59:23+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: es
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069042192879108141'
+  text: '@SpotifyCares did spotify change some codes? i used to be able to play all
+    the songs from an artist’s discography if i display all release in a list order,
+    but now once the last song of the first album finishes, it auto play recommended
+    songs rather than the next album. Pls help.'
+  author:
+    id: '279322120'
+    name: ewith
+    screenName: ThunderHunter_
+    profileImageUrl: https://pbs.twimg.com/profile_images/735342427872104449/-5X8eNdK_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 48
+    bookmarks: 0
+  createdAt: Mon Jun 22 12:57:54 +0000 2026
+  createdAtLocal: 2026-06-22 18:27
+  createdAtISO: '2026-06-22T12:57:54+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068296693343306113'
+  text: Spotify has the shittiest algo. I'm not even comparing it with any other.
+    Any random music service would beat it. Wdym I searched a few Lil Wayne songs
+    and you're now suggesting a whole lot of music from that time? At least suggest
+    good stuff, who TF is Drake?
+  author:
+    id: '159390311'
+    name: ~Blankets and Vodka~ 🐦
+    screenName: Unski_i
+    profileImageUrl: https://pbs.twimg.com/profile_images/2056835222306525184/IGg6VetQ_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 23
+    bookmarks: 0
+  createdAt: Sat Jun 20 11:35:33 +0000 2026
+  createdAtLocal: 2026-06-20 17:05
+  createdAtISO: '2026-06-20T11:35:33+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068029712694173940'
+  text: "Olivia Rodrigo becomes the first female artist this year to debut at #1 on\
+    \ all Spotify charts.\n\n#1 Weekly Song \n#1 Weekly Artist  \n#1 Weekly Album\
+    \ \n#1 Daily Song \n#1 Daily Artist https://t.co/GB5GIdM2Mr"
+  author:
+    id: '1855794951570731008'
+    name: Olivia Rodrigo Charts
+    screenName: oliviascharts
+    profileImageUrl: https://pbs.twimg.com/profile_images/2039763574629769217/8dTZabsX_normal.jpg
+    verified: false
+  metrics:
+    likes: 87
+    retweets: 5
+    replies: 0
+    quotes: 0
+    views: 566
+    bookmarks: 1
+  createdAt: Fri Jun 19 17:54:40 +0000 2026
+  createdAtLocal: 2026-06-19 23:24
+  createdAtISO: '2026-06-19T17:54:40+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLMd9_aXYAA61t1.jpg
+    width: 2111
+    height: 2111
+  - type: photo
+    url: https://pbs.twimg.com/media/HLMeACNXAAATdkw.jpg
+    width: 924
+    height: 1155
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069496333560684845'
+  text: '@SiriusXMOctane Spotify, YouTube, Twitter. All metal accounts. Octane and
+    liquid metal replay the same songs and artists too much.'
+  author:
+    id: '55129822'
+    name: Born Again Pessimist
+    screenName: SparteeB
+    profileImageUrl: https://pbs.twimg.com/profile_images/1470154495913086983/SKg4z-bG_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 53
+    bookmarks: 0
+  createdAt: Tue Jun 23 19:02:29 +0000 2026
+  createdAtLocal: 2026-06-24 00:32
+  createdAtISO: '2026-06-23T19:02:29+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069432584434495686'
+  text: '@MMshikshake Spotify made it like they make the On Repeat playlists!! https://t.co/OCLBZ8sJQ9'
+  author:
+    id: '1138634340546617344'
+    name: cinder(ella)
+    screenName: orangewonsik
+    profileImageUrl: https://pbs.twimg.com/profile_images/1287542864197623808/khyJv1pX_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 20
+    bookmarks: 0
+  createdAt: Tue Jun 23 14:49:10 +0000 2026
+  createdAtLocal: 2026-06-23 20:19
+  createdAtISO: '2026-06-23T14:49:10+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLgZ9lSa0AAYI23.jpg
+    width: 922
+    height: 2048
+  - type: photo
+    url: https://pbs.twimg.com/media/HLgZ9pTXMAAYJAP.jpg
+    width: 372
+    height: 1082
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069178772872421457'
+  text: '@Atleti @FCBarcelona_es Muchachos, ya a estas horas les damos 2 años de Spotify
+    premium por Julián para que puedan disfrutar de Bad Bunny. Jajajajajajajajaja.
+    Bufonada del año! 🤣'
+  author:
+    id: '1724399371'
+    name: Gerardo CND
+    screenName: tibusan
+    profileImageUrl: https://pbs.twimg.com/profile_images/1506039599738634249/Szhdkecu_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 112
+    bookmarks: 0
+  createdAt: Mon Jun 22 22:00:37 +0000 2026
+  createdAtLocal: 2026-06-23 03:30
+  createdAtISO: '2026-06-22T22:00:37+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: es
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069887520331157690'
+  text: '@Kronogen @sailaunderscore it does something similar in dms, both accounts
+    have to agree to join a blend and get to scroll a mix of the reels recommended
+    to them'
+  author:
+    id: '1075326113109422080'
+    name: mknya
+    screenName: mknya14
+    profileImageUrl: https://pbs.twimg.com/profile_images/1941942070781804545/2PKrBomC_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 3
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:56:56 +0000 2026
+  createdAtLocal: 2026-06-25 02:26
+  createdAtISO: '2026-06-24T20:56:56+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069065508658307413'
+  text: '@JDNebusiness vraie question, quelles sont les nouveautés chez Spotify ?
+
+
+    J''ai l''impression que l''app stagne depuis plusieurs années.
+
+
+    Ou même régresse, je suis déçu de mes Discover Weekly Playlist maintenant, alors
+    qu''elles me faisaient découvrir plein de tracks avant...'
+  author:
+    id: '9777902'
+    name: Antoine Frankart
+    screenName: eMeRiKa
+    profileImageUrl: https://pbs.twimg.com/profile_images/1962824472005681152/wLC6x1rl_normal.jpg
+    verified: true
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 104
+    bookmarks: 0
+  createdAt: Mon Jun 22 14:30:33 +0000 2026
+  createdAtLocal: 2026-06-22 20:00
+  createdAtISO: '2026-06-22T14:30:33+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: fr
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069518895061364923'
+  text: "@Spotify Rebel by @lecrae \n\nBut I never left his music journey. I stuck\
+    \ with him. We went on the journey together."
+  author:
+    id: '1939753954021113856'
+    name: Brettley
+    screenName: bcanders116
+    profileImageUrl: https://pbs.twimg.com/profile_images/2066989439243431936/oMz1YTrJ_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 7
+    bookmarks: 0
+  createdAt: Tue Jun 23 20:32:09 +0000 2026
+  createdAtLocal: 2026-06-24 02:02
+  createdAtISO: '2026-06-23T20:32:09+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068820647640265003'
+  text: '@jaeminizada cada vez que entro a spotify sofi tiene la misma canción.......
+    https://t.co/HVNSvDyjwv'
+  author:
+    id: '1242604904084111362'
+    name: ludmi Ψ🦌
+    screenName: ludfugitiva
+    profileImageUrl: https://pbs.twimg.com/profile_images/2069533538924347393/I-NVIW7T_normal.jpg
+    verified: false
+  metrics:
+    likes: 2
+    retweets: 0
+    replies: 2
+    quotes: 1
+    views: 258
+    bookmarks: 0
+  createdAt: Sun Jun 21 22:17:33 +0000 2026
+  createdAtLocal: 2026-06-22 03:47
+  createdAtISO: '2026-06-21T22:17:33+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLXtaWBWoAAPkUU.jpg
+    width: 975
+    height: 550
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: es
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067335235616883200'
+  text: '@arichanvuhe @aflorswift vou falar algo importante tambem
+
+
+    🌎 | Spotify Global
+
+
+    I Knew It, I Knew You
+
+    (Peak 1 | Days: 12)
+
+
+    The Girl In The Bubble
+
+    (Peak ❌ | Days: 0)'
+  author:
+    id: '1869753977275023360'
+    name: marc out the slammer .ᐟ ❤️‍🔥
+    screenName: torturedmarc
+    profileImageUrl: https://pbs.twimg.com/profile_images/1955816521734766592/rXK-AxoY_normal.jpg
+    verified: false
+  metrics:
+    likes: 5
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 37
+    bookmarks: 0
+  createdAt: Wed Jun 17 19:55:04 +0000 2026
+  createdAtLocal: 2026-06-18 01:25
+  createdAtISO: '2026-06-17T19:55:04+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069169911826415869'
+  text: its a real prevalent problem and spotify pushes ai songs into your algorithm
+    if youre not like actively stopping it
+  author:
+    id: '1810013013510139904'
+    name: orb oomf
+    screenName: outlawizard
+    profileImageUrl: https://pbs.twimg.com/profile_images/2065173318131482624/58HawpzT_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 227
+    bookmarks: 0
+  createdAt: Mon Jun 22 21:25:24 +0000 2026
+  createdAtLocal: 2026-06-23 02:55
+  createdAtISO: '2026-06-22T21:25:24+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069401425138876882'
+  text: Spotify is so bad at recommending music like truly the most stupid worthless
+    good for nothing algorithm but they keep making useless app enhancements where
+    they tell u song stats like the producers now so yeah I’m not leaving
+  author:
+    id: '1152657626'
+    name: vanessa
+    screenName: yarnessa
+    profileImageUrl: https://pbs.twimg.com/profile_images/1309549485069086723/c7gDEBIz_normal.jpg
+    verified: false
+  metrics:
+    likes: 4
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 203
+    bookmarks: 0
+  createdAt: Tue Jun 23 12:45:22 +0000 2026
+  createdAtLocal: 2026-06-23 18:15
+  createdAtISO: '2026-06-23T12:45:22+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068805776500764877'
+  text: 'What music???
+
+    after one song your desperate ass ads pop up for a whole minute and after listening
+    to 6 or 7 songs I can''t even choose to play songs of my own choice never ever
+    have I seen an app as desperate as you Spotify bih fuck you'
+  author:
+    id: '2026591875063566336'
+    name: 𝙸.
+    screenName: Purple_sayy
+    profileImageUrl: https://pbs.twimg.com/profile_images/2066577108546281472/l8TPOz0a_normal.jpg
+    verified: false
+  metrics:
+    likes: 9
+    retweets: 0
+    replies: 3
+    quotes: 0
+    views: 381
+    bookmarks: 0
+  createdAt: Sun Jun 21 21:18:28 +0000 2026
+  createdAtLocal: 2026-06-22 02:48
+  createdAtISO: '2026-06-21T21:18:28+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  quotedTweet:
+    id: '2068571112972468293'
+    text: "Working? Music \nStudying? Music\nCooking? Music\nWalking? Music\nExercising?\
+      \ Music\nDoing nothing? Music"
+    author:
+      screenName: spotifyindia
+      name: Spotify India
+- id: '2069523075633500235'
+  text: '@Spotify All jude bouncer and Tracy chapman albums'
+  author:
+    id: '1537325661110603776'
+    name: Bryuhnt🇲🇼🇵🇹
+    screenName: bryant_malasa
+    profileImageUrl: https://pbs.twimg.com/profile_images/2039585618100105216/ZvCkjQlh_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 28
+    bookmarks: 0
+  createdAt: Tue Jun 23 20:48:45 +0000 2026
+  createdAtLocal: 2026-06-24 02:18
+  createdAtISO: '2026-06-23T20:48:45+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069519567613727051'
+  text: '@Spotify Trilogy by The Weeknd.
+
+
+    I was in a dark place after breaking up with my girlfriend in the university,
+    i was navigating through the terrains of school hardships,weather and heartbreak.
+
+
+    An experience worth remembering'
+  author:
+    id: '1725260630825861120'
+    name: 𝐹𝑖𝑏𝑜𝑛𝑎𝑐𝑐𝑖 🪭
+    screenName: _Fibonacii
+    profileImageUrl: https://pbs.twimg.com/profile_images/2068048240264589312/T5oNW6qQ_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 36
+    bookmarks: 0
+  createdAt: Tue Jun 23 20:34:49 +0000 2026
+  createdAtLocal: 2026-06-24 02:04
+  createdAtISO: '2026-06-23T20:34:49+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067417796129034628'
+  text: '@_Twinndiesel Spotify shuffle ass 😭 get the same 9 songs everytime I swear.'
+  author:
+    id: '733785488369192961'
+    name: DNN
+    screenName: Nez3k
+    profileImageUrl: https://pbs.twimg.com/profile_images/1991729920691597312/TyNZYHTP_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 348
+    bookmarks: 0
+  createdAt: Thu Jun 18 01:23:08 +0000 2026
+  createdAtLocal: 2026-06-18 06:53
+  createdAtISO: '2026-06-18T01:23:08+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+

@@ -1,0 +1,1188 @@
+ok: true
+schema_version: '1'
+data:
+- id: '2068870980173217820'
+  text: It really bugs me on Spotify when I like only certain songs from an artist,
+    so I try to make a radio from one of them, and then it plays songs like the whole
+    artist’s library. Why can’t it show me similar to one specific song?
+  author:
+    id: '3663238692'
+    name: Cameron 🦬
+    screenName: Camshill99
+    profileImageUrl: https://pbs.twimg.com/profile_images/1890461161562218496/_gvxbRH5_normal.jpg
+    verified: false
+  metrics:
+    likes: 2
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 42
+    bookmarks: 0
+  createdAt: Mon Jun 22 01:37:34 +0000 2026
+  createdAtLocal: 2026-06-22 07:07
+  createdAtISO: '2026-06-22T01:37:34+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069887852880465980'
+  text: '@TeamYouTube I don’t know how this video on the standalone “Liked videos”
+    tab got there. Even when I put it in a playlist or “Watch later”, I get a “Something
+    went wrong. Please try again.”
+
+
+    I reset the app, I signed out, I deleted and reinstalled the app… NOTHING! https://t.co/hw3DBZNQUX'
+  author:
+    id: '1923160850812239876'
+    name: Luis Angel Santos
+    screenName: LASantos011519
+    profileImageUrl: https://pbs.twimg.com/profile_images/1923169176342102016/9aOsWwbu_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 1
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:58:15 +0000 2026
+  createdAtLocal: 2026-06-25 02:28
+  createdAtISO: '2026-06-24T20:58:15+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLm4CENW4AAaH9K.jpg
+    width: 1152
+    height: 2048
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069842105262842214'
+  text: "@monkieboy99 @Spotify @AppleMusic I’m on Apple Music, discover only uses\
+    \ the last 100 songs played or so. \n\nIf I listened to a DJ mix. It’s going to\
+    \ recommend EDM. Start listening to my country mix. It will switch to that."
+  author:
+    id: '1516935566184665088'
+    name: 🥶 ICEMAN 🥶 🇨🇦
+    screenName: k_starfox88
+    profileImageUrl: https://pbs.twimg.com/profile_images/1994080911885836288/tZQ6lUya_normal.jpg
+    verified: false
+  metrics:
+    likes: 2
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 65
+    bookmarks: 0
+  createdAt: Wed Jun 24 17:56:28 +0000 2026
+  createdAtLocal: 2026-06-24 23:26
+  createdAtISO: '2026-06-24T17:56:28+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069518895061364923'
+  text: "@Spotify Rebel by @lecrae \n\nBut I never left his music journey. I stuck\
+    \ with him. We went on the journey together."
+  author:
+    id: '1939753954021113856'
+    name: Brettley
+    screenName: bcanders116
+    profileImageUrl: https://pbs.twimg.com/profile_images/2066989439243431936/oMz1YTrJ_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 7
+    bookmarks: 0
+  createdAt: Tue Jun 23 20:32:09 +0000 2026
+  createdAtLocal: 2026-06-24 02:02
+  createdAtISO: '2026-06-23T20:32:09+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068982339955249266'
+  text: Listen to all ayrastarr's 10 popular songs on Spotify and come back for other
+    recommendations 🙂
+  author:
+    id: '2053761785035882496'
+    name: Abdullateef
+    screenName: Abdul_light0
+    profileImageUrl: https://pbs.twimg.com/profile_images/2061490689171447808/8ZOwD4vf_normal.jpg
+    verified: true
+  metrics:
+    likes: 17
+    retweets: 2
+    replies: 0
+    quotes: 0
+    views: 274
+    bookmarks: 0
+  createdAt: Mon Jun 22 09:00:04 +0000 2026
+  createdAtLocal: 2026-06-22 14:30
+  createdAtISO: '2026-06-22T09:00:04+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  quotedTweet:
+    id: '2068968989829603820'
+    text: I need to listen to new music. Any recommendations?
+    author:
+      screenName: thickredhead44
+      name: Oliviaabbxo
+- id: '2069696109061005480'
+  text: This useless spotify update has a fvcking bug I can't even listen to music
+    without the app exiting
+  author:
+    id: '1438753565246468098'
+    name: °-° 🇯🇵🇵🇹🇳🇴🇳🇱
+    screenName: zedyuuu
+    profileImageUrl: https://pbs.twimg.com/profile_images/2032941474824822784/djmRnVKR_normal.jpg
+    verified: false
+  metrics:
+    likes: 2
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 131
+    bookmarks: 0
+  createdAt: Wed Jun 24 08:16:20 +0000 2026
+  createdAtLocal: 2026-06-24 13:46
+  createdAtISO: '2026-06-24T08:16:20+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069169911826415869'
+  text: its a real prevalent problem and spotify pushes ai songs into your algorithm
+    if youre not like actively stopping it
+  author:
+    id: '1810013013510139904'
+    name: orb oomf
+    screenName: outlawizard
+    profileImageUrl: https://pbs.twimg.com/profile_images/2065173318131482624/58HawpzT_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 227
+    bookmarks: 0
+  createdAt: Mon Jun 22 21:25:24 +0000 2026
+  createdAtLocal: 2026-06-23 02:55
+  createdAtISO: '2026-06-22T21:25:24+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069790724531310614'
+  text: 'Hi! We want to ensure you enjoy a great experience with the app and with
+    controlling playback speed. Could you confirm if this issue happens on the mobile
+    app or on other devices? Since you’ve already force closed the app, we also recommend
+    clearing the app cache on your device and trying a clean reinstall. You can find
+    detailed steps on how to do it here: https://t.co/XRlsg9I86o. A quick device restart
+    can also do wonders. Give it a try and let us know how it goes!'
+  author:
+    id: '497340309'
+    name: SpotifyCares
+    screenName: SpotifyCares
+    profileImageUrl: https://pbs.twimg.com/profile_images/826455807080427521/00yQeX3K_normal.jpg
+    verified: true
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 35
+    bookmarks: 0
+  createdAt: Wed Jun 24 14:32:18 +0000 2026
+  createdAtLocal: 2026-06-24 20:02
+  createdAtISO: '2026-06-24T14:32:18+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069477744316907823'
+  text: '@marklrsss @PopCrave Let''s just stay at the present for now at least! She''s
+    #1 on the Artist 100, Billboard 200, Global 200, Global 200 Excl. US, Spotify
+    top songs Global and US, Spotify top 50 Global and US. ALL that at the same time
+    which is now.'
+  author:
+    id: '1187287252025696256'
+    name: Minora
+    screenName: Minora1988
+    profileImageUrl: https://pbs.twimg.com/profile_images/1829484371520221184/aG5QJ0m-_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 14
+    bookmarks: 0
+  createdAt: Tue Jun 23 17:48:37 +0000 2026
+  createdAtLocal: 2026-06-23 23:18
+  createdAtISO: '2026-06-23T17:48:37+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068262209151766581'
+  text: '@tylerllewtaing His owner (Bonnie) is an 8 year old girl. He is listening
+    to Taylor Swift whether he likes it or not'
+  author:
+    id: '1129451446297079808'
+    name: 💖Loki 💖 || COMMISSIONS OPEN
+    screenName: FurmeWolfy
+    profileImageUrl: https://pbs.twimg.com/profile_images/1688561690298761216/ou1wLq_7_normal.jpg
+    verified: false
+  metrics:
+    likes: 2408
+    retweets: 28
+    replies: 8
+    quotes: 0
+    views: 36550
+    bookmarks: 17
+  createdAt: Sat Jun 20 09:18:31 +0000 2026
+  createdAtLocal: 2026-06-20 14:48
+  createdAtISO: '2026-06-20T09:18:31+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069877858739081334'
+  text: '@SL8ERB0I have you tried opening it through a browser? that worked for me.'
+  author:
+    id: '2039004652755107840'
+    name: Ada Wong
+    screenName: jooosiephine
+    profileImageUrl: https://pbs.twimg.com/profile_images/2066970260637454336/RtbaNbaY_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 22
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:18:32 +0000 2026
+  createdAtLocal: 2026-06-25 01:48
+  createdAtISO: '2026-06-24T20:18:32+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069887788732838014'
+  text: '@GreyArchiveBTS7 Yes; same for me. I had finished my L3 in time, but I have
+    a few albums left... 5/6 hours with no update.'
+  author:
+    id: '1978899561050492929'
+    name: Xplore | BTS ARIRANG ⛵️
+    screenName: Xplore78
+    profileImageUrl: https://pbs.twimg.com/profile_images/2007879620188651521/d9aIsr4x_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 1
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:58:00 +0000 2026
+  createdAtLocal: 2026-06-25 02:28
+  createdAtISO: '2026-06-24T20:58:00+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '1934046582170583096'
+  text: i don’t even go here but mind you enhypen is a 4 year old group that already
+    has 4 songs with over 300M streams on spotify including 1 song with over 400M
+    while seventeen is a 10 year old group and their most streamed song on spotify
+    is still stuck in the 200M range…
+  author:
+    id: '1537032013840101378'
+    name: rafael⁷
+    screenName: edwardlculIen
+    profileImageUrl: https://pbs.twimg.com/profile_images/1964524006343618560/ncpc2MJ5_normal.jpg
+    verified: false
+  metrics:
+    likes: 3903
+    retweets: 348
+    replies: 44
+    quotes: 111
+    views: 171509
+    bookmarks: 253
+  createdAt: Sun Jun 15 00:33:32 +0000 2025
+  createdAtLocal: 2025-06-15 06:03
+  createdAtISO: '2025-06-15T00:33:32+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  quotedTweet:
+    id: '1933802705123958826'
+    text: why are yall so loud for a group that’s still a nugu in their motherland
+      five years in? worry about that first
+    author:
+      screenName: chwenotchew
+      name: َ
+- id: '2069496333560684845'
+  text: '@SiriusXMOctane Spotify, YouTube, Twitter. All metal accounts. Octane and
+    liquid metal replay the same songs and artists too much.'
+  author:
+    id: '55129822'
+    name: Born Again Pessimist
+    screenName: SparteeB
+    profileImageUrl: https://pbs.twimg.com/profile_images/1470154495913086983/SKg4z-bG_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 53
+    bookmarks: 0
+  createdAt: Tue Jun 23 19:02:29 +0000 2026
+  createdAtLocal: 2026-06-24 00:32
+  createdAtISO: '2026-06-23T19:02:29+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069885277494014234'
+  text: '@smoothmelanin I blocked it from playing on Spotify 😭😭😭'
+  author:
+    id: '1571872162926952456'
+    name: Ja'Meyah
+    screenName: jameyah__
+    profileImageUrl: https://pbs.twimg.com/profile_images/1922044201501356032/GWbwjTvr_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 2
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:48:01 +0000 2026
+  createdAtLocal: 2026-06-25 02:18
+  createdAtISO: '2026-06-24T20:48:01+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '1996261544284266563'
+  text: i’m so fucking confused. i’m on spotify every single day of my life, wearing
+    my airpods all the time, listening to songs on repeat while i write, yet i only
+    listened to 19k minutes while everyone has over 300k+? have i not been listening
+    to enough music or is spotify just stupid
+  author:
+    id: '1642192452902682630'
+    name: pips
+    screenName: stalkerable
+    profileImageUrl: https://pbs.twimg.com/profile_images/2065550825544462336/v4tPF80q_normal.jpg
+    verified: false
+  metrics:
+    likes: 63364
+    retweets: 1664
+    replies: 358
+    quotes: 468
+    views: 2874920
+    bookmarks: 1513
+  createdAt: Wed Dec 03 16:53:35 +0000 2025
+  createdAtLocal: 2025-12-03 22:23
+  createdAtISO: '2025-12-03T16:53:35+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068604602576949521'
+  text: spotify fix your damn app like why has it been more than a week of me trying
+    to open the app and it's just a fucking black screen, emptying cache does nothing
+    everytime i just have to uninstall reinstall for it to work for maybe a few hours
+    if i'm lucky it's pmo
+  author:
+    id: '877247536104431617'
+    name: Clem🌷❤️‍🔥
+    screenName: moo_vie_
+    profileImageUrl: https://pbs.twimg.com/profile_images/2052023302512664576/SGwaWul3_normal.jpg
+    verified: false
+  metrics:
+    likes: 4
+    retweets: 2
+    replies: 0
+    quotes: 0
+    views: 226
+    bookmarks: 0
+  createdAt: Sun Jun 21 07:59:04 +0000 2026
+  createdAtLocal: 2026-06-21 13:29
+  createdAtISO: '2026-06-21T07:59:04+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069880307038187666'
+  text: '@thankgod9999 @Amsupremetingz It’s crazy cause he use to be my fav singer
+    back in 2013 (was 11 years old)  growing up. I use to have that “hip hop” song
+    on repeat and all the other songs was bangers. I stopped listening when the gay
+    shit came out too smh'
+  author:
+    id: '742574171486572544'
+    name: Twonn🥷🏽
+    screenName: __twonn__
+    profileImageUrl: https://pbs.twimg.com/profile_images/2065005706483257344/T6MMkvQA_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 15
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:28:16 +0000 2026
+  createdAtLocal: 2026-06-25 01:58
+  createdAtISO: '2026-06-24T20:28:16+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067315163678613993'
+  text: 'Backrooms director Kane Parsons says he had a good time listening to you
+    seem pretty sad for a girl so in love by olivia rodrigo.
+
+
+    “It’s the best album of all time.”
+
+
+    He’s only 20 years old. https://t.co/xErcKZK61Q'
+  author:
+    id: '2045888238275932160'
+    name: izzy
+    screenName: dayalivias
+    profileImageUrl: https://pbs.twimg.com/profile_images/2069750092102258688/ACFmT8YM_normal.jpg
+    verified: false
+  metrics:
+    likes: 822
+    retweets: 43
+    replies: 8
+    quotes: 2
+    views: 14082
+    bookmarks: 34
+  createdAt: Wed Jun 17 18:35:18 +0000 2026
+  createdAtLocal: 2026-06-18 00:05
+  createdAtISO: '2026-06-17T18:35:18+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLCUL3UWYAAqW94.jpg
+    width: 640
+    height: 545
+  - type: photo
+    url: https://pbs.twimg.com/media/HLCUL3PXYAAGdmZ.jpg
+    width: 1179
+    height: 1143
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069879447638114683'
+  text: "@DutchessofFrog No, the cache fills up and The app goes dead. I cleared my\
+    \ cache and restarted my phone and they showed up again. \n\nWorth a try."
+  author:
+    id: '2050643591878545408'
+    name: Jeremy 4Runner™️
+    screenName: Jeremy4Runner
+    profileImageUrl: https://pbs.twimg.com/profile_images/2051104424639254528/BO96i6TM_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 12
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:24:51 +0000 2026
+  createdAtLocal: 2026-06-25 01:54
+  createdAtISO: '2026-06-24T20:24:51+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069879819832058334'
+  text: '@psychogal716 @ObeyMeIDO I had that very same message, too, as long as your
+    account is connected to Google or Apple(?) You''ll be fine to reinstall the app.'
+  author:
+    id: '793906387'
+    name: Ling | 撒旦的小花貓 Satan's Kitten ฅ^•ﻌ•^ฅ
+    screenName: AwesomeVampireL
+    profileImageUrl: https://pbs.twimg.com/profile_images/2053493529016455171/A-tCAbxt_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 12
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:26:20 +0000 2026
+  createdAtLocal: 2026-06-25 01:56
+  createdAtISO: '2026-06-24T20:26:20+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069884809179238741'
+  text: '@NotAbyssalVlad No eres el único, lo mismo me pasó con ultier motives, creo
+    que el filtro viejo le da más personalidad a las canciones de esa época.'
+  author:
+    id: '1538549958068035585'
+    name: matttsymbiote
+    screenName: JuanCar50987027
+    profileImageUrl: https://pbs.twimg.com/profile_images/2058292743558791168/qRH_I061_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 1
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:46:09 +0000 2026
+  createdAtLocal: 2026-06-25 02:16
+  createdAtISO: '2026-06-24T20:46:09+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: es
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068594187423871460'
+  text: Hey there! That’s definitely not the experience we’re aiming for, so let us
+    look into it 👀 Try the basics first - reinstall the app + try from another device
+    + check if the same happens on the web player + try connecting to a (different)
+    WiFi network- and if the hiccup's still happening, do let us know, and we'll continue
+    with this together 😊
+  author:
+    id: '497340309'
+    name: SpotifyCares
+    screenName: SpotifyCares
+    profileImageUrl: https://pbs.twimg.com/profile_images/826455807080427521/00yQeX3K_normal.jpg
+    verified: true
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 32
+    bookmarks: 0
+  createdAt: Sun Jun 21 07:17:41 +0000 2026
+  createdAtLocal: 2026-06-21 12:47
+  createdAtISO: '2026-06-21T07:17:41+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069052814995681406'
+  text: Hey @Spotify , get your stupid algorithm out of my library! I have 870 liked
+    songs, and when I put that list on random play I want a truly random playlist.
+    There is zero reason I should hear the same song every day of the week when there
+    are 870 options!!
+  author:
+    id: '35538290'
+    name: PLEH (No Help)
+    screenName: InGoodWeTrust3
+    profileImageUrl: https://pbs.twimg.com/profile_images/467162896544198656/ivsNxx90_normal.jpeg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 40
+    bookmarks: 0
+  createdAt: Mon Jun 22 13:40:06 +0000 2026
+  createdAtLocal: 2026-06-22 19:10
+  createdAtISO: '2026-06-22T13:40:06+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069821861127467283'
+  text: '@spookyinsider if someone doesn’t want to stream they’re free not to do so.
+    listening to songs the way op and people in the replies are is considered bot
+    activity by spotify and harms skz numbers. if you want to loop a song, download
+    it, upload it to local files and loop that as much as u like'
+  author:
+    id: '984123432983031810'
+    name: ༺༒༻
+    screenName: _winena
+    profileImageUrl: https://pbs.twimg.com/profile_images/2025893640589991936/XlnEHHNG_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 48
+    bookmarks: 0
+  createdAt: Wed Jun 24 16:36:01 +0000 2026
+  createdAtLocal: 2026-06-24 22:06
+  createdAtISO: '2026-06-24T16:36:01+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069147992808935757'
+  text: '@axolote1000000 #plz listen Its one of my favs from this year
+
+    also, i loved spotify daylists but they started being uninteresting, always showing
+    me everything I already listened to😔 i loved it for finding new music, now I just
+    use radios of specific songs'
+  author:
+    id: '1674657684358934528'
+    name: gosia
+    screenName: mivxhao
+    profileImageUrl: https://pbs.twimg.com/profile_images/2061927222076690433/bATyJjIb_normal.jpg
+    verified: false
+  metrics:
+    likes: 1
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 50
+    bookmarks: 0
+  createdAt: Mon Jun 22 19:58:19 +0000 2026
+  createdAtLocal: 2026-06-23 01:28
+  createdAtISO: '2026-06-22T19:58:19+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068584556958031941'
+  text: "Thanks so much for reaching out! To help you better, could you provide more\
+    \ info on what’s happening? Please also share your current app version and make\
+    \ sure your device is updated. You could try a clean reinstall to help clear any\
+    \ old cache lying around: https://t.co/a09UG0mtHh \nLet us know if this helps\
+    \ or if you need more assistance - we’re always here for you! \U0001F60A"
+  author:
+    id: '497340309'
+    name: SpotifyCares
+    screenName: SpotifyCares
+    profileImageUrl: https://pbs.twimg.com/profile_images/826455807080427521/00yQeX3K_normal.jpg
+    verified: true
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 16
+    bookmarks: 0
+  createdAt: Sun Jun 21 06:39:25 +0000 2026
+  createdAtLocal: 2026-06-21 12:09
+  createdAtISO: '2026-06-21T06:39:25+00:00'
+  media: []
+  urls:
+  - https://bit.ly/4pj9pSy
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069521805719544060'
+  text: '@Spotify man plays the horn, the ghost pop tape, dreamcast summer songs,
+    heaven or las vegas, ok computer'
+  author:
+    id: '1575575442773385230'
+    name: ‏ًًً
+    screenName: Covenfrmda6ix
+    profileImageUrl: https://pbs.twimg.com/profile_images/2067999203196829696/xNkbC8iX_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 141
+    bookmarks: 0
+  createdAt: Tue Jun 23 20:43:42 +0000 2026
+  createdAtLocal: 2026-06-24 02:13
+  createdAtISO: '2026-06-23T20:43:42+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068766390882889984'
+  text: 'Hi! We know you want to enjoy your music seamlessly. To help us gather more
+    details, could you tell us if this occurs on other devices, or if it''s specific
+    to the app or web browser? Having these details will be of great help to review
+    this situation. Also, ensuring a stable internet connection is an excellent step.
+    In the meantime, if you have not tried yet, you can check these quick tips for
+    a fresh app reinstall: https://t.co/XRlsg9I86o. Keep us posted!'
+  author:
+    id: '497340309'
+    name: SpotifyCares
+    screenName: SpotifyCares
+    profileImageUrl: https://pbs.twimg.com/profile_images/826455807080427521/00yQeX3K_normal.jpg
+    verified: true
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 81
+    bookmarks: 0
+  createdAt: Sun Jun 21 18:41:58 +0000 2026
+  createdAtLocal: 2026-06-22 00:11
+  createdAtISO: '2026-06-21T18:41:58+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068221671211688021'
+  text: Thank you for getting back to us! Try to run a clean reinstall of the app
+    (https://t.co/LzjeY1fU8k) to get rid of any potentially corrupted cache that could
+    be causing this. Still stuck? Check for any pending Windows updates for your device.
+    Let us know how it goes. We'll be on the lookout for your response. 👀
+  author:
+    id: '497340309'
+    name: SpotifyCares
+    screenName: SpotifyCares
+    profileImageUrl: https://pbs.twimg.com/profile_images/826455807080427521/00yQeX3K_normal.jpg
+    verified: true
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 52
+    bookmarks: 0
+  createdAt: Sat Jun 20 06:37:26 +0000 2026
+  createdAtLocal: 2026-06-20 12:07
+  createdAtISO: '2026-06-20T06:37:26+00:00'
+  media: []
+  urls:
+  - https://bit.ly/4i5XV2d
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069153080323781017'
+  text: Tux, my healthy, gorgeous, 8 year old Tuxedo died suddenly. One minute he
+    was looking at me with his beautiful bright eyes and the next thing I knew he
+    fell off his perch and was dead when he hit the floor. I just can’t believe it.
+    I’m 70, retired and he was my companion. My vet said it is not uncommon for cats
+    to die suddenly due to hidden heart issues. That’s what they think happened. The
+    hidden blessing is that he didn’t have time to suffer. I’ve had cats all my life
+    but Tux was more than a cat. He was my sweet boy. Thanks for listening.
+  author:
+    id: '2025986249408806912'
+    name: Maria Rose ❤️
+    screenName: BhattiLaib9960
+    profileImageUrl: https://pbs.twimg.com/profile_images/2051978910586507265/CmRtlee3_normal.jpg
+    verified: true
+  metrics:
+    likes: 387
+    retweets: 43
+    replies: 122
+    quotes: 3
+    views: 3379
+    bookmarks: 5
+  createdAt: Mon Jun 22 20:18:32 +0000 2026
+  createdAtLocal: 2026-06-23 01:48
+  createdAtISO: '2026-06-22T20:18:32+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLcbwsWawAEuJQ9.jpg
+    width: 897
+    height: 1200
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068389098436297153'
+  text: https://t.co/VAhGad6iGa
+  author:
+    id: '1470734366204735492'
+    name: Afina Official
+    screenName: afinaio
+    profileImageUrl: https://pbs.twimg.com/profile_images/2068144986806202368/LGYfVxad_normal.jpg
+    verified: true
+  metrics:
+    likes: 20
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 397198
+    bookmarks: 3
+  createdAt: Sat Jun 20 17:42:44 +0000 2026
+  createdAtLocal: 2026-06-20 23:12
+  createdAtISO: '2026-06-20T17:42:44+00:00'
+  media: []
+  urls:
+  - http://x.com/i/article/2067583136880373760
+  isRetweet: false
+  retweetedBy: null
+  lang: zxx
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  articleTitle: That Perfect Zero. Why the Tampering Signal Decides Everything — and
+    Why Most Antidetects Fail It
+- id: '2068334354485354806'
+  text: Nobody talks about his character songs enough bc everyone larps pub and go
+    and the different marukite chikyuu covers. I’m telling you guys start listening
+    to other character songs they are AMAZING
+  author:
+    id: '1875275064972587008'
+    name: 'Chérie of #Cutetwt !!'
+    screenName: Cheriesluvlypie
+    profileImageUrl: https://pbs.twimg.com/profile_images/2069619458142846977/As2eqXIV_normal.jpg
+    verified: false
+  metrics:
+    likes: 585
+    retweets: 117
+    replies: 21
+    quotes: 8
+    views: 8593
+    bookmarks: 33
+  createdAt: Sat Jun 20 14:05:12 +0000 2026
+  createdAtLocal: 2026-06-20 19:35
+  createdAtISO: '2026-06-20T14:05:12+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+  quotedTweet:
+    id: '1276915213942632449'
+    text: your unpopular opinion about France/Francis Bonnefoy https://t.co/TfIb4EHIcA
+    author:
+      screenName: ChinaSan2
+      name: Чпок|⚪🟢⚫
+- id: '2067923104605622777'
+  text: Thank you for getting back to us with this information. We appreciate it!
+    In this case, try to run a clean reinstall (https://t.co/LzjeY1fU8k) to get rid
+    of any potentially corrupted cache that could be causing this. Let us know how
+    it goes afterwards. We'll be on the lookout for your response. 👀
+  author:
+    id: '497340309'
+    name: SpotifyCares
+    screenName: SpotifyCares
+    profileImageUrl: https://pbs.twimg.com/profile_images/826455807080427521/00yQeX3K_normal.jpg
+    verified: true
+  metrics:
+    likes: 2
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 155
+    bookmarks: 0
+  createdAt: Fri Jun 19 10:51:02 +0000 2026
+  createdAtLocal: 2026-06-19 16:21
+  createdAtISO: '2026-06-19T10:51:02+00:00'
+  media: []
+  urls:
+  - https://bit.ly/4i5XV2d
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069877987302842599'
+  text: '@PeteTheGreek13 Fans should never have to suffer the problem is there is
+    no quick fix to all of it. It’s going to take some time. Problem is that the timeline
+    is 2-3 Years late. They tried the quick fixes and it clearly doesn’t work. It
+    sucks'
+  author:
+    id: '914877938838929414'
+    name: J.D.H
+    screenName: Jhertzz1222
+    profileImageUrl: https://pbs.twimg.com/profile_images/2022406315344265216/RYKa4qhw_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 20
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:19:03 +0000 2026
+  createdAtLocal: 2026-06-25 01:49
+  createdAtISO: '2026-06-24T20:19:03+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2067352319004434631'
+  text: '🚨🚨 My prediction for when Ariana Grande''s albums will reach 10 billion streams
+    on Spotify.
+
+
+    Considering only this current tour boost, not including any possible viral songs
+    moments. https://t.co/QTgn7h9Xet'
+  author:
+    id: '1646176790438715396'
+    name: Oppa
+    screenName: oppa1924
+    profileImageUrl: https://pbs.twimg.com/profile_images/2049179459631161345/ne5C4bA6_normal.jpg
+    verified: true
+  metrics:
+    likes: 923
+    retweets: 40
+    replies: 30
+    quotes: 5
+    views: 27444
+    bookmarks: 71
+  createdAt: Wed Jun 17 21:02:57 +0000 2026
+  createdAtLocal: 2026-06-18 02:32
+  createdAtISO: '2026-06-17T21:02:57+00:00'
+  media:
+  - type: photo
+    url: https://pbs.twimg.com/media/HLC16MGWcAAYai-.jpg
+    width: 1200
+    height: 1136
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069110458825478576'
+  text: Was listening to a dubstep song and the next song is fucking Kmoe Spotify
+    fix ur recommendations
+  author:
+    id: '2002146177643397120'
+    name: 𝔏𝔞𝔦𝔫.⋆🪷
+    screenName: lainremover
+    profileImageUrl: https://pbs.twimg.com/profile_images/2068632918851817472/m0P7bBuw_normal.jpg
+    verified: false
+  metrics:
+    likes: 4
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 63
+    bookmarks: 0
+  createdAt: Mon Jun 22 17:29:10 +0000 2026
+  createdAtLocal: 2026-06-22 22:59
+  createdAtISO: '2026-06-22T17:29:10+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2068332028194357708'
+  text: Hi there! We want to make sure you can enjoy your music, let's solve this
+    together. Log out, restart your device to clean up the temporary memory and log
+    back in. If it doesn't work, reinstall your app with the steps at https://t.co/Fuhbtm8Vy6
+    and check if that does the trick. Keep us posted 👍
+  author:
+    id: '497340309'
+    name: SpotifyCares
+    screenName: SpotifyCares
+    profileImageUrl: https://pbs.twimg.com/profile_images/826455807080427521/00yQeX3K_normal.jpg
+    verified: true
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 1
+    quotes: 0
+    views: 30
+    bookmarks: 0
+  createdAt: Sat Jun 20 13:55:57 +0000 2026
+  createdAtLocal: 2026-06-20 19:25
+  createdAtISO: '2026-06-20T13:55:57+00:00'
+  media: []
+  urls:
+  - http://bit.ly/4hd5sfj
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069880916571296209'
+  text: '@itadoriwashere The same had been happening to me too, I think it’s just
+    this stupid app'
+  author:
+    id: '1466495215573909506'
+    name: Satoru Gojo 🩵
+    screenName: infinitysixeye
+    profileImageUrl: https://pbs.twimg.com/profile_images/2061513964895326208/RNqzAsg7_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 18
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:30:41 +0000 2026
+  createdAtLocal: 2026-06-25 02:00
+  createdAtISO: '2026-06-24T20:30:41+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+- id: '2069878447598342201'
+  text: '@synthexic_ @immasiddx I haven''t tried Apple Music''s recommendations, but
+    Spotify''s are so clunky 📉'
+  author:
+    id: '1100813828005289984'
+    name: LeslyeCream
+    screenName: LeslyeCream
+    profileImageUrl: https://pbs.twimg.com/profile_images/2055358284853309440/we7l5w3U_normal.jpg
+    verified: false
+  metrics:
+    likes: 0
+    retweets: 0
+    replies: 0
+    quotes: 0
+    views: 3
+    bookmarks: 0
+  createdAt: Wed Jun 24 20:20:53 +0000 2026
+  createdAtLocal: 2026-06-25 01:50
+  createdAtISO: '2026-06-24T20:20:53+00:00'
+  media: []
+  urls: []
+  isRetweet: false
+  retweetedBy: null
+  lang: en
+  score: null
+  isSubscriberOnly: false
+  isPromoted: false
+

@@ -17,8 +17,10 @@ from groq import Groq
 from dotenv import load_dotenv
 from google_play_scraper import Sort, reviews
 
+from config import get_groq_api_key
+
 load_dotenv()
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+client = Groq(api_key=get_groq_api_key())
 
 THEMES = [
     "recommendation_quality",
@@ -64,7 +66,7 @@ def scrape_playstore(search_term, limit=200):
     while len(all_reviews) < limit:
         try:
             result, continuation_token = reviews(
-                search_term, lang='en', country='us', sort=Sort.NEWEST,
+                search_term, lang='en', country='in', sort=Sort.NEWEST,
                 count=200, continuation_token=continuation_token
             )
         except Exception as e:
@@ -202,6 +204,46 @@ def load_manual_source(source_type):
     return df
 
 
+def load_twitter_scraped(limit=200):
+    """Loads scraped Twitter/X data from data/raw/twitter*.json (YAML from twitter CLI)."""
+    from twitter_utils import load_twitter_raw_files, filter_relevant_tweets
+
+    print(f"\n[STAGE 1/3] Loading scraped Twitter/X data...")
+    records = filter_relevant_tweets(load_twitter_raw_files())
+    if limit:
+        records = records[:limit]
+
+    if not records:
+        df = pd.DataFrame(columns=['id', 'text', 'rating', 'published_at', 'source'])
+    else:
+        df = pd.DataFrame(records)[['id', 'text', 'rating', 'published_at', 'source']]
+
+    print(f"  ✅ Loaded {len(df)} tweets\n")
+    return df
+
+
+def load_full_dataset(limit=200, source_filter=None):
+    """Loads the merged unified corpus (all sources). Optionally filter by source."""
+    print(f"\n[STAGE 1/3] Loading full merged dataset...")
+    path = 'data/unified_feedback.csv'
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"{path} not found. Run: python merge_all_sources.py")
+
+    df = pd.read_csv(path)
+    df['text'] = df['text'].fillna('').astype(str)
+    df = df[df['text'].str.strip() != '']
+
+    if source_filter:
+        df = df[df['source'] == source_filter]
+
+    if limit:
+        df = df.head(limit)
+
+    out = df[['id', 'text', 'rating', 'published_at', 'source']].reset_index(drop=True)
+    print(f"  ✅ Loaded {len(out)} records from unified corpus\n")
+    return out
+
+
 # ---------- STAGE 2: CLASSIFY ----------
 
 def classify_batch(reviews_batch, max_retries=3):
@@ -286,58 +328,33 @@ Return ONLY a JSON object with this exact structure, no other text:
         return {"root_cause": f"[Unavailable: {e}]", "user_behavior": "", "representative_quote": ""}
 
 
-def synthesize_insights(df, source_label):
+def synthesize_insights(df, source_label, include_research_questions=True):
+    from research_synthesis import (
+        build_full_report,
+        build_theme_sections,
+        synthesize_all_research_questions,
+    )
+
     print(f"[STAGE 3/3] Synthesizing insights...")
     discovery_df = df[df['is_discovery_related'] == True]
 
-    sections = []
-    structured_results = []
-    for theme_key, theme_label in THEME_LABELS.items():
-        theme_data = discovery_df[discovery_df['theme'] == theme_key]
-        if len(theme_data) == 0:
-            continue
-        print(f"  Analyzing: {theme_label} ({len(theme_data)} records)...")
-        analysis = synthesize_theme(theme_label, theme_data['key_quote'].tolist())
-        structured_results.append({
-            "theme": theme_label,
-            "count": len(theme_data),
-            "root_cause": analysis.get('root_cause', ''),
-            "user_behavior": analysis.get('user_behavior', ''),
-            "representative_quote": analysis.get('representative_quote', '')
-        })
-        sections.append(
-            f"## {theme_label} ({len(theme_data)} records)\n\n"
-            f"**Root cause:** {analysis.get('root_cause', '')}\n\n"
-            f"**User behavior:** {analysis.get('user_behavior', '')}\n\n"
-            f"**Representative quote:** \"{analysis.get('representative_quote', '')}\"\n"
-        )
-        time.sleep(2)
+    theme_sections, structured_results = build_theme_sections(discovery_df, structured=True)
 
-    report = f"""# Review Discovery Workflow — Insights Report
+    research_results = []
+    if include_research_questions and len(discovery_df) > 0:
+        print("  Synthesizing research question answers...")
+        research_results = synthesize_all_research_questions(discovery_df)
 
-**Data source:** {source_label}
-**Total reviews processed:** {len(df)}
-**Discovery-related reviews:** {len(discovery_df)}
-
----
-
-# Findings by Theme
-
-{chr(10).join(sections)}
-
----
-
-# Theme Distribution
-
-{discovery_df['theme'].value_counts().to_string()}
-"""
+    report = build_full_report(
+        df, source_label, discovery_df, theme_sections, research_results, structured=True,
+    )
     print(f"  ✅ Synthesis complete\n")
-    return report, structured_results
+    return report, structured_results, research_results
 
 
 # ---------- MAIN WORKFLOW ----------
 
-def run_workflow(source, search_term=None, limit=200):
+def run_workflow(source, search_term=None, limit=200, source_filter=None):
     os.makedirs('data/workflow_runs', exist_ok=True)
     run_id = time.strftime("%Y%m%d_%H%M%S")
 
@@ -356,6 +373,15 @@ def run_workflow(source, search_term=None, limit=200):
     elif source == "social_media":
         df = load_manual_source("social_media")
         source_label = "Social Media — Twitter/X (curated)"
+    elif source == "twitter":
+        df = load_twitter_scraped(limit)
+        source_label = "Twitter/X (scraped)"
+    elif source == "full_dataset":
+        df = load_full_dataset(limit, source_filter=source_filter or search_term)
+        if source_filter or search_term:
+            source_label = f"Full merged corpus — filter: {source_filter or search_term}"
+        else:
+            source_label = "Full merged corpus (all sources)"
     else:
         raise ValueError(f"Unsupported source: {source}")
 
@@ -365,7 +391,7 @@ def run_workflow(source, search_term=None, limit=200):
     df = classify_reviews(df)
     df.to_csv(f'data/workflow_runs/{run_id}_classified.csv', index=False)
 
-    report, structured_results = synthesize_insights(df, source_label)
+    report, structured_results, research_results = synthesize_insights(df, source_label)
 
     report_path = f'data/workflow_runs/{run_id}_insights.md'
     with open(report_path, 'w', encoding='utf-8') as f:
@@ -373,7 +399,14 @@ def run_workflow(source, search_term=None, limit=200):
 
     structured_path = f'data/workflow_runs/{run_id}_structured.json'
     with open(structured_path, 'w', encoding='utf-8') as f:
-        json.dump(structured_results, f, indent=2)
+        json.dump({"themes": structured_results, "research_questions": research_results}, f, indent=2)
+
+    # Also refresh the main cross-source report when running full dataset
+    if source == "full_dataset":
+        with open('data/research_insights.md', 'w', encoding='utf-8') as f:
+            f.write(report)
+        with open('data/research_questions.json', 'w', encoding='utf-8') as f:
+            json.dump(research_results, f, indent=2)
 
     print(f"{'='*60}")
     print(f"✅ WORKFLOW COMPLETE")
@@ -381,13 +414,16 @@ def run_workflow(source, search_term=None, limit=200):
     print(f"   Insights report: {report_path}")
     print(f"{'='*60}\n")
 
-    return df, report, structured_results
+    return df, report, structured_results, research_results
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="AI-Powered Review Discovery Workflow")
-    parser.add_argument("--source", required=True, choices=["playstore", "appstore", "reddit", "community_forum", "social_media"])
-    parser.add_argument("--search-term", default=None, help="App ID or search keyword, depending on source")
+    parser.add_argument("--source", required=True, choices=[
+        "playstore", "appstore", "reddit", "community_forum",
+        "social_media", "twitter", "full_dataset",
+    ])
+    parser.add_argument("--search-term", default=None, help="App ID, keyword, or source filter for full_dataset")
     parser.add_argument("--limit", type=int, default=200)
     args = parser.parse_args()
 

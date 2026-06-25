@@ -1,122 +1,73 @@
 """
-Synthesizes classified feedback into answers for the 6 core research questions.
-Reads data/classified_feedback.csv, groups by theme, and asks Groq to reason
-about the underlying pattern behind each theme using real supporting quotes.
-Saves results to data/research_insights.md
+Synthesizes classified feedback into theme insights + answers to the 6 research questions.
+Reads data/classified_feedback.csv (merged with unified for full corpus labels).
+Saves results to data/research_insights.md and data/research_questions.json
 """
 
+import json
 import os
-import time
+
 import pandas as pd
-from groq import Groq
 from dotenv import load_dotenv
 
+from research_synthesis import (
+    RESEARCH_QUESTIONS,
+    VALID_THEMES,
+    THEME_LABELS,
+    build_full_report,
+    build_theme_sections,
+    synthesize_all_research_questions,
+)
+
 load_dotenv()
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-print("Loading classified feedback...")
-df = pd.read_csv('data/classified_feedback.csv')
+OUTPUT_MD = "data/research_insights.md"
+OUTPUT_JSON = "data/research_questions.json"
 
-# Only work with rows that were actually classified
-df = df[df['theme'].notna()]
-discovery_df = df[df['is_discovery_related'] == True]
 
-print(f"Working with {len(discovery_df)} discovery-related records\n")
+def load_classified_discovery_data():
+    """Load classified rows, falling back to unified + classified merge."""
+    if os.path.exists("data/classified_feedback.csv"):
+        df = pd.read_csv("data/classified_feedback.csv")
+    elif os.path.exists("data/unified_feedback.csv"):
+        df = pd.read_csv("data/unified_feedback.csv")
+    else:
+        raise FileNotFoundError("No classified_feedback.csv or unified_feedback.csv found.")
 
-THEME_LABELS = {
-    "recommendation_quality": "Recommendation Quality",
-    "repetition_fatigue": "Repetition Fatigue",
-    "discovery_effort": "Discovery Effort",
-    "trust_algorithm_distrust": "Algorithm Trust/Distrust",
-    "social_identity": "Social/Identity Signaling",
-    "context_mismatch": "Context Mismatch"
-}
+    df = df[df["theme"].isin(VALID_THEMES)].copy()
+    return df, df[df["is_discovery_related"] == True]
 
-RESEARCH_QUESTIONS = """
-1. Why do users struggle to discover new music?
-2. What are the most common frustrations with recommendations?
-3. What listening behaviors are users trying to achieve?
-4. What causes users to repeatedly listen to the same content?
-5. Which user segments experience different discovery challenges?
-6. What unmet needs emerge consistently across reviews?
-"""
 
-def synthesize_theme(theme_key, theme_label, quotes, sources, max_retries=3):
-    quotes_text = "\n".join([f'- "{q}"' for q in quotes[:25] if q and str(q) != 'nan'])
-    source_summary = sources.value_counts().to_dict()
+def main():
+    print("Loading classified feedback...")
+    df, discovery_df = load_classified_discovery_data()
+    print(f"  {len(df)} classified records, {len(discovery_df)} discovery-related\n")
 
-    prompt = f"""You are a product research analyst. Below are real user feedback quotes, all tagged under the theme "{theme_label}", collected from Spotify app reviews and community discussions.
+    if len(discovery_df) == 0:
+        print("⚠️  No discovery-related classified records. Run classify_reviews.py first.")
+        return
 
-Source breakdown for this theme: {source_summary}
+    source_label = "Full merged corpus (Play Store, App Store, Reddit, Twitter, Forum, Social)"
 
-Quotes:
-{quotes_text}
+    print("Synthesizing themes...")
+    theme_sections, _ = build_theme_sections(discovery_df, structured=False)
 
-Based ONLY on these quotes, write a concise analysis (4-6 sentences) covering:
-- The underlying root cause or job-to-be-done behind this pattern (not just a restatement of the complaints)
-- Any distinct user behavior or segment hinted at in the quotes
-- One representative quote (choose the single most illustrative one, max 20 words)
+    print("\nSynthesizing research question answers...")
+    research_results = synthesize_all_research_questions(discovery_df)
 
-Be specific and grounded in the quotes. Do not generalize beyond what's actually said. Write in plain analytical prose, no headers or bullet points."""
-
-    for attempt in range(max_retries):
-        try:
-            response = client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
-                messages=[{"role": "user", "content": prompt}],
-                temperature=0.3,
-                max_tokens=400
-            )
-            return response.choices[0].message.content.strip()
-        except Exception as e:
-            wait_time = 90
-            print(f"    Rate limited, waiting {wait_time}s before retry {attempt + 1}/{max_retries}...")
-            time.sleep(wait_time)
-
-    return f"[Synthesis failed after {max_retries} retries due to rate limits — re-run script later]"
-
-print("Synthesizing insights per theme...\n")
-
-report_sections = []
-
-for theme_key, theme_label in THEME_LABELS.items():
-    theme_data = discovery_df[discovery_df['theme'] == theme_key]
-    if len(theme_data) == 0:
-        continue
-
-    print(f"  Analyzing: {theme_label} ({len(theme_data)} records)...")
-    analysis = synthesize_theme(
-        theme_key,
-        theme_label,
-        theme_data['key_quote'].tolist(),
-        theme_data['source']
+    report = build_full_report(
+        df, source_label, discovery_df, theme_sections, research_results, structured=False,
     )
 
-    report_sections.append(f"## {theme_label} ({len(theme_data)} records)\n\n{analysis}\n")
-    time.sleep(3)
+    os.makedirs("data", exist_ok=True)
+    with open(OUTPUT_MD, "w", encoding="utf-8") as f:
+        f.write(report)
+    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+        json.dump(research_results, f, indent=2)
 
-# Build the final markdown report
-report = f"""# Spotify Discovery Research Insights
+    print(f"\n✅ Saved insights to {OUTPUT_MD}")
+    print(f"✅ Saved research Q&A to {OUTPUT_JSON}")
 
-**Generated from {len(df)} classified records ({len(discovery_df)} discovery-related) across Play Store, App Store, Reddit, Community Forum, and Social Media.**
 
-## Research Questions Addressed
-{RESEARCH_QUESTIONS}
-
----
-
-# Findings by Theme
-
-{chr(10).join(report_sections)}
-
----
-
-# Overall Theme Distribution
-
-{discovery_df['theme'].value_counts().to_string()}
-"""
-
-with open('data/research_insights.md', 'w', encoding='utf-8') as f:
-    f.write(report)
-
-print(f"\n✅ Done! Saved synthesis to data/research_insights.md")
+if __name__ == "__main__":
+    main()

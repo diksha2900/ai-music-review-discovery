@@ -1,285 +1,480 @@
 """
-Spotify Discovery Review Engine — Workflow Demonstration
-Primary view: the scrape -> classify -> synthesize workflow and its output.
-Secondary view: a chat tool to explore the full historical dataset further.
+Spotify Discovery Review Engine — Streamlit app.
+Tab 1: Live scrape → classify → synthesize workflow
+Tab 2: RAG chat over the full historical corpus
 """
 
-import streamlit as st
-import pandas as pd
-import os
 import glob
 import json
+import os
+
+import pandas as pd
 import plotly.graph_objects as go
+import streamlit as st
 
-st.set_page_config(page_title="Spotify Discovery Workflow", page_icon="🎧", layout="wide")
+st.set_page_config(
+    page_title="Spotify Discovery Engine",
+    page_icon="🎧",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 
-# ---------- SPOTIFY-THEMED STYLING ----------
+SOURCES = [
+    {
+        "label": "Play Store",
+        "key": "playstore",
+        "icon": "📱",
+        "desc": "Live scrape from Google Play (India)",
+        "needs_input": True,
+        "input_label": "Play Store App ID",
+        "input_default": "com.spotify.music",
+        "input_help": "e.g. com.spotify.music",
+    },
+    {
+        "label": "App Store",
+        "key": "appstore",
+        "icon": "🍎",
+        "desc": "Live scrape from Apple App Store RSS (India)",
+        "needs_input": True,
+        "input_label": "App Store numeric App ID",
+        "input_default": "324684580",
+        "input_help": "Spotify = 324684580",
+    },
+    {
+        "label": "Reddit",
+        "key": "reddit",
+        "icon": "🔴",
+        "desc": "Live search across r/spotify, r/spotifyplaylists, r/musicsuggestions",
+        "needs_input": True,
+        "input_label": "Search keyword",
+        "input_default": "spotify discover weekly",
+        "input_help": "Discovery-related search term",
+    },
+    {
+        "label": "Twitter / X",
+        "key": "twitter",
+        "icon": "🐦",
+        "desc": "Loads scraped tweets from data/raw/ (run scrape_twitter_bulk_fixed.py to refresh)",
+        "needs_input": False,
+    },
+    {
+        "label": "Community Forum",
+        "key": "community_forum",
+        "icon": "💬",
+        "desc": "Manually curated Spotify Community posts",
+        "needs_input": False,
+    },
+    {
+        "label": "Social Media",
+        "key": "social_media",
+        "icon": "📣",
+        "desc": "Manually curated Twitter/X quotes",
+        "needs_input": False,
+    },
+]
+
 st.markdown("""
 <style>
-    .stApp { background-color: #0a0a0a; color: #ffffff; }
-    h1, h2, h3 { color: #1DB954 !important; }
-    .stTabs [data-baseweb="tab"] { color: #ffffff; }
-    .stTabs [aria-selected="true"] { color: #1DB954 !important; border-bottom-color: #1DB954 !important; }
-    div[data-testid="stMetricValue"] { color: #1DB954; }
-    .stAlert { background-color: #181818; border-left: 4px solid #1DB954; }
-    div[data-testid="stExpander"] { background-color: #181818; border-radius: 8px; }
-    .stChatMessage { background-color: #181818; border-radius: 12px; }
-    a { color: #1DB954 !important; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
+    .stApp { background: linear-gradient(165deg, #0a0a0a 0%, #121212 45%, #0d1f12 100%); color: #fff; }
+    .hero {
+        background: linear-gradient(135deg, rgba(29,185,84,0.15) 0%, rgba(29,185,84,0.03) 100%);
+        border: 1px solid rgba(29,185,84,0.25); border-radius: 16px;
+        padding: 28px 32px; margin-bottom: 24px;
+    }
+    .hero h1 { color: #fff !important; font-size: 2rem; font-weight: 700; margin: 0 0 8px 0; }
+    .hero p { color: #b3b3b3; margin: 0; font-size: 1.05rem; line-height: 1.6; }
+    .step-card {
+        background: #181818; border: 1px solid #282828; border-radius: 14px;
+        padding: 20px; text-align: center; height: 100%;
+    }
+    .step-num {
+        background: #1DB954; color: #000; font-weight: 700;
+        width: 32px; height: 32px; border-radius: 50%;
+        display: inline-flex; align-items: center; justify-content: center;
+        margin-bottom: 10px; font-size: 0.9rem;
+    }
+    .step-title { color: #1DB954; font-weight: 600; margin-bottom: 6px; }
+    .step-desc { color: #b3b3b3; font-size: 0.85rem; line-height: 1.4; }
+    .source-pill {
+        display: inline-block; background: #282828; border-radius: 20px;
+        padding: 4px 12px; font-size: 0.78rem; color: #b3b3b3; margin: 2px 4px 2px 0;
+    }
     .theme-card {
-        background-color: #181818;
-        border-radius: 12px;
-        padding: 20px;
-        margin-bottom: 16px;
-        border-left: 4px solid #1DB954;
+        background: linear-gradient(145deg, #1a1a1a 0%, #141414 100%);
+        border: 1px solid #282828; border-left: 4px solid #1DB954;
+        border-radius: 14px; padding: 22px 24px; margin-bottom: 16px;
     }
-    .theme-card h4 { color: #1DB954; margin-top: 0; margin-bottom: 14px; }
-    .theme-card .label { color: #1DB954; font-weight: 600; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; }
-    .theme-card .value { color: #e0e0e0; line-height: 1.5; margin-bottom: 12px; }
-    .theme-card .quote { color: #b0b0b0; font-style: italic; border-left: 2px solid #444; padding-left: 12px; margin-top: 8px; }
+    .theme-card h4 { color: #1DB954; margin: 0 0 16px 0; font-size: 1.05rem; }
+    .theme-card .label {
+        color: #1DB954; font-weight: 600; font-size: 0.75rem;
+        text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px;
+    }
+    .theme-card .value { color: #e8e8e8; line-height: 1.6; margin-bottom: 14px; font-size: 0.95rem; }
+    .theme-card .quote {
+        color: #a0a0a0; font-style: italic;
+        border-left: 3px solid #333; padding-left: 14px; margin-top: 4px;
+    }
+    div[data-testid="stMetric"] {
+        background: #181818; border: 1px solid #282828; border-radius: 12px; padding: 16px;
+    }
+    div[data-testid="stMetricValue"] { color: #1DB954 !important; font-size: 2rem !important; }
+    div[data-testid="stMetricLabel"] { color: #b3b3b3 !important; }
+    .stTabs [data-baseweb="tab"] { color: #b3b3b3; font-weight: 500; }
+    .stTabs [aria-selected="true"] { color: #1DB954 !important; border-bottom-color: #1DB954 !important; }
     div.stButton > button {
-        background-color: #1DB954;
-        color: #000000;
-        border-radius: 24px;
-        font-weight: 600;
-        border: none;
+        background: linear-gradient(90deg, #1DB954, #1ed760) !important;
+        color: #000 !important; border: none !important;
+        border-radius: 24px !important; font-weight: 600 !important;
     }
-    div.stButton > button:hover { background-color: #1ed760; color: #000000; }
+    .stChatMessage { background: #181818 !important; border: 1px solid #282828; border-radius: 14px; }
+    div[data-testid="stSidebar"] { background: #0a0a0a; border-right: 1px solid #282828; }
+    .rag-stat { color: #1DB954; font-weight: 600; font-size: 1.4rem; }
+    .rag-label { color: #727272; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    h2, h3 { color: #fff !important; }
+    hr { border-color: #282828; }
 </style>
 """, unsafe_allow_html=True)
 
-# ---------- HEADER WITH SPOTIFY LOGO ----------
-header_col1, header_col2 = st.columns([1, 10])
-with header_col1:
-    st.markdown("""
-    <svg width="60" height="60" viewBox="0 0 24 24" fill="#1DB954">
-        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.020-.12-1.140-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.6.18-1.2.72-1.38 4.26-1.26 11.28-1.02 15.12 1.26.539.3.719 1.02.419 1.56-.3.421-1.02.599-1.559.3z"/>
-    </svg>
-    """, unsafe_allow_html=True)
-with header_col2:
-    st.title("AI-Powered Review Discovery Workflow")
 
-st.caption("Point this workflow at a data source — it scrapes reviews, classifies them by discovery-related theme using an LLM (Groq/Llama 3.3), and synthesizes the findings into insights.")
-
-tab1, tab2 = st.tabs(["🔄 Workflow", "💬 Explore Further (RAG chat)"])
+@st.cache_data
+def load_corpus_stats():
+    if not os.path.exists("data/unified_feedback.csv"):
+        return {"total": 0, "by_source": {}}
+    df = pd.read_csv("data/unified_feedback.csv")
+    return {"total": len(df), "by_source": df["source"].value_counts().to_dict()}
 
 
 def render_theme_cards(structured_results):
-    """Renders each theme as a styled card with labeled sections."""
     for item in structured_results:
-        root_cause = str(item.get('root_cause', '')).replace('"', '&quot;')
-        user_behavior = str(item.get('user_behavior', '')).replace('"', '&quot;')
-        quote = str(item.get('representative_quote', '')).replace('"', '&quot;')
-        heading = f"{item.get('theme', '')} ({item.get('count', 0)} records)"
+        root = str(item.get("root_cause", "")).replace('"', "&quot;")
+        behavior = str(item.get("user_behavior", "")).replace('"', "&quot;")
+        quote = str(item.get("representative_quote", "")).replace('"', "&quot;")
+        heading = f"{item.get('theme', '')} · {item.get('count', 0)} records"
+        st.markdown(f"""
+        <div class="theme-card">
+            <h4>{heading}</h4>
+            <div class="label">Root Cause</div>
+            <div class="value">{root}</div>
+            <div class="label">User Behavior</div>
+            <div class="value">{behavior}</div>
+            <div class="quote">"{quote}"</div>
+        </div>
+        """, unsafe_allow_html=True)
 
-        card_html = (
-            '<div class="theme-card">'
-            f'<h4>{heading}</h4>'
-            '<div class="label">Root Cause</div>'
-            f'<div class="value">{root_cause}</div>'
-            '<div class="label">User Behavior</div>'
-            f'<div class="value">{user_behavior}</div>'
-            f'<div class="quote">"{quote}"</div>'
-            '</div>'
-        )
-        st.markdown(card_html, unsafe_allow_html=True)
+
+def load_structured_run(path):
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    if isinstance(data, list):
+        return data, []
+    return data.get("themes", []), data.get("research_questions", [])
+
+
+def render_research_questions(research_results):
+    if not research_results:
+        return
+    st.subheader("📋 Research Question Answers")
+    for item in research_results:
+        st.markdown(f"**{item.get('question', '')}**")
+        st.markdown(item.get("answer", ""))
+        st.divider()
 
 
 def render_theme_chart(structured_results, chart_key="chart"):
-    """Renders a clean horizontal bar chart of theme frequency."""
     if not structured_results:
         return
-    themes = [item['theme'] for item in structured_results]
-    counts = [item['count'] for item in structured_results]
-
-    sorted_pairs = sorted(zip(themes, counts), key=lambda x: x[1])
-    themes_sorted = [p[0] for p in sorted_pairs]
-    counts_sorted = [p[1] for p in sorted_pairs]
-
+    pairs = sorted([(i["theme"], i["count"]) for i in structured_results], key=lambda x: x[1])
+    themes, counts = zip(*pairs)
+    colors = [f"rgba(29,185,84,{0.4 + 0.6 * (c / max(counts))})" for c in counts]
     fig = go.Figure(go.Bar(
-        x=counts_sorted,
-        y=themes_sorted,
-        orientation='h',
-        marker=dict(color='#1DB954'),
-        text=counts_sorted,
-        textposition='outside',
-        textfont=dict(color='#ffffff')
+        x=list(counts), y=list(themes), orientation="h",
+        marker=dict(color=colors, line=dict(color="#1DB954", width=1)),
+        text=list(counts), textposition="outside", textfont=dict(color="#fff"),
     ))
     fig.update_layout(
-        plot_bgcolor='#0a0a0a',
-        paper_bgcolor='#0a0a0a',
-        font=dict(color='#ffffff'),
-        margin=dict(l=10, r=10, t=10, b=10),
-        height=max(250, len(themes_sorted) * 60),
-        xaxis=dict(showgrid=True, gridcolor='#2a2a2a', title="Number of Records"),
-        yaxis=dict(showgrid=False)
+        plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#fff"), margin=dict(l=10, r=40, t=10, b=10),
+        height=max(280, len(themes) * 65),
+        xaxis=dict(showgrid=True, gridcolor="#282828", title="Records"),
+        yaxis=dict(showgrid=False),
     )
     st.plotly_chart(fig, use_container_width=True, key=chart_key)
 
 
-# ============ TAB 1: THE WORKFLOW ============
-with tab1:
-    st.header("Workflow: Input → Process → Output")
-
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.info("**1. INPUT**\n\nChoose a data source + search term")
-    with col2:
-        st.info("**2. PROCESS**\n\nScrape →\nClassify (Groq) →\nSynthesize (Groq)")
-    with col3:
-        st.info("**3. OUTPUT**\n\nThemed insights\nwith root causes & quotes")
-
+with st.sidebar:
+    st.markdown("### 🎧 Discovery Engine")
+    st.markdown("Spotify Growth · Music Discovery Research")
     st.divider()
+    stats = load_corpus_stats()
+    st.markdown(
+        f'<div class="rag-stat">{stats["total"]:,}</div>'
+        f'<div class="rag-label">Total reviews in corpus</div>',
+        unsafe_allow_html=True,
+    )
+    st.markdown("")
+    if stats["by_source"]:
+        st.markdown("**Corpus by source**")
+        for src, count in sorted(stats["by_source"].items(), key=lambda x: -x[1]):
+            label = src.replace("_", " ").title()
+            st.markdown(f'<span class="source-pill">{label}: {count:,}</span>', unsafe_allow_html=True)
+    st.divider()
+    st.caption("Groq Llama 3.3 · Sentence Transformers RAG")
 
-    # ---------- LIVE DEMO ----------
-    st.subheader("🎬 Try it live")
-    st.caption("Choose a data source and search term, then run the full workflow live — real scraping, real Groq classification, real synthesis.")
+st.markdown("""
+<div class="hero">
+    <h1>🎧 AI-Powered Review Discovery Engine</h1>
+    <p>Point at any data source, scrape reviews live, and get LLM-classified insights on why users struggle with music discovery — or explore the full corpus via chat.</p>
+</div>
+""", unsafe_allow_html=True)
 
-    demo_source_display = st.selectbox(
-        "1. Choose a data source",
-        options=["Play Store", "App Store", "Reddit", "Community Forum (curated)", "Social Media (curated)"]
+tab1, tab2 = st.tabs(["🔄 Live Workflow", "💬 Research Chat (RAG)"])
+
+with tab1:
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.markdown(
+            '<div class="step-card"><div class="step-num">1</div>'
+            '<div class="step-title">Input</div>'
+            '<div class="step-desc">Pick source or full dataset + review count</div></div>',
+            unsafe_allow_html=True,
+        )
+    with c2:
+        st.markdown(
+            '<div class="step-card"><div class="step-num">2</div>'
+            '<div class="step-title">Process</div>'
+            '<div class="step-desc">Scrape → Classify → Synthesize</div></div>',
+            unsafe_allow_html=True,
+        )
+    with c3:
+        st.markdown(
+            '<div class="step-card"><div class="step-num">3</div>'
+            '<div class="step-title">Output</div>'
+            '<div class="step-desc">Themes + 6 research question answers</div></div>',
+            unsafe_allow_html=True,
+        )
+
+    st.markdown("")
+    workflow_mode = st.radio(
+        "Analysis mode",
+        ["Single source (live scrape)", "Full merged dataset (all sources)"],
+        horizontal=True,
     )
 
-    SOURCE_MAP = {
-        "Play Store": "playstore",
-        "App Store": "appstore",
-        "Reddit": "reddit",
-        "Community Forum (curated)": "community_forum",
-        "Social Media (curated)": "social_media"
-    }
-    source_key = SOURCE_MAP[demo_source_display]
+    left, right = st.columns([1, 1])
+    demo_input = None
+    source_key = "full_dataset"
+    selected_label = "Full merged dataset"
 
-    if source_key == "playstore":
-        demo_input = st.text_input("2. Play Store App ID", value="com.spotify.music",
-                                     help="e.g. com.spotify.music, com.whatsapp, com.netflix.mediaclient")
-    elif source_key == "appstore":
-        demo_input = st.text_input("2. App Store numeric App ID", value="324684580",
-                                     help="Find this in an App Store URL: apps.apple.com/.../id THIS_NUMBER")
-    elif source_key == "reddit":
-        demo_input = st.text_input("2. Search keyword", value="spotify discover weekly",
-                                     help="Searches r/spotify, r/spotifyplaylists, r/musicsuggestions for this term")
-    else:
-        demo_input = None
-        st.caption("This source uses pre-collected, manually curated data (no live search term needed).")
+    with left:
+        if workflow_mode.startswith("Single"):
+            source_labels = [s["label"] for s in SOURCES]
+            selected_label = st.selectbox("Data source", options=source_labels)
+            source_cfg = next(s for s in SOURCES if s["label"] == selected_label)
+            source_key = source_cfg["key"]
+            st.caption(f"{source_cfg['icon']} {source_cfg['desc']}")
+            if source_cfg.get("needs_input"):
+                demo_input = st.text_input(
+                    source_cfg["input_label"],
+                    value=source_cfg.get("input_default", ""),
+                    help=source_cfg.get("input_help"),
+                )
+        else:
+            st.markdown("**📊 Full merged corpus**")
+            st.caption("Analyzes pre-merged data from Play Store, App Store, Reddit, Twitter, Forum & Social Media.")
+            stats = load_corpus_stats()
+            if stats["by_source"]:
+                for src, count in sorted(stats["by_source"].items(), key=lambda x: -x[1]):
+                    st.markdown(f"- {src.replace('_', ' ').title()}: **{count:,}**")
+            corpus_filter = st.selectbox(
+                "Filter by source (optional)",
+                ["All sources", "reddit", "play_store", "app_store", "twitter", "community_forum", "social_media"],
+                format_func=lambda x: "All sources" if x == "All sources" else x.replace("_", " ").title(),
+            )
+            demo_input = None if corpus_filter == "All sources" else corpus_filter
 
-    demo_limit = st.slider("3. Number of reviews to analyze", min_value=50, max_value=500, value=200, step=50)
+        demo_limit = st.slider("Number of reviews to analyze", min_value=10, max_value=500, value=100, step=10)
+        run_clicked = st.button("▶ Run Analysis", type="primary", use_container_width=True)
 
-    if st.button("▶️ Run live workflow"):
-        with st.spinner(f"Running workflow live on {demo_source_display} — this may take 1-3 minutes for {demo_limit} reviews..."):
+    with right:
+        st.markdown("**What you'll get**")
+        st.markdown(
+            "- Each review tagged with a discovery theme\n"
+            "- Root cause + user behavior per theme\n"
+            "- **Direct answers to all 6 research questions**"
+        )
+        st.info(
+            "Live scrape: Play Store, App Store, Reddit. "
+            "Full dataset uses merged corpus. Twitter/Forum/Social are pre-collected.",
+            icon="ℹ️",
+        )
+
+    if run_clicked:
+        label = selected_label if workflow_mode.startswith("Single") else "Full merged dataset"
+        with st.spinner(f"Analyzing {demo_limit} reviews from {label}… (1–5 min)"):
             try:
                 from run_workflow import run_workflow
-                live_df, live_report, live_structured = run_workflow(
-                    source=source_key, search_term=demo_input, limit=demo_limit
+                wf_source = source_key if workflow_mode.startswith("Single") else "full_dataset"
+                live_df, live_report, live_structured, live_research = run_workflow(
+                    source=wf_source,
+                    search_term=demo_input,
+                    limit=demo_limit,
+                    source_filter=demo_input if wf_source == "full_dataset" else None,
                 )
-                st.session_state['live_structured'] = live_structured
-                st.session_state['live_count'] = len(live_df)
-                st.session_state['live_discovery_count'] = int(live_df['is_discovery_related'].sum())
-                st.success("✅ Live run complete! See results below.")
+                st.session_state["live_structured"] = live_structured
+                st.session_state["live_research"] = live_research
+                st.session_state["live_report"] = live_report
+                st.session_state["live_count"] = len(live_df)
+                st.session_state["live_discovery_count"] = int(live_df["is_discovery_related"].sum())
+                st.session_state["live_source"] = label
+                st.success("Analysis complete!")
             except Exception as e:
-                st.error(f"Live run hit an error: {e}")
+                st.error(f"Workflow error: {e}")
 
-    if 'live_structured' in st.session_state:
+    if "live_structured" in st.session_state:
         st.divider()
-        st.subheader("📊 Live Run Results")
-        col1, col2, col3 = st.columns(3)
-        col1.metric("Reviews Processed", st.session_state.get('live_count', 0))
-        col2.metric("Discovery-Related", st.session_state.get('live_discovery_count', 0))
-        col3.metric("Themes Identified", len(st.session_state['live_structured']))
-        render_theme_chart(st.session_state['live_structured'], chart_key="live_chart")
-        render_theme_cards(st.session_state['live_structured'])
+        st.subheader(f"Results · {st.session_state.get('live_source', 'Latest run')}")
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric("Reviews Processed", st.session_state.get("live_count", 0))
+        m2.metric("Discovery-Related", st.session_state.get("live_discovery_count", 0))
+        m3.metric("Themes Found", len(st.session_state["live_structured"]))
+        m4.metric("Research Qs Answered", len(st.session_state.get("live_research", [])))
+        render_theme_chart(st.session_state["live_structured"], chart_key="live_chart")
+        render_theme_cards(st.session_state["live_structured"])
+        render_research_questions(st.session_state.get("live_research", []))
 
+    # Cross-source research report (pre-computed)
     st.divider()
+    st.subheader("📑 Cross-Source Research Report")
+    insights_path = "data/research_insights.md"
+    rq_path = "data/research_questions.json"
 
-    # ---------- LATEST FULL WORKFLOW RUN (pre-computed) ----------
-    structured_files = sorted(glob.glob('data/workflow_runs/*_structured.json'), reverse=True)
-
-    if structured_files:
-        latest_structured_path = structured_files[0]
-        run_id = os.path.basename(latest_structured_path).replace('_structured.json', '')
-        classified_path = f'data/workflow_runs/{run_id}_classified.csv'
-
-        st.subheader(f"📊 Latest pre-computed run: `{run_id}`")
-
-        if os.path.exists(classified_path):
-            run_df = pd.read_csv(classified_path)
-            col1, col2, col3 = st.columns(3)
-            col1.metric("Reviews Processed", len(run_df))
-            col2.metric("Discovery-Related", int(run_df['is_discovery_related'].sum()))
-            col3.metric("Themes Identified", run_df['theme'].nunique())
-
-        with open(latest_structured_path, 'r', encoding='utf-8') as f:
-            structured_results = json.load(f)
-
-        render_theme_chart(structured_results, chart_key="latest_run_chart")
-        render_theme_cards(structured_results)
+    if os.path.exists(insights_path):
+        with open(insights_path, encoding="utf-8") as f:
+            insights_md = f.read()
+        with st.expander("View full research_insights.md", expanded=True):
+            st.markdown(insights_md)
     else:
-        st.warning("No pre-computed workflow runs found yet.")
+        st.info("No cross-source report yet. Run **Full merged dataset** analysis or `python synthesize_insights.py`.")
 
-    st.divider()
-    st.caption("💡 This workflow is parameterized by data source and search term — point it at any app or keyword and it runs the same pipeline.")
+    if os.path.exists(rq_path):
+        with open(rq_path, encoding="utf-8") as f:
+            rq_data = json.load(f)
+        with st.expander("Research questions (JSON)", expanded=False):
+            render_research_questions(rq_data)
 
-# ============ TAB 2: RAG CHAT (secondary) ============
+    structured_files = sorted(glob.glob("data/workflow_runs/*_structured.json"), reverse=True)
+    if structured_files:
+        with st.expander("📁 Previous workflow runs", expanded=False):
+            latest = structured_files[0]
+            run_id = os.path.basename(latest).replace("_structured.json", "")
+            st.caption(f"Latest: `{run_id}`")
+            themes, research = load_structured_run(latest)
+            if themes:
+                render_theme_chart(themes, chart_key="prev_chart")
+                render_theme_cards(themes)
+            render_research_questions(research)
+
 with tab2:
-    st.caption("This tool lets you query the full historical dataset for deeper exploration beyond a single workflow run.")
-
-    EXAMPLE_QUESTIONS = [
-        "Why do users struggle to discover new music?",
-        "What are the most common frustrations with recommendations?",
-        "What causes users to repeatedly listen to the same content?",
-        "Do users trust Spotify's algorithm?",
-        "What do users say about Discover Weekly specifically?"
-    ]
-
-    st.markdown("**💡 Example questions:**")
-    example_cols = st.columns(len(EXAMPLE_QUESTIONS))
-    clicked_question = None
-    for i, q in enumerate(EXAMPLE_QUESTIONS):
-        with example_cols[i]:
-            if st.button(q, key=f"example_q_{i}", use_container_width=True):
-                clicked_question = q
-
     try:
-        from rag_engine import answer_question
-        rag_available = True
+        from rag_engine import answer_question, get_corpus_stats
+        rag_ok = True
     except Exception as e:
-        rag_available = False
-        st.error(f"RAG engine could not be loaded: {e}")
+        rag_ok = False
+        st.error(f"RAG engine failed to load: {e}. Run `python build_embeddings.py` first.")
 
-    if rag_available:
+    if rag_ok:
+        try:
+            rag_stats = get_corpus_stats()
+        except FileNotFoundError:
+            st.warning("No embeddings found. Run: `python build_embeddings.py`")
+            rag_ok = False
+
+    if rag_ok:
+        rs1, rs2, rs3, rs4 = st.columns(4)
+        rs1.metric("Corpus Size", f"{rag_stats['total']:,}")
+        rs2.metric("Classified", f"{rag_stats['classified']:,}")
+        rs3.metric("Sources", len(rag_stats["by_source"]))
+        rs4.metric("Twitter / X", rag_stats["by_source"].get("twitter", 0))
+
+        filter_options = ["All sources"] + [
+            s.replace("_", " ").title() for s in rag_stats["by_source"]
+        ]
+        source_filter_display = st.selectbox("Filter by source (optional)", filter_options)
+        source_filter = None
+        if source_filter_display != "All sources":
+            source_filter = source_filter_display.lower().replace(" ", "_")
+
+        examples = [
+            "Why do users struggle to discover new music?",
+            "What are the most common frustrations with recommendations?",
+            "What causes users to repeatedly listen to the same content?",
+            "Do users trust Spotify's algorithm?",
+            "What do users say about Discover Weekly?",
+        ]
+        st.markdown("**Try an example question:**")
+        eq_cols = st.columns(5)
+        clicked_q = None
+        for i, q in enumerate(examples):
+            with eq_cols[i]:
+                short = q[:30] + "…" if len(q) > 30 else q
+                if st.button(short, key=f"eq_{i}", use_container_width=True):
+                    clicked_q = q
+
         if "messages" not in st.session_state:
             st.session_state.messages = []
 
-        for message in st.session_state.messages:
-            with st.chat_message(message["role"]):
-                st.markdown(message["content"])
-                if "sources" in message:
-                    with st.expander(f"📄 View {len(message['sources'])} supporting quotes"):
-                        for _, row in message["sources"].iterrows():
-                            st.markdown(f"**[{row['source']}]** _{row['theme']}_")
-                            st.markdown(f"> {str(row['text'])[:300]}")
-                            st.markdown("---")
+        for msg in st.session_state.messages:
+            with st.chat_message(msg["role"]):
+                st.markdown(msg["content"])
+                if "sources" in msg:
+                    with st.expander(f"📄 {len(msg['sources'])} supporting quotes"):
+                        for _, row in msg["sources"].iterrows():
+                            theme = row.get("theme") or "unclassified"
+                            if str(theme) == "nan":
+                                theme = "unclassified"
+                            src = str(row.get("source", "")).replace("_", " ").title()
+                            st.markdown(f"**{src}** · _{theme}_")
+                            st.markdown(f"> {str(row['text'])[:350]}")
+                            st.divider()
 
-        question = st.chat_input("Ask a deeper question about the full dataset...")
-
-        if clicked_question:
-            question = clicked_question
+        question = st.chat_input("Ask anything about Spotify discovery feedback…")
+        if clicked_q:
+            question = clicked_q
 
         if question:
             st.session_state.messages.append({"role": "user", "content": question})
             with st.chat_message("user"):
                 st.markdown(question)
-
             with st.chat_message("assistant"):
-                with st.spinner("Searching reviews and generating answer..."):
-                    answer, sources = answer_question(question)
+                with st.spinner("Searching corpus & generating answer…"):
+                    answer, sources = answer_question(question, source_filter=source_filter)
                     st.markdown(answer)
-                    with st.expander(f"📄 View {len(sources)} supporting quotes"):
+                    with st.expander(f"📄 {len(sources)} supporting quotes"):
                         for _, row in sources.iterrows():
-                            st.markdown(f"**[{row['source']}]** _{row['theme']}_")
-                            st.markdown(f"> {str(row['text'])[:300]}")
-                            st.markdown("---")
+                            theme = row.get("theme") or "unclassified"
+                            if str(theme) == "nan":
+                                theme = "unclassified"
+                            src = str(row.get("source", "")).replace("_", " ").title()
+                            sim = row.get("similarity", 0)
+                            st.markdown(f"**{src}** · _{theme}_ · {sim:.0%} match")
+                            st.markdown(f"> {str(row['text'])[:350]}")
+                            st.divider()
+            st.session_state.messages.append({"role": "assistant", "content": answer, "sources": sources})
 
-            st.session_state.messages.append({
-                "role": "assistant",
-                "content": answer,
-                "sources": sources
-            })
+        with st.expander("ℹ️ About Spotify Community Forum data"):
+            st.markdown("""
+**Why isn't the Community Forum live-scraped?**
+
+Spotify Community (`community.spotify.com`) uses a closed Khoros platform that requires login, has no public API, and blocks automated access.
+
+**Best alternatives:**
+
+1. **Manual curation** (current) — add threads to `data/raw/data/manual_sources.csv`
+2. **Reddit as proxy** — your corpus already has **1,982** r/spotify posts covering the same complaints
+3. **Google search** — `site:community.spotify.com discover weekly`, paste top threads manually
+4. **Browser automation** (Playwright + login) — possible but fragile and likely against ToS
+
+After adding forum posts: `python merge_all_sources.py && python build_embeddings.py`
+            """)

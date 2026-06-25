@@ -1,0 +1,37 @@
+[
+  {
+    "theme": "Recommendation Quality",
+    "count": 6,
+    "root_cause": "The recommendation algorithm is not meeting user expectations, providing limited or irrelevant results.",
+    "user_behavior": "Users are expressing frustration and disappointment with the quality of recommendations.",
+    "representative_quote": "utter garbage"
+  },
+  {
+    "theme": "Repetition Fatigue",
+    "count": 9,
+    "root_cause": "The algorithm repeats songs too frequently, causing user frustration. This leads to a poor user experience.",
+    "user_behavior": "Users are expressing dissatisfaction with the music selection, indicating a desire for more varied playlists.",
+    "representative_quote": "heard at least 10 songs twice"
+  },
+  {
+    "theme": "Discovery Effort",
+    "count": 7,
+    "root_cause": "Users are struggling to find new content, leading to frustration and disappointment. The current discovery process is inadequate.",
+    "user_behavior": "Users are having difficulty discovering new music and are seeking better recommendations. They are expressing dissatisfaction with the current experience.",
+    "representative_quote": "sucks pretty hard"
+  },
+  {
+    "theme": "Algorithm Trust/Distrust",
+    "count": 4,
+    "root_cause": "Algorithmic recommendations are not diverse or personalized enough, leading to user frustration.",
+    "user_behavior": "Users are expressing dissatisfaction with the repetitive music suggestions they receive.",
+    "representative_quote": "same music every time"
+  },
+  {
+    "theme": "Social/Identity Signaling",
+    "count": 3,
+    "root_cause": "Users are expressing enthusiasm and pride through exclusive or trendy references. This signals their social identity and interests.",
+    "user_behavior": "Users are showcasing their affiliation with popular culture and trends to signal their identity and status.",
+    "representative_quote": "bad bunny collecting"
+  }
+]
