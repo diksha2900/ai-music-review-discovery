@@ -3,14 +3,13 @@
 import datetime
 
 import streamlit as st
-import streamlit.components.v1 as components
 from zoneinfo import ZoneInfo
 
 _FALLBACK = "Asia/Kolkata"
 
 
 def ensure_user_tz() -> ZoneInfo:
-    """Use the phone/browser timezone (via ?tz= query param), not server UTC."""
+    """Use browser timezone from ?tz= if present, else a sensible default."""
     cached = st.session_state.get("user_tz")
     if cached:
         try:
@@ -26,23 +25,6 @@ def ensure_user_tz() -> ZoneInfo:
         except Exception:
             pass
 
-    # First load: read timezone from the user's browser, then reload once.
-    components.html(
-        """
-        <script>
-        (function () {
-            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            const url = new URL(window.parent.location.href);
-            if (url.searchParams.get("tz") !== tz) {
-                url.searchParams.set("tz", tz);
-                window.parent.location.replace(url.toString());
-            }
-        })();
-        </script>
-        """,
-        height=0,
-        width=0,
-    )
     try:
         return ZoneInfo(_FALLBACK)
     except Exception:

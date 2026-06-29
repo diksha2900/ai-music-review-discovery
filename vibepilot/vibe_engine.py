@@ -19,8 +19,18 @@ from groq import Groq
 
 from config import get_groq_api_key
 
-_client = Groq(api_key=get_groq_api_key())
 MODEL = "llama-3.3-70b-versatile"
+_client = None
+
+
+def _groq():
+    global _client
+    if _client is None:
+        key = get_groq_api_key()
+        if not key:
+            raise RuntimeError("GROQ_API_KEY missing — add it in Streamlit Secrets.")
+        _client = Groq(api_key=key)
+    return _client
 
 INTENT_PRESETS = {
     "🚗 Driving": "an upbeat long drive — energetic, feel-good, sing-along momentum. Not slow or sad.",
@@ -151,7 +161,7 @@ Return ONLY a JSON object with a "tracks" array of exactly {n} items:
 def propose_cousins(anchor_song, n=8, taste=None, exclude_names=None, moment=None):
     """Cousins of a SPECIFIC song — same vibe, unheard. Returns [{title,artist,why}]."""
     prompt = build_cousins_prompt(anchor_song, n, taste, exclude_names, moment)
-    resp = _client.chat.completions.create(
+    resp = _groq().chat.completions.create(
         model=MODEL,
         messages=[{"role": "user", "content": prompt}],
         temperature=0.65,
@@ -211,7 +221,7 @@ Return ONLY a JSON object with a "tracks" array of exactly {n} items:
 def propose_vibe_session(vibe_text, n=15, taste=None, usual_tracks=None, exclude_names=None, familiarity=5):
     """A taste-grounded session for a moment/intent. Returns [{title,artist,why}]."""
     prompt = build_vibe_session_prompt(vibe_text, n, taste, usual_tracks, exclude_names, familiarity)
-    resp = _client.chat.completions.create(
+    resp = _groq().chat.completions.create(
         model=MODEL,
         messages=[{"role": "user", "content": prompt}],
         temperature=0.75,
@@ -258,7 +268,7 @@ Rules:
 
 Return ONLY JSON: {{"seeds": [{{"title": "...", "artist": "..."}}], "tags": ["...", "..."]}}"""
     try:
-        resp = _client.chat.completions.create(
+        resp = _groq().chat.completions.create(
             model=MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.5,
@@ -290,7 +300,7 @@ Songs:
 
 Return ONLY JSON: {{"whys": ["...", "..."]}} with exactly {len(items)} strings, same order."""
     try:
-        resp = _client.chat.completions.create(
+        resp = _groq().chat.completions.create(
             model=MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.4,
@@ -320,7 +330,7 @@ In ONE short, friendly sentence (max 16 words), guess the kind of music mood the
 RIGHT NOW given the time of day and their recent listening. Be specific about feel. \
 Return ONLY a JSON object: {{"mood": "<sentence>", "vibe": "<3-6 word vibe phrase for a music search>"}}"""
     try:
-        resp = _client.chat.completions.create(
+        resp = _groq().chat.completions.create(
             model=MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.6,
