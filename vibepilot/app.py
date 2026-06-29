@@ -18,82 +18,11 @@ import lastfm_client
 import reccobeats_client
 import spotify_client
 import time_utils
+import ui
 import vibe_engine
 
-st.set_page_config(page_title="VibePilot", page_icon="🎧", layout="wide", initial_sidebar_state="expanded")
-
-st.markdown(
-    """
-    <style>
-      .stApp { background: linear-gradient(165deg, #070707 0%, #0e0e0e 45%, #0a1510 100%); }
-      #MainMenu, footer { visibility: hidden; }
-      section[data-testid="stSidebar"] {
-          background: linear-gradient(180deg, #0c0c0c 0%, #101010 100%) !important;
-          border-right: 1px solid #222;
-      }
-      section[data-testid="stSidebar"] .stRadio label {
-          background: transparent; border-radius: 12px; padding: 10px 12px; width: 100%;
-      }
-      section[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label[data-baseweb="radio"] {
-          border: 1px solid transparent;
-      }
-      .vp-logo { font-size: 1.35rem; font-weight: 800; color: #fff; padding: 8px 4px 18px; }
-      .vp-beta {
-          font-size: 0.65rem; background: #1ed760; color: #000; padding: 2px 8px;
-          border-radius: 999px; margin-left: 6px; vertical-align: middle; font-weight: 700;
-      }
-      .vp-page-title { font-size: 2rem; font-weight: 800; line-height: 1.2; margin: 0 0 8px; color: #fff; }
-      .vp-page-title span { color: #1ed760; }
-      .vp-sub { color: #9a9a9a; font-size: 1rem; margin-bottom: 18px; }
-      .vp-mood {
-          background: linear-gradient(135deg, rgba(29,185,84,0.18), rgba(29,185,84,0.04));
-          border: 1px solid rgba(29,185,84,0.28); border-radius: 20px; padding: 22px 24px; margin-bottom: 14px;
-      }
-      .vp-time { color:#1ed760; font-size:0.82rem; letter-spacing:1px; text-transform:uppercase; font-weight:700; }
-      .vp-moodline { font-size:1.45rem; font-weight:700; line-height:1.25; margin-top:4px; color:#fff; }
-      .vp-or { text-align:center; color:#666; font-size:0.9rem; margin:18px 0; }
-      .vp-def {
-          background: rgba(255,255,255,0.03); border-left: 3px solid #1ed760;
-          border-radius: 10px; padding: 12px 16px; margin: 0 0 20px; color: #cfcfcf; font-size: 0.95rem;
-      }
-      .vp-def b { color: #fff; }
-      .vp-npname { font-size:1.25rem; font-weight:800; line-height:1.2; color:#fff; }
-      .vp-npart { color:#b3b3b3; font-size:0.95rem; margin-top:2px; }
-      .vp-selected {
-          border: 1px solid rgba(29,185,84,0.5); border-radius: 16px; padding: 14px;
-          background: rgba(29,185,84,0.08); margin: 12px 0;
-      }
-      .vp-tag { display:inline-block; background:#1a1a1a; border:1px solid #333;
-          color:#1ed760; font-size:0.75rem; padding:3px 10px; border-radius:999px; margin-right:6px; }
-      .vp-card { border:1px solid #282828; border-radius:16px; padding:12px;
-          background: linear-gradient(180deg, #141414, #101010); margin-bottom:12px; }
-      .vp-pillar { text-align:center; padding:12px 8px; }
-      .vp-pillar h4 { color:#1ed760; margin:0 0 6px; font-size:0.95rem; }
-      .vp-pillar p { color:#888; font-size:0.8rem; margin:0; line-height:1.35; }
-      div[data-baseweb="input"], div[data-baseweb="base-input"] {
-          background: #141414 !important; border-radius: 12px !important; border: 1px solid #333 !important;
-      }
-      div[data-baseweb="input"]:focus-within { border-color: #1ed760 !important; }
-      .stTextInput input { color: #fff !important; background: transparent !important; }
-      .vp-hits { border: 1px solid rgba(29,185,84,0.35); border-radius: 14px;
-          padding: 12px; margin-top: 10px; background: rgba(29,185,84,0.05); }
-      .vp-hits-title { color: #1ed760; font-size: 0.78rem; font-weight: 700;
-          letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 8px; }
-      div.stButton > button[kind="primary"] {
-          background: linear-gradient(90deg, #1DB954, #1ed760); color: #000;
-          border: none; border-radius: 999px; font-weight: 700;
-      }
-      div.stButton > button[kind="secondary"] {
-          background: #1a1a1a; color: #ddd; border: 1px solid #3a3a3a; border-radius: 999px; font-weight: 600;
-      }
-      div.stButton > button[kind="secondary"]:hover { border-color: #1ed760; color: #fff; }
-      .stTabs [data-baseweb="tab-list"] { gap: 8px; }
-      .stTabs [data-baseweb="tab"] { border-radius: 999px; padding: 8px 18px; background: #1a1a1a; }
-      .stTabs [aria-selected="true"] { background: #1ed760 !important; color: #000 !important; }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+st.set_page_config(page_title="VibePilot AI", page_icon="🎧", layout="wide", initial_sidebar_state="expanded")
+ui.inject()
 
 
 # ----------------------------- OAuth redirect -----------------------------
@@ -118,21 +47,23 @@ def handle_redirect():
 # ------------------------------- Login view -------------------------------
 
 def render_login():
-    st.markdown(
-        '<div class="vp-page-title">🎧 VibePilot <span class="vp-beta">Beta</span></div>'
-        '<p class="vp-sub">Find songs with the same feel, not the same artist.</p>',
-        unsafe_allow_html=True,
+    ui.hero(
+        desc="Give us a song you love — we'll find unheard songs with the same tempo, beat & vibe.",
     )
-    lc1, lc2 = st.columns(2)
-    with lc1:
-        if st.button("✨  Try it now — no login", type="primary", use_container_width=True):
+    st.markdown('<div class="vp-section" style="max-width:640px;margin:0 auto;">', unsafe_allow_html=True)
+    c1, c2 = st.columns(2)
+    with c1:
+        if st.button("✨ Try it now", type="primary", use_container_width=True):
             st.session_state["guest"] = True
             st.rerun()
-        st.caption("Type any song → get its cousins. No account needed.")
-    with lc2:
-        st.link_button("🟢  Log in with Spotify", auth.build_authorize_url(),
-                       use_container_width=True)
-        st.caption("Unlocks now-playing & saving. Dev mode: allowlisted accounts only.")
+        st.caption("No account needed.")
+    with c2:
+        if auth.spotify_configured():
+            st.link_button("Log in with Spotify", auth.build_authorize_url(), use_container_width=True)
+        else:
+            st.button("Log in with Spotify", disabled=True, use_container_width=True)
+        st.caption("Unlocks now-playing & save.")
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 # ------------------------------ Data loading ------------------------------
@@ -154,31 +85,46 @@ def ensure_taste():
 
 VIBE_N = 15
 COUSINS_N = 8
-NAV_PAGES = ["Find Cousins", "Break My Loop", "Start from Vibe", "Now Playing"]
+NAV_PAGES = ["Home", "Find Cousins", "Break My Loop", "Start From Vibe", "About"]
+
+MOOD_CHIPS = {
+    "😌 Chill": "chilled-out and laid-back — easy-going, breezy, relaxed",
+    "🏋️ Gym": vibe_engine.INTENT_PRESETS["💪 Gym"],
+    "🌧 Rain": "rainy day — soft, introspective, mellow, emotional",
+    "🚗 Drive": vibe_engine.INTENT_PRESETS["🚗 Driving"],
+    "🌙 Late Night": "late night — moody, slow, intimate, after midnight feel",
+    "📚 Focus": vibe_engine.INTENT_PRESETS["🎯 Focus"],
+    "💔 Heartbreak": "heartbreak — raw, emotional, bittersweet, not angry",
+    "✨ Main Character": "main-character energy — cinematic, confident, epic",
+}
+
+DISCOVERY_MAP = {
+    "Familiar favorites": 10,
+    "Mostly familiar": 8,
+    "Balanced": 5,
+    "Mostly new": 3,
+    "All new (discover)": 0,
+}
 
 
 def _render_sidebar(guest: bool, name: str | None = None):
     with st.sidebar:
-        st.markdown(
-            '<div class="vp-logo">🎧 VibePilot <span class="vp-beta">Beta</span></div>',
-            unsafe_allow_html=True,
-        )
+        st.markdown('<div class="vp-logo">🎧 <span>VibePilot</span></div>', unsafe_allow_html=True)
         page = st.radio(
             "Navigate",
             NAV_PAGES,
             label_visibility="collapsed",
             key="vp_page",
         )
-        st.divider()
+        st.markdown(
+            '<p class="vp-tagline"><em>Same feel, different blood.</em></p>',
+            unsafe_allow_html=True,
+        )
         if name:
             st.caption(f"Signed in as **{name}**")
-        elif guest:
-            st.caption("👋 Guest mode")
-        st.caption("🎙 Catch That — coming soon")
-        st.divider()
-        if guest:
-            st.link_button("🟢 Log in with Spotify", auth.build_authorize_url(), use_container_width=True)
-        else:
+        elif guest and auth.spotify_configured():
+            st.link_button("Log in with Spotify", auth.build_authorize_url(), use_container_width=True)
+        elif not guest:
             if st.button("Log out", use_container_width=True):
                 auth.logout()
                 for k in ("spotify_profile", "taste_profile", "vibe_session", "shown_tracks",
@@ -187,23 +133,6 @@ def _render_sidebar(guest: bool, name: str | None = None):
                     st.session_state.pop(k, None)
                 st.rerun()
     return page
-
-
-def _render_footer():
-    st.markdown("<br>", unsafe_allow_html=True)
-    c = st.columns(4)
-    pillars = [
-        ("Same Feel", "Matches tempo, mood & musical DNA"),
-        ("New Artists", "Discover songs you haven't heard"),
-        ("Smart AI", "Understands vibe, not just genre"),
-        ("You're in Control", "Break loops & explore freely"),
-    ]
-    for col, (title, blurb) in zip(c, pillars):
-        with col:
-            st.markdown(
-                f'<div class="vp-pillar"><h4>{title}</h4><p>{blurb}</p></div>',
-                unsafe_allow_html=True,
-            )
 
 
 def render_home():
@@ -228,23 +157,81 @@ def render_home():
 
     page = _render_sidebar(guest, name)
 
-    if page == "Find Cousins":
+    if page == "Home":
+        _page_home()
+    elif page == "Find Cousins":
         _page_find_cousins(guest)
     elif page == "Break My Loop":
         _page_break_loop()
-    elif page == "Start from Vibe":
+    elif page == "Start From Vibe":
         _page_start_vibe(taste)
-    elif page == "Now Playing":
-        _page_now_playing(guest)
+    elif page == "About":
+        _page_about()
 
     _render_session(guest=guest)
-    _render_footer()
+
+
+def _page_home():
+    ui.hero(
+        desc="Give us a song you love. We'll find songs you've never heard with the same tempo, beat & vibe.",
+    )
+    c1, c2, c3 = st.columns([13, 4, 3])
+    with c1:
+        if st.button("✨ Find Cousins", type="primary", use_container_width=True):
+            st.session_state["vp_page"] = "Find Cousins"
+            st.rerun()
+    with c2:
+        if st.button("Break My Loop", type="secondary", use_container_width=True):
+            st.session_state["vp_page"] = "Break My Loop"
+            st.rerun()
+    with c3:
+        if st.button("Start From Vibe", type="secondary", use_container_width=True):
+            st.session_state["vp_page"] = "Start From Vibe"
+            st.rerun()
+    ui.catch_that_teaser()
+
+
+def _page_about():
+    ui.section_title("About <span>VibePilot</span>", "One discovery engine — multiple entry points.")
+    st.markdown(
+        '<div class="vp-section"><p class="vp-sub" style="margin:0;">'
+        "VibePilot finds songs with the <b>same feel</b> — tempo, beat, mood — not the same artist. "
+        "Start with a song, break a loop, or describe a vibe.</p></div>",
+        unsafe_allow_html=True,
+    )
+    ui.about_pillars()
+    ui.catch_that_teaser()
 
 
 def _page_header(title_html: str, subtitle: str = ""):
-    st.markdown(title_html, unsafe_allow_html=True)
-    if subtitle:
-        st.markdown(f'<p class="vp-sub">{subtitle}</p>', unsafe_allow_html=True)
+    ui.section_title(title_html.replace('<div class="vp-page-title">', "").replace("</div>", ""), subtitle)
+
+
+def _adventure_slider(key: str = "cousins_adventure"):
+    st.caption("How adventurous? · Familiar ← → Adventurous")
+    return st.select_slider(
+        "How adventurous?",
+        options=list(DISCOVERY_MAP.keys()),
+        value=st.session_state.get(key, "Balanced"),
+        key=key,
+        label_visibility="collapsed",
+    )
+
+
+def _resolve_spotify_link(url: str) -> dict | None:
+    m = re.search(r"(?:spotify\.com|spotify:)track[/:]([A-Za-z0-9]+)", url.strip())
+    if m:
+        try:
+            data = spotify_client._get(f"/tracks/{m.group(1)}", app_ok=True)
+            return spotify_client._simplify_track(data)
+        except Exception:
+            pass
+    return _resolve_song_query(url.strip())
+
+
+def _show_selected_track(track: dict):
+    tag = _track_bpm_tag(track)
+    ui.anchor_card(track["name"], track["artist"], tag.replace(" · ", " · ") if tag else "Selected", track.get("album_art"))
 
 
 def _track_bpm_tag(track: dict) -> str:
@@ -256,69 +243,58 @@ def _track_bpm_tag(track: dict) -> str:
     return reccobeats_client.feature_tag(f) if f else ""
 
 
-def _show_selected_track(track: dict):
-    tag = _track_bpm_tag(track)
-    st.markdown(
-        f'<div class="vp-selected"><div class="vp-time">selected song</div>'
-        f'<div class="vp-npname">{track["name"]}</div>'
-        f'<div class="vp-npart">{track["artist"]}</div></div>',
-        unsafe_allow_html=True,
-    )
-    c1, c2 = st.columns([1, 3])
-    with c1:
-        if track.get("album_art"):
-            st.image(track["album_art"], width=100)
-    with c2:
-        if tag:
-            st.caption(tag)
-
-
 def _page_find_cousins(guest: bool):
-    _page_header(
-        '<div class="vp-page-title">Find songs with the <span>same feel</span>, not the same artist</div>',
-        "Pick a song → get unheard cousins that match its tempo, beat & mood.",
-    )
-    st.markdown(
-        '<div class="vp-def">🧬 <b>Cousins</b> share your song\'s musical DNA — tempo, beat & mood — '
-        "but from artists you've never heard. Same feel, different blood.</div>",
-        unsafe_allow_html=True,
-    )
+    st.markdown('<div class="vp-section vp-section-hero">', unsafe_allow_html=True)
+    ui.section_title("Find <span>Cousins</span>", "Same tempo, beat & feel — different artists.")
+    _adventure_slider()
 
-    tab_np, tab_search = st.tabs(["▶ Now Playing", "🔎 Search Song"])
+    tab_np, tab_search, tab_link = st.tabs(["Now Playing", "Search Song", "Paste Spotify Link"])
     with tab_np:
         if guest:
-            st.info("🔒 Log in with Spotify to detect what's playing on your phone right now.")
+            st.info("Log in with Spotify to use now-playing.")
         else:
             _now_playing_card()
     with tab_search:
         _render_cousin_search()
+    with tab_link:
+        _render_cousin_link()
+    st.markdown("</div>", unsafe_allow_html=True)
+
+
+def _render_cousin_link():
+    link = st.text_input(
+        "Spotify link",
+        placeholder="Paste open.spotify.com/track/…",
+        key="cousin_link",
+        label_visibility="collapsed",
+    )
+    if st.button("✨ Find Cousins", type="primary", key="cousin_link_go"):
+        if not link.strip():
+            st.warning("Paste a Spotify track link first.")
+        else:
+            track = _resolve_spotify_link(link)
+            if track:
+                _generate_cousins(track)
+                st.rerun()
+            else:
+                st.error("Couldn't read that link — try Search Song instead.")
 
 
 def _page_break_loop():
-    _page_header(
-        '<div class="vp-page-title">Break your <span>loop</span></div>',
-        "Add songs you keep repeating — we'll find fresh tracks in the same vibe, different artists.",
+    st.markdown('<div class="vp-section vp-section-sm">', unsafe_allow_html=True)
+    ui.section_title(
+        "Stuck in the <span>same 5 songs?</span>",
+        "Add songs you keep replaying — we'll break the loop.",
     )
     _render_break_loop_body()
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 def _page_start_vibe(taste):
-    _page_header(
-        '<div class="vp-page-title">Start from a <span>vibe</span></div>',
-        "No song in mind? Pick a mood and get a discovery playlist.",
-    )
+    st.markdown('<div class="vp-section">', unsafe_allow_html=True)
+    ui.section_title("Start from a <span>vibe</span>", "Pick a mood or describe it in words.")
     render_moment(taste)
-
-
-def _page_now_playing(guest: bool):
-    _page_header(
-        '<div class="vp-page-title">What\'s <span>playing</span> now</div>',
-        "Find cousins of the song on Spotify right now.",
-    )
-    if guest:
-        st.info("🔒 Log in with Spotify to use now-playing detection.")
-    else:
-        _now_playing_card()
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 def _now_playing_card():
@@ -326,37 +302,21 @@ def _now_playing_card():
         np = spotify_client.currently_playing()
     except Exception:
         np = None
-    with st.container(border=True):
-        if np:
-            pos = np.get("progress_ms", 0) // 1000
-            mm, ss = divmod(pos, 60)
-            a, b, c = st.columns([1.2, 5, 3])
-            with a:
-                if np.get("album_art"):
-                    st.image(np["album_art"], width=84)
-            with b:
-                st.markdown('<div class="vp-time">▶ now playing</div>', unsafe_allow_html=True)
-                st.markdown(f"<div class='vp-npname'>{np['name']}</div>", unsafe_allow_html=True)
-                st.markdown(
-                    f"<div class='vp-npart'>{np['artist']} · "
-                    f"<span style='color:#1DB954'>{mm}:{ss:02d}</span></div>",
-                    unsafe_allow_html=True,
-                )
-                tag = _track_bpm_tag(np)
-                if tag:
-                    st.caption(tag)
-            with c:
-                if st.button("✨ Find Cousins →", type="primary", use_container_width=True, key="np_cousins"):
-                    _generate_cousins(np, at=f"{mm}:{ss:02d}")
-                    st.rerun()
-                if st.button("🔄 Refresh", type="secondary", use_container_width=True, key="np_refresh"):
-                    st.rerun()
-        else:
-            st.markdown('<div class="vp-time">▶ nothing playing</div>', unsafe_allow_html=True)
-            st.markdown("<div class='vp-npname'>Press play on Spotify 🎧</div>", unsafe_allow_html=True)
-            st.caption("Start any song in Spotify, then hit Refresh.")
-            if st.button("🔄 Refresh", type="primary", key="np_refresh2"):
-                st.rerun()
+    if np:
+        pos = np.get("progress_ms", 0) // 1000
+        mm, ss = divmod(pos, 60)
+        tag = _track_bpm_tag(np)
+        ui.anchor_card(np["name"], f"{np['artist']} · {mm}:{ss:02d}", tag or "Now playing", np.get("album_art"))
+        if st.button("✨ Find Cousins", type="primary", use_container_width=True, key="np_cousins"):
+            _generate_cousins(np, at=f"{mm}:{ss:02d}")
+            st.rerun()
+    else:
+        st.markdown(
+            '<p class="vp-sub">Press play on Spotify, then refresh.</p>',
+            unsafe_allow_html=True,
+        )
+        if st.button("Refresh", type="secondary", key="np_refresh2"):
+            st.rerun()
 
 
 def _track_label(t: dict) -> str:
@@ -390,10 +350,7 @@ def _render_spotify_hits(hits: list[dict], err_key: str, key_prefix: str, action
             st.info("No songs found on Spotify — try another spelling or add the artist name.")
         return None
 
-    st.markdown(
-        f'<div class="vp-hits"><div class="vp-hits-title">🎵 results from spotify · pick one</div></div>',
-        unsafe_allow_html=True,
-    )
+    st.markdown('<p style="color:#1DB954;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin:0.75rem 0;">Pick a match</p>', unsafe_allow_html=True)
     labels = [_track_label(t) for t in hits]
     pick = st.radio(
         "Spotify matches",
@@ -425,66 +382,71 @@ def _render_cousin_search():
 
     hits = st.session_state.get("cousin_hits", [])
     if hits or st.session_state.get("cousin_hits") is not None:
-        picked = _render_spotify_hits(hits, "cousin_err", "cousin", "✨ Find Cousins →")
+        picked = _render_spotify_hits(hits, "cousin_err", "cousin", "✨ Find Cousins")
         if picked:
             _generate_cousins(picked)
             st.rerun()
     else:
-        st.caption("Type a song → **Search** → pick the match → **Find Cousins**")
+        st.caption("Search → pick → Find Cousins")
 
 
 def _render_break_loop_body():
-    """Build a list of songs you repeat → discovery playlist that breaks the loop."""
     if "loop_queue" not in st.session_state:
         st.session_state["loop_queue"] = []
 
-    with st.container(border=True):
-        lc1, lc2 = st.columns([4, 1])
-        with lc1:
-            lq = st.text_input(
-                "Add repeating song",
-                placeholder="search a song you repeat…",
-                key="loop_query",
-                label_visibility="collapsed",
-                autocomplete="off",
-            )
-        with lc2:
-            st.write("")
-            loop_search = st.button("Search", type="secondary", use_container_width=True, key="loop_search_btn")
+    lc1, lc2 = st.columns([4, 1])
+    with lc1:
+        lq = st.text_input(
+            "Add repeating song",
+            placeholder="Search a song you repeat…",
+            key="loop_query",
+            label_visibility="collapsed",
+            autocomplete="off",
+        )
+    with lc2:
+        st.write("")
+        loop_search = st.button("Search", type="secondary", use_container_width=True, key="loop_search_btn")
 
-        if loop_search:
-            _run_song_search(lq, "loop_hits", "loop_err")
+    if loop_search:
+        _run_song_search(lq, "loop_hits", "loop_err")
 
-        hits = st.session_state.get("loop_hits", [])
-        if hits or st.session_state.get("loop_hits") is not None:
-            picked = _render_spotify_hits(hits, "loop_err", "loop", "➕ add this song to my loop")
-            if picked:
-                key = _track_label(picked).lower()
-                existing = {_track_label(x).lower() for x in st.session_state["loop_queue"]}
-                if key not in existing:
-                    st.session_state["loop_queue"].append(picked)
-                st.session_state.pop("loop_hits", None)
-                st.rerun()
+    hits = st.session_state.get("loop_hits", [])
+    if hits or st.session_state.get("loop_hits") is not None:
+        picked = _render_spotify_hits(hits, "loop_err", "loop", "Add to loop")
+        if picked:
+            key = _track_label(picked).lower()
+            existing = {_track_label(x).lower() for x in st.session_state["loop_queue"]}
+            if key not in existing:
+                st.session_state["loop_queue"].append(picked)
+            st.session_state.pop("loop_hits", None)
+            st.rerun()
 
-        queue = st.session_state["loop_queue"]
-        if queue:
-            st.markdown("**Your loop:**")
-            for i, t in enumerate(queue):
-                c1, c2 = st.columns([5, 1])
-                with c1:
-                    st.markdown(f"· {_track_label(t)}")
-                with c2:
-                    if st.button("✕", key=f"rm_loop_{i}"):
-                        st.session_state["loop_queue"].pop(i)
-                        st.rerun()
-            if st.button("🔓 Break My Loop →", type="primary", use_container_width=True):
-                if len(queue) < 2:
-                    st.warning("Add at least 2 songs first 🙂")
-                else:
-                    _generate_breakloop(queue)
+    queue = st.session_state["loop_queue"]
+    if queue:
+        chips = "".join(
+            f'<span class="vp-chip vp-chip-loop">{t["name"]} · {t["artist"]}</span>'
+            for t in queue
+        )
+        st.markdown(f'<div class="vp-chip-row">{chips}</div>', unsafe_allow_html=True)
+        rm_cols = st.columns(min(len(queue), 4))
+        for i, t in enumerate(queue[:4]):
+            with rm_cols[i % len(rm_cols)]:
+                if st.button(f"Remove {t['name'][:12]}…", key=f"rm_loop_{i}"):
+                    st.session_state["loop_queue"].pop(i)
                     st.rerun()
-        else:
-            st.caption("Search and add songs above — need at least 2 to break the loop.")
+        if len(queue) > 4:
+            for i in range(4, len(queue)):
+                if st.button(f"Remove {queue[i]['name']}", key=f"rm_loop_{i}"):
+                    st.session_state["loop_queue"].pop(i)
+                    st.rerun()
+        if st.button("Break My Loop", type="primary", use_container_width=True):
+            if len(queue) < 2:
+                st.warning("Add at least 2 songs.")
+            else:
+                _generate_breakloop(queue)
+                st.rerun()
+    else:
+        st.caption("Add 2+ songs you keep replaying.")
 
 
 def _resolve_song_query(q: str) -> dict | None:
@@ -502,67 +464,40 @@ def _resolve_song_query(q: str) -> dict | None:
 
 # --------- The moment → vibe session (the easy, low-friction flow) ---------
 
-DISCOVERY_MAP = {
-    "Familiar favorites": 10,
-    "Mostly familiar": 8,
-    "Balanced": 5,
-    "Mostly new": 3,
-    "All new (discover)": 0,
-}
-
 
 def render_moment(taste):
     now = time_utils.local_now()
     time_str = time_utils.format_clock(now)
     band = vibe_engine.time_band_vibe(now)
 
-    # Hero: time-aware suggestion + one big primary action
     st.markdown(
-        f'<div class="vp-mood"><div class="vp-time">✨ it\'s {time_str.lower()}</div>'
-        f'<div class="vp-moodline">{band["mood"]}</div></div>',
+        f'<div class="vp-section vp-section-sm" style="margin-bottom:1rem;">'
+        f'<p style="color:#1DB954;font-size:0.78rem;font-weight:700;margin:0 0 6px;">IT\'S {time_str.upper()}</p>'
+        f'<p style="color:#fff;font-size:1.15rem;font-weight:700;margin:0;">{band["mood"]}</p></div>',
         unsafe_allow_html=True,
     )
-    # Collect the chosen action, then generate ONCE at the end — outside any
-    # column context — so the "building…" spinner spans full width (no glitch).
+
     action = None
+    familiarity = DISCOVERY_MAP[_adventure_slider("vibe_adventure")]
 
-    if st.button("▶  play this vibe", type="primary", use_container_width=True):
-        action = (band["vibe"], band["label"], 3, True)
+    st.caption("Pick a mood")
+    chip_cols = st.columns(4)
+    for i, (label, vibe_text) in enumerate(MOOD_CHIPS.items()):
+        with chip_cols[i % 4]:
+            if st.button(label, use_container_width=True, key=f"mood_{label}", type="secondary"):
+                action = (vibe_text, label, familiarity, False)
 
-    st.markdown('<div class="vp-or">not feeling it? pick your own 👇</div>', unsafe_allow_html=True)
-
-    choice = st.select_slider(
-        "how adventurous?",
-        options=list(DISCOVERY_MAP.keys()),
-        value=st.session_state.get("discovery_choice", "Mostly new"),
-        key="discovery_choice",
-        help="← comfy familiar favorites · brand-new discoveries →",
+    vibe_text = st.text_input(
+        "Describe your vibe",
+        placeholder="rainy evening, coffee, soft heartbreak…",
+        key="vibe_text",
+        label_visibility="collapsed",
     )
-    familiarity = DISCOVERY_MAP[choice]
-
-    intents = list(vibe_engine.INTENT_PRESETS.keys())
-    cols = st.columns(4)
-    for i, intent in enumerate(intents):
-        with cols[i % 4]:
-            if st.button(intent, use_container_width=True, key=f"intent_{intent}", type="secondary"):
-                action = (vibe_engine.INTENT_PRESETS[intent], intent.split(" ", 1)[-1],
-                          familiarity, False)
-
-    # quirky: describe your mood in emojis 🎭
-    st.markdown('<div class="vp-or">…or just vibe it in emojis 🎭</div>', unsafe_allow_html=True)
-    ec1, ec2 = st.columns([4, 1])
-    with ec1:
-        emojis = st.text_input(
-            "mood in emojis", placeholder="e.g.  🌧️😌☕   or   🔥🕺🎉",
-            key="emoji_mood", label_visibility="collapsed",
-        )
-    with ec2:
-        if st.button("✨ build it", use_container_width=True, type="primary"):
-            if emojis.strip():
-                action = (f"a mood best described by these emojis: {emojis.strip()}",
-                          emojis.strip(), familiarity, False)
-            else:
-                st.warning("Drop a few emojis first 🙂")
+    if st.button("Get My Vibe", type="primary", use_container_width=True):
+        if vibe_text.strip():
+            action = (vibe_text.strip(), vibe_text.strip()[:40], familiarity, False)
+        else:
+            action = (band["vibe"], band["label"], familiarity, True)
 
     if action:
         _generate_vibe(action[0], action[1], familiarity=action[2], use_usual=action[3])
@@ -639,20 +574,21 @@ def _generate_cousins(anchor, at=None):
     exclude = _all_excludes()
     label = f"{title} — {artist}"
     anchor_tag = ""
-    with st.spinner("Matching tempo, beat & feel…"):
+    with st.status("Scanning musical DNA…", expanded=True) as status:
+        status.update(label="Matching tempo…")
         try:
             tracks = []
             if lastfm_client.is_configured():
+                status.update(label="Finding unheard cousins…")
                 pool = _lastfm_similar_robust(title, artist, limit=120)
-                # cousins must be DIFFERENT blood — never the same artist
                 block = _artist_candidates(artist) + [artist]
-                # pull a wide pool, then rank it down by real audio features
                 picks = _dedupe_filter(pool, exclude, want=COUSINS_N * 4, discovery=True,
                                        taste=taste, block_artists=block)
                 candidates = _resolve_pool(picks, COUSINS_N * 4)
                 ranked, anchor_tag = _rank_by_beat(anchor, candidates)
                 tracks = ranked[:COUSINS_N]
-            if not tracks:  # Last.fm has no data for this song → fall back to the LLM
+            if not tracks:
+                status.update(label="Consulting AI musical memory…")
                 picks = vibe_engine.propose_cousins(
                     f"'{label}'", n=COUSINS_N, taste=taste, exclude_names=exclude,
                     moment=(f"{label} at {at}" if at else None),
@@ -661,10 +597,12 @@ def _generate_cousins(anchor, at=None):
             _record_shown(tracks)
             st.session_state["vibe_session"] = {
                 "kind": "cousins", "label": label, "tracks": tracks,
-                "anchor_tag": anchor_tag,
+                "anchor_tag": anchor_tag, "anchor": anchor,
             }
             st.session_state.pop("saved_playlist", None)
+            status.update(label="Done ✨", state="complete")
         except Exception as e:
+            status.update(label="Something went wrong", state="error")
             st.error(f"Couldn't find cousins: {e}")
 
 
@@ -698,7 +636,7 @@ def _generate_breakloop(seeds: list[dict]):
 
             _record_shown(tracks)
             st.session_state["vibe_session"] = {
-                "kind": "cousins", "label": f"your loop · {len(seeds)} songs",
+                "kind": "cousins", "label": "Escape Your Loop",
                 "tracks": tracks, "anchor_tag": "",
             }
             st.session_state.pop("saved_playlist", None)
@@ -895,34 +833,41 @@ def _render_session(only_kind=None, guest=False):
         return
     tracks = session["tracks"]
     if not tracks:
-        st.warning("Couldn't match those on Spotify. Try again or pick another vibe.")
+        st.warning("Couldn't match those on Spotify. Try again.")
         return
 
-    st.divider()
+    st.markdown('<div class="vp-section" style="margin-top:1.5rem;">', unsafe_allow_html=True)
+
     if session.get("kind") == "cousins":
-        st.markdown("#### Here are your cousins ✨")
-        st.caption(f"**{session['label']}** — {len(tracks)} unheard songs that match the beat & feel")
+        ui.section_title("Your <span>cousins</span>", f"{len(tracks)} unheard songs · same feel, new blood")
+        anchor = session.get("anchor")
+        if anchor:
+            tag = session.get("anchor_tag") or _track_bpm_tag(anchor)
+            ui.anchor_card(anchor["name"], anchor["artist"], tag or "Anchor", anchor.get("album_art"))
     else:
-        st.markdown(f"#### 🎶 Your _{session['label']}_ session")
-        st.caption(f"{len(tracks)} songs tuned to your vibe")
+        mins = len(tracks) * 4
+        ui.section_title(f"_{session['label']}_", f"{len(tracks)} songs · {mins // 60}h {mins % 60:02d}m")
+        ui.playlist_card(session["label"], f"{len(tracks)} songs · {mins // 60}h {mins % 60:02d}m",
+                         "Keeps your vibe. Removes repetition." if "loop" in session["label"].lower() else "Built for your mood.")
 
     cols = st.columns(2)
-    for i, t in enumerate(tracks):
+    for i, t in enumerate(tracks[:COUSINS_N if session.get("kind") == "cousins" else VIBE_N]):
         with cols[i % 2]:
-            with st.container(border=True):
-                if t.get("album_art"):
-                    st.image(t["album_art"], use_container_width=True)
-                link = t.get("url")
-                title = f"**[{t['name']}]({link})**" if link else f"**{t['name']}**"
-                st.markdown(title)
-                st.caption(t["artist"])
-                if t.get("why"):
-                    st.caption(t["why"])
+            if t.get("album_art"):
+                st.image(t["album_art"], use_container_width=True)
+            bpm_tag = _track_bpm_tag(t)
+            st.markdown(
+                ui.cousin_card_html(
+                    t["name"], t["artist"], bpm_tag.replace(" · ", " | ") if bpm_tag else "match",
+                    t.get("why", ""), t.get("url"), t.get("preview_url"),
+                ),
+                unsafe_allow_html=True,
+            )
 
-    st.divider()
+    st.markdown("</div>", unsafe_allow_html=True)
+
     if guest:
-        st.caption("🔒 Saving to a Spotify playlist is available on a logged-in account. "
-                   "As a guest you can explore unlimited cousins — search another song above 👆")
+        st.caption("Log in to save to a Spotify playlist.")
         return
     _render_save_controls(session, tracks)
 
