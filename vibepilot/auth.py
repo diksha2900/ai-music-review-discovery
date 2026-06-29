@@ -40,11 +40,15 @@ def get_app_token():
     now = time.time()
     if _APP_TOKEN.get("token") and now < _APP_TOKEN.get("exp", 0) - 60:
         return _APP_TOKEN["token"]
+    cid = get_spotify_client_id()
+    secret = get_spotify_client_secret()
+    if not cid or not secret:
+        return None
     try:
         resp = requests.post(
             TOKEN_URL,
             data={"grant_type": "client_credentials"},
-            auth=(get_spotify_client_id(), get_spotify_client_secret()),
+            auth=(cid, secret),
             headers={"Content-Type": "application/x-www-form-urlencoded"},
             timeout=20,
         )
@@ -56,6 +60,11 @@ def get_app_token():
     _APP_TOKEN["token"] = payload["access_token"]
     _APP_TOKEN["exp"] = now + payload.get("expires_in", 3600)
     return _APP_TOKEN["token"]
+
+
+def spotify_configured() -> bool:
+    """True if Client ID + Secret are present (needed for guest search)."""
+    return bool(get_spotify_client_id() and get_spotify_client_secret())
 
 
 def build_authorize_url() -> str:

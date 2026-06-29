@@ -15,6 +15,16 @@ def _headers(app_ok=False):
     if not token and app_ok:
         token = auth.get_app_token()  # guest mode: public catalog only
     if not token:
+        if app_ok and not auth.spotify_configured():
+            raise RuntimeError(
+                "Spotify API keys missing. In Streamlit Cloud → Settings → Secrets, "
+                "set SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET."
+            )
+        if app_ok:
+            raise RuntimeError(
+                "Could not connect to Spotify. Check SPOTIFY_CLIENT_ID and "
+                "SPOTIFY_CLIENT_SECRET in Streamlit Secrets."
+            )
         raise RuntimeError("Not authenticated with Spotify.")
     return {"Authorization": f"Bearer {token}"}
 

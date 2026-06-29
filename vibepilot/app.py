@@ -154,6 +154,9 @@ def render_home():
     if guest:
         st.markdown("### 🎧 VibePilot")
         st.caption("👋 Type any song below to find its **cousins** — unheard songs that match its tempo, beat & feel.")
+        if not auth.spotify_configured():
+            st.error("⚠️ Spotify API keys not loaded. Set **SPOTIFY_CLIENT_ID** and **SPOTIFY_CLIENT_SECRET** "
+                     "in Streamlit Cloud → Settings → Secrets, then reboot the app.")
         taste = None
     else:
         try:
@@ -262,27 +265,27 @@ def _track_label(t: dict) -> str:
     return f"{t['name']} — {t['artist']}"
 
 
-def _run_song_search(query: str, hits_key: str) -> list[dict]:
+def _run_song_search(query: str, hits_key: str, err_key: str) -> list[dict]:
     """Fetch Spotify matches and cache in session (called on Search button click)."""
     q = query.strip()
     if len(q) < 2:
         st.session_state[hits_key] = []
-        st.session_state[f"{hits_key}_err"] = "Type at least 2 characters."
+        st.session_state[err_key] = "Type at least 2 characters."
         return []
     try:
         hits = spotify_client.search_tracks(q, limit=10)
+        st.session_state[hits_key] = hits
+        st.session_state.pop(err_key, None)
     except Exception as e:
-        hits = []
-        st.session_state[f"{hits_key}_err"] = str(e)
-    st.session_state[hits_key] = hits
-    st.session_state.pop(f"{hits_key}_err", None)
-    return hits
+        st.session_state[hits_key] = []
+        st.session_state[err_key] = str(e)
+    return st.session_state.get(hits_key, [])
 
 
-def _render_spotify_hits(hits: list[dict], key_prefix: str, action_label: str) -> dict | None:
+def _render_spotify_hits(hits: list[dict], err_key: str, key_prefix: str, action_label: str) -> dict | None:
     """Show Spotify results as visible pickable rows. Returns track if user clicks action."""
     if not hits:
-        err = st.session_state.get(f"{key_prefix}_err")
+        err = st.session_state.get(err_key)
         if err:
             st.warning(f"Search failed: {err}")
         else:
@@ -330,11 +333,11 @@ def _render_cousin_search():
         search_clicked = st.button("Search", type="secondary", use_container_width=True, key="cousin_search_btn")
 
     if search_clicked:
-        _run_song_search(query, "cousin_hits")
+        _run_song_search(query, "cousin_hits", "cousin_err")
 
     hits = st.session_state.get("cousin_hits", [])
     if hits or st.session_state.get("cousin_hits") is not None:
-        picked = _render_spotify_hits(hits, "cousin", "🔎 find cousins of this song")
+        picked = _render_spotify_hits(hits, "cousin_err", "cousin", "🔎 find cousins of this song")
         if picked:
             _generate_cousins(picked)
             st.rerun()
@@ -373,11 +376,11 @@ def _render_break_loop_section():
             loop_search = st.button("Search", type="secondary", use_container_width=True, key="loop_search_btn")
 
         if loop_search:
-            _run_song_search(lq, "loop_hits")
+            _run_song_search(lq, "loop_hits", "loop_err")
 
         hits = st.session_state.get("loop_hits", [])
         if hits or st.session_state.get("loop_hits") is not None:
-            picked = _render_spotify_hits(hits, "loop", "➕ add this song to my loop")
+            picked = _render_spotify_hits(hits, "loop_err", "loop", "➕ add this song to my loop")
             if picked:
                 key = _track_label(picked).lower()
                 existing = {_track_label(x).lower() for x in st.session_state["loop_queue"]}
