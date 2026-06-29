@@ -97,7 +97,14 @@ def exchange_code(code: str) -> bool:
         timeout=20,
     )
     if resp.status_code != 200:
-        st.session_state["auth_error"] = f"{resp.status_code}: {resp.text}"
+        body = resp.text
+        if "invalid_client" in body or "Invalid client secret" in body:
+            st.session_state["auth_error"] = (
+                "Spotify rejected the Client Secret. In Streamlit Cloud → Settings → Secrets, "
+                "re-copy SPOTIFY_CLIENT_SECRET from developer.spotify.com/dashboard → your app → Settings."
+            )
+        else:
+            st.session_state["auth_error"] = f"{resp.status_code}: {body}"
         return False
     _store_token(resp.json())
     return True

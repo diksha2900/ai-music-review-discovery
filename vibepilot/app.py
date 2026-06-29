@@ -17,6 +17,7 @@ import capture
 import lastfm_client
 import reccobeats_client
 import spotify_client
+import time_utils
 import vibe_engine
 
 st.set_page_config(page_title="VibePilot AI", page_icon="🎧", layout="wide")
@@ -435,8 +436,8 @@ DISCOVERY_MAP = {
 
 
 def render_moment(taste):
-    now = datetime.datetime.now()
-    time_str = now.strftime("%-I:%M %p")
+    now = time_utils.local_now()
+    time_str = time_utils.format_clock(now)
     band = vibe_engine.time_band_vibe(now)
 
     # Hero: time-aware suggestion + one big primary action
@@ -497,7 +498,7 @@ def render_moment(taste):
 def _usual_at_this_hour(taste, window: int = 3) -> list[str]:
     """What the listener tends to play around now (from recently-played timestamps)."""
     recent = (taste or {}).get("recent", [])
-    now_hour = datetime.datetime.now().hour
+    now_hour = time_utils.local_now().hour
     out = []
     for r in recent:
         pa = r.get("played_at")
