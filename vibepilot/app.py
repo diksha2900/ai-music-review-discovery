@@ -135,6 +135,11 @@ def _render_sidebar(guest: bool, name: str | None = None):
     return page
 
 
+def _nav_to(page: str):
+    """Set sidebar page before radio widget renders (use with button on_click)."""
+    st.session_state["vp_page"] = page
+
+
 def render_home():
     guest = st.session_state.get("guest") and not auth.is_logged_in()
     taste = None
@@ -177,17 +182,20 @@ def _page_home():
     )
     c1, c2, c3 = st.columns([13, 4, 3])
     with c1:
-        if st.button("✨ Find Cousins", type="primary", use_container_width=True):
-            st.session_state["vp_page"] = "Find Cousins"
-            st.rerun()
+        st.button(
+            "✨ Find Cousins", type="primary", use_container_width=True,
+            on_click=_nav_to, args=("Find Cousins",),
+        )
     with c2:
-        if st.button("Break My Loop", type="secondary", use_container_width=True):
-            st.session_state["vp_page"] = "Break My Loop"
-            st.rerun()
+        st.button(
+            "Break My Loop", type="secondary", use_container_width=True,
+            on_click=_nav_to, args=("Break My Loop",),
+        )
     with c3:
-        if st.button("Start From Vibe", type="secondary", use_container_width=True):
-            st.session_state["vp_page"] = "Start From Vibe"
-            st.rerun()
+        st.button(
+            "Start From Vibe", type="secondary", use_container_width=True,
+            on_click=_nav_to, args=("Start From Vibe",),
+        )
     ui.catch_that_teaser()
 
 
