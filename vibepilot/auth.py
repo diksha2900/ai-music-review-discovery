@@ -68,16 +68,19 @@ def spotify_configured() -> bool:
 
 
 def build_authorize_url() -> str:
+    cid = get_spotify_client_id()
+    redirect = get_spotify_redirect_uri()
+    if not cid:
+        return "https://developer.spotify.com/dashboard"
     state = secrets.token_urlsafe(16)
     st.session_state["oauth_state"] = state
     params = {
-        "client_id": get_spotify_client_id(),
+        "client_id": cid,
         "response_type": "code",
-        "redirect_uri": get_spotify_redirect_uri(),
+        "redirect_uri": redirect,
         "scope": " ".join(SPOTIFY_SCOPES),
         "state": state,
-        "show_dialog": "true",   # force the account/login screen so a different
-                                  # Spotify account can sign in (not silently reuse the browser's)
+        "show_dialog": "true",
     }
     return f"{AUTH_URL}?{urllib.parse.urlencode(params)}"
 

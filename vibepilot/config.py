@@ -14,9 +14,11 @@ def _get(key: str, default=None):
     try:
         import streamlit as st
 
-        return st.secrets[key]
+        if hasattr(st, "secrets") and key in st.secrets:
+            return st.secrets[key]
     except Exception:
-        return default
+        pass
+    return default
 
 
 def get_spotify_client_id():

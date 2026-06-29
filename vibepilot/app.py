@@ -1002,8 +1002,38 @@ def _mark_saved(name, url, label):
 
 # --------------------------------- Router ---------------------------------
 
-handle_redirect()
-if auth.is_logged_in() or st.session_state.get("guest"):
-    render_home()
-else:
-    render_login()
+def _missing_secrets() -> list[str]:
+    import config
+
+    need = {
+        "SPOTIFY_CLIENT_ID": config.get_spotify_client_id(),
+        "SPOTIFY_CLIENT_SECRET": config.get_spotify_client_secret(),
+        "GROQ_API_KEY": config.get_groq_api_key(),
+        "LASTFM_API_KEY": config.get_lastfm_api_key(),
+    }
+    return [k for k, v in need.items() if not v]
+
+
+def main():
+    missing = _missing_secrets()
+    if missing:
+        st.warning("Some API keys are missing in Streamlit Secrets — guest search / AI may fail.")
+        with st.expander("Required secrets (Settings → Secrets)"):
+            st.code("\n".join(f'{k} = "..."' for k in missing), language="toml")
+
+    handle_redirect()
+    if auth.is_logged_in() or st.session_state.get("guest"):
+        render_home()
+    else:
+        render_login()
+
+
+try:
+    main()
+except Exception as exc:
+    st.error("VibePilot hit a startup error.")
+    st.exception(exc)
+    st.info(
+        "If this persists: Streamlit Cloud → **Manage app** → **Logs**, "
+        "set Python **3.11**, verify Secrets TOML, then **Reboot app**."
+    )

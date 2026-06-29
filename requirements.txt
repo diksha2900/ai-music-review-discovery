@@ -1,18 +1,6 @@
-# Core app
-streamlit>=1.32.0
-plotly>=5.18.0
-pandas>=2.0.0
-numpy>=1.24.0
-
-# LLM + embeddings
+# VibePilot AI — MVP dependencies (used if main file is repo-root app.py shim)
+streamlit>=1.32.0,<2
 groq>=0.9.0
-sentence-transformers>=2.2.0
-
-# Scraping
-google-play-scraper>=1.2.4
 requests>=2.31.0
-pyyaml>=6.0
-
-# Utilities
 python-dotenv>=1.0.0
-tqdm>=4.66.0
+tzdata>=2024.1
