@@ -49,7 +49,12 @@ class BreakLoopRequest(BaseModel):
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "service": "vibepilot-api"}
+    return {
+        "status": "ok",
+        "service": "vibepilot-api",
+        "spotify_redirect_uri": settings.spotify_redirect_uri(),
+        "frontend_url": settings.frontend_url(),
+    }
 
 
 @app.get("/auth/login")

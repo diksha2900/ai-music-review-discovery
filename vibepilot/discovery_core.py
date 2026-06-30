@@ -116,6 +116,54 @@ def rank_by_beat(anchor, candidates):
     return graded + ungraded, anchor_tag
 
 
+def _genre_tokens(genres: set[str]) -> set[str]:
+    toks: set[str] = set()
+    for g in genres:
+        toks.update(g.replace("-", " ").split())
+    return toks
+
+
+def _genre_overlap(anchor_genres: set[str], cand_genres: set[str]) -> float:
+    """1.0 = same lane, 0.0 = unrelated genre cluster."""
+    if not anchor_genres or not cand_genres:
+        return 0.35
+    if anchor_genres & cand_genres:
+        return 1.0
+    at, ct = _genre_tokens(anchor_genres), _genre_tokens(cand_genres)
+    shared = at & ct
+    if shared:
+        return 0.55 + min(0.45, len(shared) * 0.15)
+    return 0.0
+
+
+def rank_by_beat_and_genre(anchor, candidates):
+    """Rank by tempo/feel, then prefer candidates in the anchor's genre lane."""
+    ranked, anchor_tag = rank_by_beat(anchor, candidates)
+    anchor_ids = anchor.get("artist_ids") or []
+    anchor_genres: set[str] = set()
+    for gs in spotify_client.batch_artist_genres(anchor_ids[:2]).values():
+        anchor_genres.update(gs)
+
+    cand_ids = [(c.get("artist_ids") or [None])[0] for c in ranked]
+    genre_map = spotify_client.batch_artist_genres([i for i in cand_ids if i])
+
+    anchor_id = anchor.get("id")
+    feats = reccobeats_client.audio_features([anchor_id] + [c.get("id") for c in ranked if c.get("id")])
+    a_feats = feats.get(anchor_id) if anchor_id else None
+
+    def score(c):
+        beat = reccobeats_client.distance(a_feats, feats.get(c.get("id"))) if a_feats else 50.0
+        aid = (c.get("artist_ids") or [None])[0]
+        cand_g = set(genre_map.get(aid, []))
+        genre_bonus = _genre_overlap(anchor_genres, cand_g)
+        return beat - 4.0 * genre_bonus
+
+    graded = [c for c in ranked if feats.get(c.get("id"))]
+    ungraded = [c for c in ranked if not feats.get(c.get("id"))]
+    graded.sort(key=score)
+    return graded + ungraded, anchor_tag
+
+
 def rank_by_centroid(seeds, candidates):
     seed_ids = [s.get("id") for s in seeds if s.get("id")]
     cand_ids = [c.get("id") for c in candidates]
@@ -184,12 +232,17 @@ def find_cousins_for_anchor(anchor, taste=None, exclude=None, moment=None):
             taste=taste, block_artists=block,
         )
         candidates = resolve_pool(picks, COUSINS_N * 4)
-        ranked, anchor_tag = rank_by_beat(anchor, candidates)
+        ranked, anchor_tag = rank_by_beat_and_genre(anchor, candidates)
         tracks = ranked[:COUSINS_N]
 
     if not tracks:
+        ag = spotify_client.batch_artist_genres((anchor.get("artist_ids") or [])[:2])
+        genres = [g for gs in ag.values() for g in gs[:4]]
+        anchor_desc = f"'{label}'"
+        if genres:
+            anchor_desc += f" (stay in genre lane: {', '.join(genres[:6])})"
         picks = vibe_engine.propose_cousins(
-            f"'{label}'", n=COUSINS_N, taste=taste, exclude_names=exclude,
+            anchor_desc, n=COUSINS_N, taste=taste, exclude_names=exclude,
             moment=(f"{label} at {moment}" if moment else None),
         )
         tracks = resolve_picks(picks)

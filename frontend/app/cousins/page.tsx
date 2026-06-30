@@ -16,11 +16,14 @@ export default function CousinsPage() {
     if (!query.trim()) return;
     setError("");
     setLoading(true);
+    setAnchor(null);
+    setCousins([]);
     try {
       const { tracks } = await searchTracks(query);
       setResults(tracks);
     } catch (e) {
       setError(String(e));
+      setResults([]);
     } finally {
       setLoading(false);
     }
@@ -30,6 +33,7 @@ export default function CousinsPage() {
     setError("");
     setLoading(true);
     setAnchor(t);
+    setCousins([]);
     try {
       const data = await findCousins(t.name, t.artist);
       setCousins(data.tracks);
@@ -40,12 +44,18 @@ export default function CousinsPage() {
     }
   }
 
+  function clearAnchor() {
+    setAnchor(null);
+    setCousins([]);
+    setError("");
+  }
+
   return (
     <section>
       <h1>
-        Find <span style={{ color: "var(--green)" }}>cousins</span>
+        Find <span className="accent">cousins</span>
       </h1>
-      <p style={{ color: "var(--muted)" }}>Same tempo, beat &amp; feel — different artists.</p>
+      <p className="muted">Same tempo, beat, feel &amp; genre — different artists.</p>
       <div className="card" style={{ marginTop: "1.5rem" }}>
         <input
           type="text"
@@ -62,7 +72,12 @@ export default function CousinsPage() {
       {results.length > 0 && !anchor && (
         <div className="track-grid" style={{ marginTop: "1rem" }}>
           {results.map((t) => (
-            <button key={t.id} className="card track" onClick={() => pickTrack(t)} style={{ width: "100%", textAlign: "left", cursor: "pointer" }}>
+            <button
+              key={t.id}
+              type="button"
+              className="card track track-pick"
+              onClick={() => pickTrack(t)}
+            >
               {t.album_art && <img src={t.album_art} alt="" />}
               <div className="track-meta">
                 <strong>{t.name}</strong>
@@ -74,10 +89,19 @@ export default function CousinsPage() {
       )}
       {anchor && (
         <div style={{ marginTop: "1.5rem" }}>
-          <p>
-            Cousins of <strong>{anchor.name}</strong> — {anchor.artist}
-          </p>
-          <TrackList tracks={cousins} />
+          <div className="row-between">
+            <p>
+              Cousins of <strong>{anchor.name}</strong> — {anchor.artist}
+            </p>
+            <button type="button" className="btn btn-outline btn-sm" onClick={clearAnchor}>
+              ← New search
+            </button>
+          </div>
+          {loading && cousins.length === 0 ? (
+            <p className="muted">Finding cousins…</p>
+          ) : (
+            <TrackList tracks={cousins} />
+          )}
         </div>
       )}
     </section>

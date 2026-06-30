@@ -136,6 +136,65 @@ textarea:focus {
   border: 1px solid var(--border);
 }
 
+.btn-sm {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.accent {
+  color: var(--green);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.track-pick {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.15s;
+}
+
+.track-pick:hover {
+  border-color: var(--green);
+}
+
+.track-meta strong {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  display: block;
+}
+
+.track-meta a {
+  color: var(--text);
+}
+
+.track-meta a:hover {
+  color: var(--green);
+}
+
 .mood-row {
   display: flex;
   flex-wrap: wrap;

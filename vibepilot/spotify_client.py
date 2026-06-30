@@ -66,6 +66,22 @@ def search_track(title: str, artist: str = "") -> dict | None:
     return _simplify_track(items[0])
 
 
+def batch_artist_genres(artist_ids: list[str]) -> dict[str, list[str]]:
+    """Batch-fetch genre tags for artists (guest mode OK)."""
+    out: dict[str, list[str]] = {}
+    ids = [i for i in dict.fromkeys(artist_ids) if i][:50]
+    if not ids:
+        return out
+    try:
+        data = _get("/artists", params={"ids": ",".join(ids)}, app_ok=True)
+        for a in data.get("artists", []) or []:
+            if a and a.get("id"):
+                out[a["id"]] = [g.lower() for g in a.get("genres", [])]
+    except Exception:
+        pass
+    return out
+
+
 def get_track(track_id: str) -> dict | None:
     """Fetch a track by Spotify ID. Works in guest mode."""
     data = _get(f"/tracks/{track_id}", app_ok=True)
