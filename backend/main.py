@@ -5,7 +5,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from fastapi import Cookie, FastAPI, HTTPException, Query
+from fastapi import Cookie, Depends, FastAPI, Header, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, Field
@@ -72,7 +72,8 @@ def callback(code: str = Query(...), state: str = Query(...)):
     except Exception as e:
         raise HTTPException(400, f"Token exchange failed: {e}") from e
     sid = result["session_id"]
-    response = RedirectResponse(f"{settings.frontend_url()}/?logged_in=1")
+    # Pass session in URL — cross-site cookies (Vercel ↔ Render) are blocked by browsers.
+    response = RedirectResponse(f"{settings.frontend_url()}/?session={sid}")
     cross_site = settings.frontend_url().startswith("https://") and "127.0.0.1" not in settings.frontend_url()
     response.set_cookie(
         key="vp_session",
@@ -85,9 +86,16 @@ def callback(code: str = Query(...), state: str = Query(...)):
     return response
 
 
+def _session_id(
+    vp_session: str | None = Cookie(default=None),
+    x_vp_session: str | None = Header(default=None, alias="X-VP-Session"),
+) -> str | None:
+    return x_vp_session or vp_session
+
+
 @app.get("/auth/me")
-def me(vp_session: str | None = Cookie(default=None)):
-    token = auth.get_token(vp_session)
+def me(sid: str | None = Depends(_session_id)):
+    token = auth.get_token(sid)
     if not token:
         return {"logged_in": False}
     discovery._patch_auth(token)
@@ -101,7 +109,7 @@ def me(vp_session: str | None = Cookie(default=None)):
 
 
 @app.post("/auth/logout")
-def logout(vp_session: str | None = Cookie(default=None)):
+def logout(sid: str | None = Depends(_session_id)):
     response = {"ok": True}
     from fastapi.responses import JSONResponse
 
@@ -110,26 +118,26 @@ def logout(vp_session: str | None = Cookie(default=None)):
     return resp
 
 
-def _token(vp_session: str | None) -> str | None:
-    return auth.get_token(vp_session)
+def _token(sid: str | None = Depends(_session_id)) -> str | None:
+    return auth.get_token(sid)
 
 
 @app.post("/api/search")
-def api_search(body: SearchRequest, vp_session: str | None = Cookie(default=None)):
+def api_search(body: SearchRequest, token: str | None = Depends(_token)):
     try:
-        return {"tracks": discovery.search_tracks(body.q.strip(), _token(vp_session))}
+        return {"tracks": discovery.search_tracks(body.q.strip(), token)}
     except Exception as e:
         raise HTTPException(500, str(e)) from e
 
 
 @app.post("/api/cousins")
-def api_cousins(body: CousinsRequest, vp_session: str | None = Cookie(default=None)):
+def api_cousins(body: CousinsRequest, token: str | None = Depends(_token)):
     try:
         if body.track_id:
-            return discovery.find_cousins_by_id(body.track_id, _token(vp_session))
+            return discovery.find_cousins_by_id(body.track_id, token)
         if not body.title:
             raise HTTPException(400, "title or track_id required")
-        return discovery.find_cousins(body.title, body.artist or "", _token(vp_session))
+        return discovery.find_cousins(body.title, body.artist or "", token)
     except ValueError as e:
         raise HTTPException(404, str(e)) from e
     except Exception as e:
@@ -137,20 +145,20 @@ def api_cousins(body: CousinsRequest, vp_session: str | None = Cookie(default=No
 
 
 @app.post("/api/vibe")
-def api_vibe(body: VibeRequest, vp_session: str | None = Cookie(default=None)):
+def api_vibe(body: VibeRequest, token: str | None = Depends(_token)):
     text = body.text.strip()
     if not text:
         raise HTTPException(400, "text required")
     try:
-        return discovery.vibe_session(text, body.familiarity, _token(vp_session))
+        return discovery.vibe_session(text, body.familiarity, token)
     except Exception as e:
         raise HTTPException(500, str(e)) from e
 
 
 @app.post("/api/break-loop")
-def api_break_loop(body: BreakLoopRequest, vp_session: str | None = Cookie(default=None)):
+def api_break_loop(body: BreakLoopRequest, token: str | None = Depends(_token)):
     try:
-        return discovery.break_loop(body.tracks, _token(vp_session))
+        return discovery.break_loop(body.tracks, token)
     except ValueError as e:
         raise HTTPException(400, str(e)) from e
     except Exception as e:

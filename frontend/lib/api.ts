@@ -1,9 +1,11 @@
+import { authHeaders } from "./session";
+
 const API = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 
 async function post<T>(path: string, body: unknown): Promise<T> {
   const res = await fetch(`${API}${path}`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...authHeaders() },
     credentials: "include",
     body: JSON.stringify(body),
   });
@@ -47,7 +49,10 @@ export function loginUrl() {
 }
 
 export async function authMe() {
-  const res = await fetch(`${API}/auth/me`, { credentials: "include" });
+  const res = await fetch(`${API}/auth/me`, {
+    credentials: "include",
+    headers: authHeaders(),
+  });
   if (!res.ok) return { logged_in: false };
   return res.json();
 }

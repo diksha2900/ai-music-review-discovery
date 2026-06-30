@@ -70,6 +70,48 @@ a {
   margin-top: auto;
 }
 
+.auth-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.auth-name {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.moment-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.moment-time {
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  letter-spacing: 0.04em;
+}
+
+.moment-mood {
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .main {
   padding: 2rem 2.5rem;
   max-width: 900px;

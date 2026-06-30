@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { getVibe, Track } from "@/lib/api";
+import { getTimeBand } from "@/lib/timeBand";
 import { TrackList } from "@/components/TrackList";
 
 const MOODS = [
@@ -16,6 +17,7 @@ const MOODS = [
 ];
 
 export default function VibePage() {
+  const band = useMemo(() => getTimeBand(new Date()), []);
   const [text, setText] = useState("");
   const [emoji, setEmoji] = useState("");
   const [familiarity, setFamiliarity] = useState(5);
@@ -28,8 +30,10 @@ export default function VibePage() {
   }
 
   async function submit() {
-    const vibe = `${emoji} ${text}`.trim();
-    if (!vibe) return;
+    let vibe = `${emoji} ${text}`.trim();
+    if (!vibe) {
+      vibe = band.vibe;
+    }
     setError("");
     setLoading(true);
     try {
@@ -45,19 +49,23 @@ export default function VibePage() {
   return (
     <section>
       <h1>
-        Start from a <span style={{ color: "var(--green)" }}>vibe</span>
+        Start from a <span className="accent">vibe</span>
       </h1>
+
+      <div className="moment-card">
+        <p className="moment-time">IT&apos;S {band.clock}</p>
+        <p className="moment-mood">{band.mood}</p>
+      </div>
+
       <div className="mood-row">
         {MOODS.map((m) => (
-          <button key={m.label} className="chip" onClick={() => pickMood(m)}>
+          <button key={m.label} type="button" className="chip" onClick={() => pickMood(m)}>
             {m.emoji} {m.label}
           </button>
         ))}
       </div>
       <div className="card">
-        <label style={{ display: "block", marginBottom: "0.5rem", color: "var(--muted)" }}>
-          Emoji mood
-        </label>
+        <label className="field-label">Emoji mood</label>
         <input
           type="text"
           placeholder="🌧️😌☕"
@@ -71,7 +79,7 @@ export default function VibePage() {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <p style={{ color: "var(--muted)", margin: "1rem 0 0.5rem" }}>
+        <p className="muted" style={{ margin: "1rem 0 0.5rem" }}>
           How adventurous? {familiarity <= 3 ? "Adventurous" : familiarity >= 8 ? "Familiar" : "Balanced"}
         </p>
         <input
@@ -82,9 +90,14 @@ export default function VibePage() {
           onChange={(e) => setFamiliarity(Number(e.target.value))}
           style={{ width: "100%", accentColor: "var(--green)" }}
         />
-        <button className="btn" style={{ marginTop: "1rem", width: "100%" }} onClick={submit} disabled={loading}>
+        <button type="button" className="btn" style={{ marginTop: "1rem", width: "100%" }} onClick={submit} disabled={loading}>
           {loading ? "Building your vibe…" : "Get My Vibe"}
         </button>
+        {!text && !emoji && (
+          <p className="muted" style={{ marginTop: "0.75rem", fontSize: "0.85rem" }}>
+            No input? We&apos;ll use your time-of-day vibe: {band.label}
+          </p>
+        )}
         {error && <p className="error">{error}</p>}
       </div>
       {tracks.length > 0 && (
