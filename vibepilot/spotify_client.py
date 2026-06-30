@@ -66,6 +66,14 @@ def search_track(title: str, artist: str = "") -> dict | None:
     return _simplify_track(items[0])
 
 
+def get_track(track_id: str) -> dict | None:
+    """Fetch a track by Spotify ID. Works in guest mode."""
+    data = _get(f"/tracks/{track_id}", app_ok=True)
+    if not data or not data.get("id"):
+        return None
+    return _simplify_track(data)
+
+
 def search_tracks(query: str, limit: int = 10) -> list[dict]:
     """Free-text search — multiple matches for autocomplete pickers. Works in guest mode."""
     q = query.strip()

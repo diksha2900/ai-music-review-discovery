@@ -18,7 +18,6 @@ import time
 import urllib.parse
 
 import requests
-import streamlit as st
 
 from config import (
     SPOTIFY_SCOPES,
@@ -26,6 +25,12 @@ from config import (
     get_spotify_client_secret,
     get_spotify_redirect_uri,
 )
+
+
+def _st():
+    import streamlit as st
+
+    return st
 
 AUTH_URL = "https://accounts.spotify.com/authorize"
 TOKEN_URL = "https://accounts.spotify.com/api/token"
@@ -73,7 +78,7 @@ def build_authorize_url() -> str:
     if not cid:
         return "https://developer.spotify.com/dashboard"
     state = secrets.token_urlsafe(16)
-    st.session_state["oauth_state"] = state
+    _st().session_state["oauth_state"] = state
     params = {
         "client_id": cid,
         "response_type": "code",
@@ -102,18 +107,19 @@ def exchange_code(code: str) -> bool:
     if resp.status_code != 200:
         body = resp.text
         if "invalid_client" in body or "Invalid client secret" in body:
-            st.session_state["auth_error"] = (
+            _st().session_state["auth_error"] = (
                 "Spotify rejected the Client Secret. In Streamlit Cloud → Settings → Secrets, "
                 "re-copy SPOTIFY_CLIENT_SECRET from developer.spotify.com/dashboard → your app → Settings."
             )
         else:
-            st.session_state["auth_error"] = f"{resp.status_code}: {body}"
+            _st().session_state["auth_error"] = f"{resp.status_code}: {body}"
         return False
     _store_token(resp.json())
     return True
 
 
 def _store_token(payload: dict):
+    st = _st()
     st.session_state["access_token"] = payload["access_token"]
     if "refresh_token" in payload:
         st.session_state["refresh_token"] = payload["refresh_token"]
@@ -121,6 +127,7 @@ def _store_token(payload: dict):
 
 
 def _refresh() -> bool:
+    st = _st()
     refresh_token = st.session_state.get("refresh_token")
     if not refresh_token:
         return False
@@ -139,6 +146,7 @@ def _refresh() -> bool:
 
 def get_valid_token():
     """Return a live access token, refreshing if near expiry. None if not logged in."""
+    st = _st()
     token = st.session_state.get("access_token")
     if not token:
         return None
@@ -153,6 +161,7 @@ def is_logged_in() -> bool:
 
 
 def logout():
+    st = _st()
     for key in (
         "access_token",
         "refresh_token",
