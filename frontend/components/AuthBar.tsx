@@ -1,29 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { authMe, loginUrl } from "@/lib/api";
-import { captureSessionFromUrl, clearSessionId } from "@/lib/session";
+import { useAuth } from "./AuthProvider";
+import { loginUrl } from "@/lib/api";
 
 export function AuthBar() {
-  const [user, setUser] = useState<{ logged_in: boolean; display_name?: string } | null>(null);
+  const { user, loading, logout } = useAuth();
 
-  async function refresh() {
-    const me = await authMe();
-    setUser(me);
-  }
-
-  useEffect(() => {
-    if (captureSessionFromUrl()) {
-      refresh();
-      return;
-    }
-    refresh();
-  }, []);
-
-  async function logout() {
-    clearSessionId();
-    setUser({ logged_in: false });
-  }
+  if (loading) return null;
 
   if (user?.logged_in) {
     return (

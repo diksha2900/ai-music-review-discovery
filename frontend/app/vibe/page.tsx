@@ -3,17 +3,18 @@
 import { useMemo, useState } from "react";
 import { getVibe, Track } from "@/lib/api";
 import { getTimeBand } from "@/lib/timeBand";
+import { PageShell } from "@/components/PageShell";
 import { TrackList } from "@/components/TrackList";
 
 const MOODS = [
-  { emoji: "😌", label: "Chill" },
-  { emoji: "🏋️", label: "Gym" },
-  { emoji: "🌧️", label: "Rain" },
-  { emoji: "🚗", label: "Drive" },
-  { emoji: "🌙", label: "Late Night" },
-  { emoji: "📚", label: "Focus" },
-  { emoji: "💔", label: "Heartbreak" },
-  { emoji: "✨", label: "Main Character" },
+  { emoji: "😌", label: "Chill", vibe: "chill, relaxed, mellow music" },
+  { emoji: "🏋️", label: "Gym", vibe: "high energy workout gym music" },
+  { emoji: "🌧️", label: "Rain", vibe: "rainy day cozy introspective music" },
+  { emoji: "🚗", label: "Drive", vibe: "upbeat long drive sing-along music" },
+  { emoji: "🌙", label: "Late Night", vibe: "late night slow emotional music" },
+  { emoji: "📚", label: "Focus", vibe: "focus study instrumental calm music" },
+  { emoji: "💔", label: "Heartbreak", vibe: "sad heartbreak emotional music" },
+  { emoji: "✨", label: "Main Character", vibe: "main character energy cinematic music" },
 ];
 
 export default function VibePage() {
@@ -25,15 +26,9 @@ export default function VibePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  function pickMood(m: (typeof MOODS)[0]) {
-    setText(`${m.emoji} ${m.label.toLowerCase()}`);
-  }
-
-  async function submit() {
-    let vibe = `${emoji} ${text}`.trim();
-    if (!vibe) {
-      vibe = band.vibe;
-    }
+  async function submit(vibeOverride?: string) {
+    let vibe = vibeOverride || `${emoji} ${text}`.trim();
+    if (!vibe) vibe = band.vibe;
     setError("");
     setLoading(true);
     try {
@@ -47,65 +42,90 @@ export default function VibePage() {
   }
 
   return (
-    <section>
-      <h1>
-        Start from a <span className="accent">vibe</span>
-      </h1>
-
-      <div className="moment-card">
+    <PageShell
+      variant="vibe"
+      title={
+        <>
+          Start from a <span className="accent">vibe</span>
+        </>
+      }
+      subtitle="Your moment, your mood — we build a discovery playlist around it."
+    >
+      <button
+        type="button"
+        className="moment-card moment-card-click"
+        onClick={() => submit(band.vibe)}
+        disabled={loading}
+      >
         <p className="moment-time">IT&apos;S {band.clock}</p>
         <p className="moment-mood">{band.mood}</p>
-      </div>
+        <p className="moment-cta">{loading ? "Building…" : "Tap for your time-of-day vibe →"}</p>
+      </button>
 
+      <p className="section-label">Or pick a mood</p>
       <div className="mood-row">
         {MOODS.map((m) => (
-          <button key={m.label} type="button" className="chip" onClick={() => pickMood(m)}>
+          <button
+            key={m.label}
+            type="button"
+            className="chip"
+            onClick={() => {
+              setEmoji(m.emoji);
+              setText(m.label.toLowerCase());
+            }}
+          >
             {m.emoji} {m.label}
           </button>
         ))}
       </div>
-      <div className="card">
+
+      <div className="card glass">
         <label className="field-label">Emoji mood</label>
+        <p className="field-hint">Express the feeling in emojis — rain, coffee, heartbreak, party…</p>
         <input
           type="text"
-          placeholder="🌧️😌☕"
+          placeholder="🌧️😌☕ or 🔥🕺🎉"
           value={emoji}
           onChange={(e) => setEmoji(e.target.value)}
-          style={{ marginBottom: "1rem" }}
+          style={{ marginBottom: "1.25rem" }}
         />
+
+        <label className="field-label">Describe your mood</label>
+        <p className="field-hint">A short scene works best — rainy evening, coffee, soft heartbreak…</p>
         <input
           type="text"
           placeholder="Rainy evening, coffee, soft heartbreak…"
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <p className="muted" style={{ margin: "1rem 0 0.5rem" }}>
-          How adventurous? {familiarity <= 3 ? "Adventurous" : familiarity >= 8 ? "Familiar" : "Balanced"}
+
+        <p className="field-label" style={{ marginTop: "1.25rem" }}>
+          How adventurous?{" "}
+          <span className="accent">
+            {familiarity <= 3 ? "Adventurous" : familiarity >= 8 ? "Familiar" : "Balanced"}
+          </span>
         </p>
+        <p className="field-hint">Left = deep cuts. Right = comfort picks you already love.</p>
         <input
           type="range"
           min={1}
           max={10}
           value={familiarity}
           onChange={(e) => setFamiliarity(Number(e.target.value))}
-          style={{ width: "100%", accentColor: "var(--green)" }}
+          className="range"
         />
-        <button type="button" className="btn" style={{ marginTop: "1rem", width: "100%" }} onClick={submit} disabled={loading}>
+        <button type="button" className="btn btn-full" style={{ marginTop: "1rem" }} onClick={() => submit()} disabled={loading}>
           {loading ? "Building your vibe…" : "Get My Vibe"}
         </button>
-        {!text && !emoji && (
-          <p className="muted" style={{ marginTop: "0.75rem", fontSize: "0.85rem" }}>
-            No input? We&apos;ll use your time-of-day vibe: {band.label}
-          </p>
-        )}
         {error && <p className="error">{error}</p>}
       </div>
+
       {tracks.length > 0 && (
-        <div style={{ marginTop: "1.5rem" }}>
-          <h2>Your session</h2>
+        <div className="results-block">
+          <h2 className="section-heading">Your session</h2>
           <TrackList tracks={tracks} />
         </div>
       )}
-    </section>
+    </PageShell>
   );
 }

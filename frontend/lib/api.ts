@@ -56,3 +56,18 @@ export async function authMe() {
   if (!res.ok) return { logged_in: false };
   return res.json();
 }
+
+export type NowPlaying = Track & {
+  progress_ms?: number;
+  duration_ms?: number;
+  is_playing?: boolean;
+};
+
+export async function getNowPlaying() {
+  const res = await fetch(`${API}/api/now-playing`, {
+    credentials: "include",
+    headers: authHeaders(),
+  });
+  if (!res.ok) return { playing: null as NowPlaying | null };
+  return res.json() as Promise<{ playing: NowPlaying | null }>;
+}

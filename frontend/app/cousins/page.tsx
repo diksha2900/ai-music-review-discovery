@@ -1,16 +1,51 @@
 "use client";
 
-import { useState } from "react";
-import { findCousins, searchTracks, Track } from "@/lib/api";
+import { useEffect, useState } from "react";
+import { findCousins, getNowPlaying, searchTracks, Track } from "@/lib/api";
+import { useAuth } from "@/components/AuthProvider";
+import { NowPlayingCard, PageShell, SearchResults } from "@/components/PageShell";
 import { TrackList } from "@/components/TrackList";
 
+function formatProgress(ms: number) {
+  const s = Math.floor(ms / 1000);
+  const mm = Math.floor(s / 60);
+  const ss = s % 60;
+  return `${mm}:${ss.toString().padStart(2, "0")}`;
+}
+
 export default function CousinsPage() {
+  const { user } = useAuth();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Track[]>([]);
   const [cousins, setCousins] = useState<Track[]>([]);
   const [anchor, setAnchor] = useState<Track | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [np, setNp] = useState<(Track & { progress_ms?: number }) | null>(null);
+  const [pickingId, setPickingId] = useState<string | undefined>();
+
+  useEffect(() => {
+    if (user?.logged_in) {
+      getNowPlaying().then((r) => setNp(r.playing));
+    }
+  }, [user?.logged_in]);
+
+  async function runCousins(t: Track) {
+    setError("");
+    setLoading(true);
+    setAnchor(t);
+    setCousins([]);
+    setResults([]);
+    try {
+      const data = await findCousins(t.name, t.artist);
+      setCousins(data.tracks);
+    } catch (e) {
+      setError(String(e));
+    } finally {
+      setLoading(false);
+      setPickingId(undefined);
+    }
+  }
 
   async function onSearch() {
     if (!query.trim()) return;
@@ -29,21 +64,6 @@ export default function CousinsPage() {
     }
   }
 
-  async function pickTrack(t: Track) {
-    setError("");
-    setLoading(true);
-    setAnchor(t);
-    setCousins([]);
-    try {
-      const data = await findCousins(t.name, t.artist);
-      setCousins(data.tracks);
-    } catch (e) {
-      setError(String(e));
-    } finally {
-      setLoading(false);
-    }
-  }
-
   function clearAnchor() {
     setAnchor(null);
     setCousins([]);
@@ -51,12 +71,36 @@ export default function CousinsPage() {
   }
 
   return (
-    <section>
-      <h1>
-        Find <span className="accent">cousins</span>
-      </h1>
-      <p className="muted">Same tempo, beat, feel &amp; genre — different artists.</p>
-      <div className="card" style={{ marginTop: "1.5rem" }}>
+    <PageShell
+      variant="cousins"
+      title={
+        <>
+          Find <span className="accent">cousins</span>
+        </>
+      }
+      subtitle="Same tempo, beat, feel & genre — different artists you haven't heard."
+    >
+      {user?.logged_in && np && !anchor && (
+        <NowPlayingCard
+          track={np}
+          progress={np.progress_ms != null ? formatProgress(np.progress_ms) : undefined}
+          onFindCousins={() => runCousins(np)}
+          loading={loading}
+        />
+      )}
+
+      {user?.logged_in && !np && !anchor && (
+        <div className="hint-card row-between">
+          <span>Press play on Spotify to see now-playing here.</span>
+          <button type="button" className="btn btn-outline btn-sm" onClick={() => getNowPlaying().then((r) => setNp(r.playing))}>
+            Refresh
+          </button>
+        </div>
+      )}
+
+      <div className="card glass">
+        <label className="field-label">Search a song</label>
+        <p className="field-hint">Type a track name — e.g. kabira, sicko mode, blinding lights</p>
         <input
           type="text"
           placeholder="Search a song you love…"
@@ -64,31 +108,26 @@ export default function CousinsPage() {
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && onSearch()}
         />
-        <button className="btn" style={{ marginTop: "1rem" }} onClick={onSearch} disabled={loading}>
-          {loading ? "Searching…" : "Search"}
+        <button type="button" className="btn btn-full" style={{ marginTop: "1rem" }} onClick={onSearch} disabled={loading}>
+          {loading && !results.length ? "Searching…" : "Search Spotify"}
         </button>
         {error && <p className="error">{error}</p>}
       </div>
-      {results.length > 0 && !anchor && (
-        <div className="track-grid" style={{ marginTop: "1rem" }}>
-          {results.map((t) => (
-            <button
-              key={t.id}
-              type="button"
-              className="card track track-pick"
-              onClick={() => pickTrack(t)}
-            >
-              {t.album_art && <img src={t.album_art} alt="" />}
-              <div className="track-meta">
-                <strong>{t.name}</strong>
-                <small>{t.artist}</small>
-              </div>
-            </button>
-          ))}
-        </div>
+
+      {!anchor && (
+        <SearchResults
+          tracks={results}
+          pickLabel="Find Cousins"
+          loadingId={pickingId}
+          onPick={(t) => {
+            setPickingId(t.id);
+            runCousins(t);
+          }}
+        />
       )}
+
       {anchor && (
-        <div style={{ marginTop: "1.5rem" }}>
+        <div className="results-block">
           <div className="row-between">
             <p>
               Cousins of <strong>{anchor.name}</strong> — {anchor.artist}
@@ -98,12 +137,12 @@ export default function CousinsPage() {
             </button>
           </div>
           {loading && cousins.length === 0 ? (
-            <p className="muted">Finding cousins…</p>
+            <div className="loading-pulse">Scanning musical DNA…</div>
           ) : (
             <TrackList tracks={cousins} />
           )}
         </div>
       )}
-    </section>
+    </PageShell>
   );
 }

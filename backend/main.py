@@ -122,6 +122,20 @@ def _token(sid: str | None = Depends(_session_id)) -> str | None:
     return auth.get_token(sid)
 
 
+@app.get("/api/now-playing")
+def now_playing(token: str | None = Depends(_token)):
+    if not token:
+        return {"playing": None}
+    discovery._patch_auth(token)
+    try:
+        import spotify_client
+
+        np = spotify_client.currently_playing()
+        return {"playing": np}
+    except Exception:
+        return {"playing": None}
+
+
 @app.post("/api/search")
 def api_search(body: SearchRequest, token: str | None = Depends(_token)):
     try:
