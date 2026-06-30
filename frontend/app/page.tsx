@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { loginUrl } from "../lib/api";
+import { loginUrl } from "@/lib/api";
 
 export default function HomePage() {
   return (

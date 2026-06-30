@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { breakLoop, searchTracks, Track } from "../lib/api";
-import { TrackList } from "../components/TrackList";
+import { breakLoop, searchTracks, Track } from "@/lib/api";
+import { TrackList } from "@/components/TrackList";
 
 export default function LoopPage() {
   const [query, setQuery] = useState("");

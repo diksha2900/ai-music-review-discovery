@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { findCousins, searchTracks, Track } from "../lib/api";
-import { TrackList } from "../components/TrackList";
+import { findCousins, searchTracks, Track } from "@/lib/api";
+import { TrackList } from "@/components/TrackList";
 
 export default function CousinsPage() {
   const [query, setQuery] = useState("");

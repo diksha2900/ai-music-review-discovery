@@ -1,4 +1,4 @@
-import { loginUrl } from "../lib/api";
+import { loginUrl } from "@/lib/api";
 
 export default function AboutPage() {
   return (

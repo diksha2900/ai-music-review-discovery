@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { getVibe, Track } from "../lib/api";
-import { TrackList } from "../components/TrackList";
+import { getVibe, Track } from "@/lib/api";
+import { TrackList } from "@/components/TrackList";
 
 const MOODS = [
   { emoji: "😌", label: "Chill" },

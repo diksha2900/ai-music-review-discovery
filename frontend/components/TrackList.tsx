@@ -1,4 +1,4 @@
-import { Track } from "../lib/api";
+import { Track } from "@/lib/api";
 
 export function TrackList({ tracks }: { tracks: Track[] }) {
   if (!tracks.length) return null;
