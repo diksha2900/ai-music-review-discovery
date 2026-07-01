@@ -116,6 +116,60 @@ def rank_by_beat(anchor, candidates):
     return graded + ungraded, anchor_tag
 
 
+LANE_KEYWORDS: dict[str, set[str]] = {
+    "devotional": {
+        "devotional", "bhajan", "spiritual", "sufi", "gospel", "christian", "hindu",
+        "mantra", "kirtan", "aarti", "aart", "arti", "worship", "prayer", "shabad",
+        "qawwali", "gurbani", "keerthanam", "stotram", "stuti", "chalisa", "abhang",
+        "carnatic", "hindustani classical", "indian classical",
+        "shri", "shree", "jai ", " om ", "hare krishna", "hanuman", "balaji", "vishnu",
+        "durga", "laxmi", "lakshmi", "saraswati", "ganpati", "ganesh", "murugan",
+        "prabhu", "bhagwan", "devi", "krishna", "ram ", "shiva", "sai baba", "guru",
+        "naam simran", "suprabhatam", "arthi", "archana",
+    },
+    "romantic": {
+        "romance", "romantic", "love song", "heartbreak", "ballad", "soft rock",
+        "pyaar", "pyar", "ishq", "mohabbat", "valentine", "darling", "girlfriend",
+        "boyfriend", "love you", "fall in love", "breakup", "broken heart",
+    },
+    "hip_hop": {"hip hop", "rap", "trap", "drill", "desi hip hop"},
+}
+
+LANE_BLOCK: dict[str, set[str]] = {
+    "devotional": {"romantic"},
+    "romantic": {"devotional"},
+}
+
+
+def _detect_lanes(genres: set[str], title: str = "", artist: str = "") -> set[str]:
+    blob = (" ".join(genres) + " " + title + " " + artist).lower()
+    out: set[str] = set()
+    for lane, kws in LANE_KEYWORDS.items():
+        if any(k in blob for k in kws):
+            out.add(lane)
+    return out
+
+
+def _lanes_compatible(anchor_lanes: set[str], cand_lanes: set[str]) -> bool:
+    for lane in anchor_lanes:
+        blocked = LANE_BLOCK.get(lane, set())
+        if blocked & cand_lanes:
+            return False
+    return True
+
+
+def _feature_align(a: dict, b: dict) -> float:
+    """Bonus for matching mood profile (valence, acousticness, energy)."""
+    if not a or not b:
+        return 0.0
+    bonus = 0.0
+    for key, w in (("valence", 2.5), ("acousticness", 2.0), ("energy", 1.2)):
+        va, vb = a.get(key), b.get(key)
+        if va is not None and vb is not None:
+            bonus += w * (1.0 - min(1.0, abs(va - vb)))
+    return bonus
+
+
 def _genre_tokens(genres: set[str]) -> set[str]:
     toks: set[str] = set()
     for g in genres:
@@ -137,13 +191,14 @@ def _genre_overlap(anchor_genres: set[str], cand_genres: set[str]) -> float:
 
 
 def rank_by_beat_and_genre(anchor, candidates):
-    """Rank by tempo/feel, then prefer candidates in the anchor's genre lane."""
+    """Rank by tempo/feel, genre lane, and mood profile (valence/acousticness)."""
     ranked, anchor_tag = rank_by_beat(anchor, candidates)
     anchor_ids = anchor.get("artist_ids") or []
     anchor_genres: set[str] = set()
     for gs in spotify_client.batch_artist_genres(anchor_ids[:2]).values():
         anchor_genres.update(gs)
 
+    anchor_lanes = _detect_lanes(anchor_genres, anchor.get("name", ""), anchor.get("artist", ""))
     cand_ids = [(c.get("artist_ids") or [None])[0] for c in ranked]
     genre_map = spotify_client.batch_artist_genres([i for i in cand_ids if i])
 
@@ -152,15 +207,27 @@ def rank_by_beat_and_genre(anchor, candidates):
     a_feats = feats.get(anchor_id) if anchor_id else None
 
     def score(c):
-        beat = reccobeats_client.distance(a_feats, feats.get(c.get("id"))) if a_feats else 50.0
+        cf = feats.get(c.get("id"))
+        beat = reccobeats_client.distance(a_feats, cf) if a_feats and cf else 50.0
         aid = (c.get("artist_ids") or [None])[0]
         cand_g = set(genre_map.get(aid, []))
+        cand_lanes = _detect_lanes(cand_g, c.get("name", ""), c.get("artist", ""))
+        if not _lanes_compatible(anchor_lanes, cand_lanes):
+            return 999.0
         genre_bonus = _genre_overlap(anchor_genres, cand_g)
-        return beat - 4.0 * genre_bonus
+        mood_bonus = _feature_align(a_feats, cf)
+        return beat - 8.0 * genre_bonus - mood_bonus
 
     graded = [c for c in ranked if feats.get(c.get("id"))]
     ungraded = [c for c in ranked if not feats.get(c.get("id"))]
     graded.sort(key=score)
+    graded = [c for c in graded if score(c) < 100]
+    # Devotional anchors: drop anything that still looks romantic by title/artist
+    if "devotional" in anchor_lanes:
+        graded = [
+            c for c in graded
+            if "romantic" not in _detect_lanes(set(), c.get("name", ""), c.get("artist", ""))
+        ]
     return graded + ungraded, anchor_tag
 
 
@@ -239,7 +306,10 @@ def find_cousins_for_anchor(anchor, taste=None, exclude=None, moment=None):
         ag = spotify_client.batch_artist_genres((anchor.get("artist_ids") or [])[:2])
         genres = [g for gs in ag.values() for g in gs[:4]]
         anchor_desc = f"'{label}'"
-        if genres:
+        lanes = _detect_lanes(set(genres), title, artist)
+        if lanes:
+            anchor_desc += f" (MUST stay in lane: {', '.join(sorted(lanes))} — NOT romantic love songs if devotional)"
+        elif genres:
             anchor_desc += f" (stay in genre lane: {', '.join(genres[:6])})"
         picks = vibe_engine.propose_cousins(
             anchor_desc, n=COUSINS_N, taste=taste, exclude_names=exclude,

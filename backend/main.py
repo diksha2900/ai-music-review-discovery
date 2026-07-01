@@ -93,10 +93,10 @@ def callback(code: str = Query(...), state: str = Query(...)):
 
 
 def _session_id(
-    vp_session: str | None = Cookie(default=None),
     x_vp_session: str | None = Header(default=None, alias="X-VP-Session"),
 ) -> str | None:
-    return x_vp_session or vp_session
+    """Header-only auth — ignore cookies so logout clears client session reliably."""
+    return x_vp_session
 
 
 @app.get("/auth/me")

@@ -2,7 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { authMe } from "@/lib/api";
+import { authMe, logoutApi } from "@/lib/api";
 import { captureSessionFromUrl, clearSessionId } from "@/lib/session";
 
 type User = { logged_in: boolean; display_name?: string };
@@ -11,14 +11,14 @@ type AuthContextValue = {
   user: User | null;
   loading: boolean;
   refresh: () => Promise<void>;
-  logout: () => void;
+  logout: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextValue>({
   user: null,
   loading: true,
   refresh: async () => {},
-  logout: () => {},
+  logout: async () => {},
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -28,6 +28,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const searchParams = useSearchParams();
 
   const refresh = useCallback(async () => {
+    if (!localStorage.getItem("vp_session")) {
+      setUser({ logged_in: false });
+      setLoading(false);
+      return;
+    }
     const me = await authMe();
     setUser(me);
     setLoading(false);
@@ -38,9 +43,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     refresh();
   }, [refresh, pathname, searchParams]);
 
-  function logout() {
+  async function logout() {
     clearSessionId();
     setUser({ logged_in: false });
+    try {
+      await logoutApi();
+    } catch {
+      /* ignore */
+    }
   }
 
   return (

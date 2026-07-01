@@ -1,10 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import "./globals.css";
-import { AuthBar } from "@/components/AuthBar";
 import { AuthProvider } from "@/components/AuthProviderWrapper";
 import { MainContent } from "@/components/MainContent";
 import { Nav } from "@/components/Nav";
+import { SidebarGreeting, SidebarLogout } from "@/components/SidebarUser";
 
 export const metadata: Metadata = {
   title: "VibePilot",
@@ -21,9 +21,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/" className="logo logo-link">
                 🎧 VibePilot
               </Link>
+              <SidebarGreeting />
               <Nav />
-              <AuthBar />
-              <p className="tagline">Same feel, different artists.</p>
+              <div className="sidebar-footer">
+                <SidebarLogout />
+                <p className="tagline">Same feel, different artists.</p>
+              </div>
             </aside>
             <MainContent>{children}</MainContent>
           </div>

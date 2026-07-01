@@ -48,7 +48,18 @@ export function loginUrl() {
   return `${API}/auth/login`;
 }
 
+export async function logoutApi() {
+  await fetch(`${API}/auth/logout`, {
+    method: "POST",
+    credentials: "include",
+    headers: authHeaders(),
+  });
+}
+
 export async function authMe() {
+  if (typeof window !== "undefined" && !localStorage.getItem("vp_session")) {
+    return { logged_in: false };
+  }
   const res = await fetch(`${API}/auth/me`, {
     credentials: "include",
     headers: authHeaders(),

@@ -77,22 +77,32 @@ a {
   background: var(--surface);
 }
 
+.sidebar-greeting {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: -0.5rem 0 0;
+}
+
+.sidebar-greeting strong {
+  color: var(--text);
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-logout {
+  align-self: flex-start;
+}
+
 .tagline {
   color: var(--green);
   font-size: 0.8rem;
-  margin-top: auto;
+  margin: 0;
   opacity: 0.9;
-}
-
-.auth-bar {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.auth-name {
-  color: var(--muted);
-  font-size: 0.85rem;
 }
 
 .main {
@@ -276,7 +286,21 @@ a {
   color: var(--muted);
   max-width: 34rem;
   line-height: 1.6;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.hub-welcome {
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+
+.hub-welcome strong {
+  color: var(--text);
+}
+
+.hub-now-playing {
+  margin-bottom: 1.25rem;
 }
 
 .hub-search-row {

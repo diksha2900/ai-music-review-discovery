@@ -10,6 +10,7 @@ import {
   searchTracks,
   Track,
 } from "@/lib/api";
+import { MOODS } from "@/lib/moods";
 import { getTimeBand } from "@/lib/timeBand";
 import { LoginButton } from "@/components/AuthBar";
 import { useAuth } from "@/components/AuthProvider";
@@ -19,7 +20,7 @@ import { TrackList } from "@/components/TrackList";
 type Tab = "cousins" | "vibe" | "loop";
 
 const TABS: { id: Tab; label: string; sub: string }[] = [
-  { id: "cousins", label: "Find Cousins", sub: "Hero · same tempo & feel, new artists" },
+  { id: "cousins", label: "Find Cousins", sub: "Same tempo & feel, new artists" },
   { id: "vibe", label: "Start From Vibe", sub: "Mood · time · emojis" },
   { id: "loop", label: "Break My Loop", sub: "Escape your repeat list" },
 ];
@@ -39,18 +40,17 @@ export function HomeHub() {
   const [tab, setTab] = useState<Tab>("cousins");
   const band = useMemo(() => getTimeBand(new Date()), []);
 
-  // Cousins tab state
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Track[]>([]);
   const [cousins, setCousins] = useState<Track[]>([]);
   const [anchor, setAnchor] = useState<Track | null>(null);
   const [np, setNp] = useState<(Track & { progress_ms?: number }) | null>(null);
 
-  // Vibe tab state
   const [vibeText, setVibeText] = useState("");
+  const [vibeEmoji, setVibeEmoji] = useState("");
+  const [familiarity, setFamiliarity] = useState(5);
   const [vibeTracks, setVibeTracks] = useState<Track[]>([]);
 
-  // Loop tab state
   const [loopQuery, setLoopQuery] = useState("");
   const [loopResults, setLoopResults] = useState<Track[]>([]);
   const [seeds, setSeeds] = useState<Track[]>([]);
@@ -62,12 +62,6 @@ export function HomeHub() {
   const switchTab = useCallback((t: Tab) => {
     setTab(t);
     setError("");
-    setResults([]);
-    setCousins([]);
-    setAnchor(null);
-    setVibeTracks([]);
-    setLoopResults([]);
-    setEscapeTracks([]);
   }, []);
 
   const refreshNowPlaying = useCallback(async () => {
@@ -113,12 +107,13 @@ export function HomeHub() {
     }
   }
 
-  async function runVibe(fromMoment = false) {
-    const vibe = fromMoment ? band.vibe : vibeText.trim() || band.vibe;
+  async function runVibe(vibeOverride?: string) {
+    let vibe = vibeOverride || `${vibeEmoji} ${vibeText}`.trim();
+    if (!vibe) vibe = band.vibe;
     setBusy(true);
     setError("");
     try {
-      const data = await getVibe(vibe, 5);
+      const data = await getVibe(vibe, familiarity);
       setVibeTracks(data.tracks);
     } catch (e) {
       setError(String(e));
@@ -180,36 +175,66 @@ export function HomeHub() {
           Love a song? We find unheard tracks with the same tempo, beat &amp; vibe — not the same
           artist on shuffle.
         </p>
+      </header>
 
-        {tab === "cousins" && !anchor && (
-          <div className="hub-search-row">
-            <input
-              type="text"
-              className="hub-search-input"
-              placeholder="Search a song you love…"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && searchCousins()}
-            />
-            <button type="button" className="btn btn-lg" onClick={searchCousins} disabled={busy}>
-              Find Cousins
-            </button>
-          </div>
-        )}
-
+      {user?.logged_in ? (
+        <p className="hub-welcome">
+          Welcome, <strong>{user.display_name}</strong>
+        </p>
+      ) : (
         <div className="hub-cta-row">
-          {!user?.logged_in ? (
+          <span className="hub-guest">Guest mode — search works without an account</span>
+          <LoginButton className="btn-lg" />
+        </div>
+      )}
+
+      {user?.logged_in && (
+        <div className="card now-playing hub-now-playing">
+          {np ? (
             <>
-              <span className="hub-guest">Guest mode — search works without an account</span>
-              <LoginButton className="btn-lg" />
+              <p className="section-label">Now playing on Spotify</p>
+              <div className="track">
+                {np.album_art && <img src={np.album_art} alt="" className="np-art" />}
+                <div className="track-meta">
+                  <strong>{np.name}</strong>
+                  <small>{np.artist}</small>
+                </div>
+              </div>
+              <div className="row-actions">
+                <button type="button" className="btn btn-full" onClick={() => runCousins(np)} disabled={busy}>
+                  Find Cousins of this song
+                </button>
+                <button type="button" className="btn btn-outline btn-sm" onClick={refreshNowPlaying}>
+                  Refresh
+                </button>
+              </div>
             </>
           ) : (
-            <span className="hub-guest">
-              Welcome, <strong>{user.display_name}</strong> — now-playing appears below when Spotify is active.
-            </span>
+            <div className="row-between">
+              <span className="muted">Play something on Spotify, then refresh.</span>
+              <button type="button" className="btn btn-outline btn-sm" onClick={refreshNowPlaying}>
+                Refresh
+              </button>
+            </div>
           )}
         </div>
-      </header>
+      )}
+
+      {tab === "cousins" && !anchor && (
+        <div className="hub-search-row">
+          <input
+            type="text"
+            className="hub-search-input"
+            placeholder="Search a song you love…"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && searchCousins()}
+          />
+          <button type="button" className="btn btn-lg" onClick={searchCousins} disabled={busy}>
+            Find Cousins
+          </button>
+        </div>
+      )}
 
       <div className="hub-tabs" role="tablist">
         {TABS.map((t) => (
@@ -230,41 +255,7 @@ export function HomeHub() {
       <div className="hub-panel" role="tabpanel">
         {tab === "cousins" && (
           <>
-            {user?.logged_in && !anchor && (
-              <div className="card now-playing">
-                {np ? (
-                  <>
-                    <p className="section-label">Now playing on Spotify</p>
-                    <div className="track">
-                      {np.album_art && <img src={np.album_art} alt="" className="np-art" />}
-                      <div className="track-meta">
-                        <strong>{np.name}</strong>
-                        <small>{np.artist}</small>
-                      </div>
-                    </div>
-                    <div className="row-actions">
-                      <button type="button" className="btn btn-full" onClick={() => runCousins(np)} disabled={busy}>
-                        Find Cousins of this song
-                      </button>
-                      <button type="button" className="btn btn-outline btn-sm" onClick={refreshNowPlaying}>
-                        Refresh
-                      </button>
-                    </div>
-                  </>
-                ) : (
-                  <div className="row-between">
-                    <span className="muted">Play something on Spotify, then refresh.</span>
-                    <button type="button" className="btn btn-outline btn-sm" onClick={refreshNowPlaying}>
-                      Refresh
-                    </button>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {!anchor && (
-              <SearchResults tracks={results} pickLabel="Find Cousins" onPick={runCousins} />
-            )}
+            {!anchor && <SearchResults tracks={results} pickLabel="Find Cousins" onPick={runCousins} />}
 
             {anchor && (
               <div className="results-block">
@@ -299,12 +290,45 @@ export function HomeHub() {
 
         {tab === "vibe" && (
           <>
-            <button type="button" className="moment-card moment-card-click" onClick={() => runVibe(true)} disabled={busy}>
+            <button
+              type="button"
+              className="moment-card moment-card-click"
+              onClick={() => runVibe(band.vibe)}
+              disabled={busy}
+            >
               <p className="moment-time">IT&apos;S {band.clock}</p>
               <p className="moment-mood">{band.mood}</p>
-              <p className="moment-cta">Tap for your time-of-day vibe →</p>
+              <p className="moment-cta">{busy ? "Building…" : "Tap for your time-of-day vibe →"}</p>
             </button>
+
+            <p className="section-label">Or pick a mood</p>
+            <div className="mood-row">
+              {MOODS.map((m) => (
+                <button
+                  key={m.label}
+                  type="button"
+                  className="chip"
+                  onClick={() => {
+                    setVibeEmoji(m.emoji);
+                    setVibeText(m.label.toLowerCase());
+                  }}
+                >
+                  {m.emoji} {m.label}
+                </button>
+              ))}
+            </div>
+
             <div className="card glass">
+              <label className="field-label">Emoji mood</label>
+              <p className="field-hint">Express the feeling in emojis — rain, coffee, heartbreak, party…</p>
+              <input
+                type="text"
+                placeholder="🌧️😌☕ or 🔥🕺🎉"
+                value={vibeEmoji}
+                onChange={(e) => setVibeEmoji(e.target.value)}
+                style={{ marginBottom: "1.25rem" }}
+              />
+
               <label className="field-label">Describe your mood</label>
               <p className="field-hint">Rainy evening, coffee, late-night drive…</p>
               <input
@@ -313,11 +337,40 @@ export function HomeHub() {
                 onChange={(e) => setVibeText(e.target.value)}
                 placeholder="Soft heartbreak, gym energy, focus mode…"
               />
-              <button type="button" className="btn btn-full" style={{ marginTop: "1rem" }} onClick={() => runVibe(false)} disabled={busy}>
-                Get My Vibe
+
+              <p className="field-label" style={{ marginTop: "1.25rem" }}>
+                How adventurous?{" "}
+                <span className="accent">
+                  {familiarity <= 3 ? "Adventurous" : familiarity >= 8 ? "Familiar" : "Balanced"}
+                </span>
+              </p>
+              <p className="field-hint">Left = deep cuts. Right = comfort picks you already love.</p>
+              <input
+                type="range"
+                min={1}
+                max={10}
+                value={familiarity}
+                onChange={(e) => setFamiliarity(Number(e.target.value))}
+                className="range"
+              />
+              <button
+                type="button"
+                className="btn btn-full"
+                style={{ marginTop: "1rem" }}
+                onClick={() => runVibe()}
+                disabled={busy}
+              >
+                {busy ? "Building your vibe…" : "Get My Vibe"}
               </button>
             </div>
-            {vibeTracks.length > 0 && <TrackList tracks={vibeTracks} />}
+
+            {vibeTracks.length > 0 && (
+              <div className="results-block">
+                <h2 className="section-heading">Your session</h2>
+                <TrackList tracks={vibeTracks} />
+              </div>
+            )}
+
             <p className="hub-deep-link">
               Full experience → <Link href="/vibe">Open Start From Vibe</Link>
             </p>
@@ -349,7 +402,12 @@ export function HomeHub() {
                 </button>
               </>
             )}
-            {escapeTracks.length > 0 && <TrackList tracks={escapeTracks} />}
+            {escapeTracks.length > 0 && (
+              <div className="results-block">
+                <h2 className="section-heading">Your escape</h2>
+                <TrackList tracks={escapeTracks} />
+              </div>
+            )}
             <p className="hub-deep-link">
               Full experience → <Link href="/loop">Open Break My Loop</Link>
             </p>
