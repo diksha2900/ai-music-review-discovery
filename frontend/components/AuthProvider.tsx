@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import { authMe } from "@/lib/api";
 import { captureSessionFromUrl, clearSessionId } from "@/lib/session";
 
@@ -23,6 +24,8 @@ const AuthContext = createContext<AuthContextValue>({
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   const refresh = useCallback(async () => {
     const me = await authMe();
@@ -33,7 +36,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     captureSessionFromUrl();
     refresh();
-  }, [refresh]);
+  }, [refresh, pathname, searchParams]);
 
   function logout() {
     clearSessionId();

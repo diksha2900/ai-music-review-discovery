@@ -1,5 +1,9 @@
-"""Spotify OAuth for FastAPI — no Streamlit session."""
+"""Spotify OAuth — signed stateless sessions (survives Render restarts)."""
 
+import base64
+import hashlib
+import hmac
+import json
 import secrets
 import time
 import urllib.parse
@@ -9,6 +13,7 @@ import requests
 
 from settings import (
     SPOTIFY_SCOPES,
+    session_secret,
     spotify_client_id,
     spotify_client_secret,
     spotify_redirect_uri,
@@ -17,10 +22,29 @@ from settings import (
 AUTH_URL = "https://accounts.spotify.com/authorize"
 TOKEN_URL = "https://accounts.spotify.com/api/token"
 
-# sid -> {access_token, refresh_token, token_expires_at}
-_sessions: dict[str, dict] = {}
-_oauth_states: dict[str, float] = {}
 _APP_TOKEN: dict = {}
+
+
+def _sign(data: str) -> str:
+    return hmac.new(session_secret().encode(), data.encode(), hashlib.sha256).hexdigest()
+
+
+def pack(data: dict) -> str:
+    raw = base64.urlsafe_b64encode(json.dumps(data, separators=(",", ":")).encode()).decode().rstrip("=")
+    return f"{raw}.{_sign(raw)}"
+
+
+def unpack(token: str) -> Optional[dict]:
+    if not token or "." not in token:
+        return None
+    raw, sig = token.rsplit(".", 1)
+    if not hmac.compare_digest(_sign(raw), sig):
+        return None
+    try:
+        pad = "=" * (-len(raw) % 4)
+        return json.loads(base64.urlsafe_b64decode(raw + pad))
+    except Exception:
+        return None
 
 
 def get_app_token() -> Optional[str]:
@@ -46,8 +70,7 @@ def get_app_token() -> Optional[str]:
 
 
 def build_login_url() -> tuple[str, str]:
-    state = secrets.token_urlsafe(16)
-    _oauth_states[state] = time.time()
+    state = pack({"oauth": True, "ts": time.time()})
     params = {
         "client_id": spotify_client_id(),
         "response_type": "code",
@@ -60,8 +83,10 @@ def build_login_url() -> tuple[str, str]:
 
 
 def verify_state(state: str) -> bool:
-    ts = _oauth_states.pop(state, None)
-    return ts is not None and time.time() - ts < 600
+    data = unpack(state)
+    if not data or not data.get("oauth"):
+        return False
+    return time.time() - float(data.get("ts", 0)) < 600
 
 
 def exchange_code(code: str) -> dict:
@@ -78,20 +103,19 @@ def exchange_code(code: str) -> dict:
     )
     resp.raise_for_status()
     payload = resp.json()
-    sid = secrets.token_urlsafe(24)
-    _sessions[sid] = {
+    sid = pack({
         "access_token": payload["access_token"],
         "refresh_token": payload.get("refresh_token"),
         "token_expires_at": time.time() + payload.get("expires_in", 3600),
-    }
+    })
     return {"session_id": sid}
 
 
 def get_token(session_id: Optional[str]) -> Optional[str]:
-    if not session_id or session_id not in _sessions:
+    sess = unpack(session_id or "")
+    if not sess or "access_token" not in sess:
         return None
-    sess = _sessions[session_id]
-    if time.time() >= sess.get("token_expires_at", 0) - 60:
+    if time.time() >= float(sess.get("token_expires_at", 0)) - 60:
         rt = sess.get("refresh_token")
         if not rt:
             return None
@@ -106,4 +130,4 @@ def get_token(session_id: Optional[str]) -> Optional[str]:
         p = resp.json()
         sess["access_token"] = p["access_token"]
         sess["token_expires_at"] = time.time() + p.get("expires_in", 3600)
-    return sess["access_token"]
+    return sess.get("access_token")

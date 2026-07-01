@@ -16,7 +16,12 @@ export function Nav() {
   return (
     <nav className="nav">
       {links.map((l) => (
-        <Link key={l.href} href={l.href} className={path === l.href ? "active" : ""}>
+        <Link
+          key={l.href}
+          href={l.href}
+          className={path === l.href ? "active" : ""}
+          prefetch={false}
+        >
           {l.label}
         </Link>
       ))}

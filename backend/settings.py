@@ -35,6 +35,10 @@ def lastfm_api_key():
     return get("LASTFM_API_KEY")
 
 
+def session_secret():
+    return get("SESSION_SECRET") or spotify_client_secret() or "vibepilot-dev-secret"
+
+
 SPOTIFY_SCOPES = [
     "user-read-private",
     "user-read-currently-playing",

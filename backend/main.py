@@ -21,7 +21,13 @@ app = FastAPI(title="VibePilot API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.frontend_url(), "http://127.0.0.1:3000", "http://localhost:3000"],
+    allow_origins=[
+        settings.frontend_url(),
+        "https://vibepilot-ai.vercel.app",
+        "https://vibepilot-two.vercel.app",
+        "http://127.0.0.1:3000",
+        "http://localhost:3000",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
