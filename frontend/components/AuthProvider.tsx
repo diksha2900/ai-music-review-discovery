@@ -10,6 +10,7 @@ type User = { logged_in: boolean; display_name?: string };
 type AuthContextValue = {
   user: User | null;
   loading: boolean;
+  authError: string | null;
   refresh: () => Promise<void>;
   logout: () => Promise<void>;
 };
@@ -17,6 +18,7 @@ type AuthContextValue = {
 const AuthContext = createContext<AuthContextValue>({
   user: null,
   loading: true,
+  authError: null,
   refresh: async () => {},
   logout: async () => {},
 });
@@ -24,10 +26,20 @@ const AuthContext = createContext<AuthContextValue>({
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [authError, setAuthError] = useState<string | null>(null);
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const refresh = useCallback(async () => {
+    captureSessionFromUrl();
+    const err = searchParams.get("auth_error");
+    if (err) {
+      setAuthError(decodeURIComponent(err));
+      setUser({ logged_in: false });
+      setLoading(false);
+      return;
+    }
+    setAuthError(null);
     if (!localStorage.getItem("vp_session")) {
       setUser({ logged_in: false });
       setLoading(false);
@@ -36,16 +48,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const me = await authMe();
     setUser(me);
     setLoading(false);
-  }, []);
+  }, [searchParams]);
 
   useEffect(() => {
-    captureSessionFromUrl();
     refresh();
   }, [refresh, pathname, searchParams]);
 
   async function logout() {
     clearSessionId();
     setUser({ logged_in: false });
+    setAuthError(null);
     try {
       await logoutApi();
     } catch {
@@ -54,7 +66,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, loading, refresh, logout }}>
+    <AuthContext.Provider value={{ user, loading, authError, refresh, logout }}>
       {children}
     </AuthContext.Provider>
   );

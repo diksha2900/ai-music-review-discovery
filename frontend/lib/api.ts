@@ -1,4 +1,4 @@
-import { authHeaders } from "./session";
+import { authHeaders, captureSessionFromUrl } from "./session";
 
 const API = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 
@@ -57,6 +57,7 @@ export async function logoutApi() {
 }
 
 export async function authMe() {
+  captureSessionFromUrl();
   if (typeof window !== "undefined" && !localStorage.getItem("vp_session")) {
     return { logged_in: false };
   }

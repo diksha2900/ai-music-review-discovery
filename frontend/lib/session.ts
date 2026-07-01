@@ -19,7 +19,7 @@ export function captureSessionFromUrl() {
   const params = new URLSearchParams(window.location.search);
   const sid = params.get("session");
   if (!sid) return false;
-  setSessionId(sid);
+  setSessionId(decodeURIComponent(sid));
   params.delete("session");
   params.delete("logged_in");
   const rest = params.toString();

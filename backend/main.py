@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 from fastapi import Cookie, Depends, FastAPI, Header, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -69,34 +70,44 @@ def login():
     return RedirectResponse(url)
 
 
+def _cookie_kwargs() -> dict:
+    cross_site = settings.frontend_url().startswith("https://") and "127.0.0.1" not in settings.frontend_url()
+    return {
+        "key": "vp_session",
+        "path": "/",
+        "secure": cross_site,
+        "samesite": "none" if cross_site else "lax",
+    }
+
+
 @app.get("/auth/callback")
 def callback(code: str = Query(...), state: str = Query(...)):
     if not auth.verify_state(state):
-        raise HTTPException(400, "Invalid OAuth state")
+        err = quote("Invalid OAuth state — try logging in again.")
+        return RedirectResponse(f"{settings.frontend_url()}/auth/complete?auth_error={err}")
     try:
         result = auth.exchange_code(code)
     except Exception as e:
-        raise HTTPException(400, f"Token exchange failed: {e}") from e
+        err = quote(f"Token exchange failed: {e}")
+        return RedirectResponse(f"{settings.frontend_url()}/auth/complete?auth_error={err}")
     sid = result["session_id"]
-    # Pass session in URL — cross-site cookies (Vercel ↔ Render) are blocked by browsers.
-    response = RedirectResponse(f"{settings.frontend_url()}/?session={sid}")
-    cross_site = settings.frontend_url().startswith("https://") and "127.0.0.1" not in settings.frontend_url()
+    encoded = quote(sid, safe="")
+    response = RedirectResponse(f"{settings.frontend_url()}/auth/complete?session={encoded}")
     response.set_cookie(
-        key="vp_session",
         value=sid,
         httponly=True,
-        secure=cross_site,
-        samesite="none" if cross_site else "lax",
         max_age=60 * 60 * 24 * 30,
+        **_cookie_kwargs(),
     )
     return response
 
 
 def _session_id(
     x_vp_session: str | None = Header(default=None, alias="X-VP-Session"),
+    vp_session: str | None = Cookie(default=None),
 ) -> str | None:
-    """Header-only auth — ignore cookies so logout clears client session reliably."""
-    return x_vp_session
+    """Prefer explicit header; cookie is a fallback for same-site dev."""
+    return x_vp_session or vp_session
 
 
 @app.get("/auth/me")
@@ -115,12 +126,11 @@ def me(sid: str | None = Depends(_session_id)):
 
 
 @app.post("/auth/logout")
-def logout(sid: str | None = Depends(_session_id)):
-    response = {"ok": True}
+def logout():
     from fastapi.responses import JSONResponse
 
-    resp = JSONResponse(response)
-    resp.delete_cookie("vp_session")
+    resp = JSONResponse({"ok": True})
+    resp.delete_cookie(**_cookie_kwargs())
     return resp
 
 

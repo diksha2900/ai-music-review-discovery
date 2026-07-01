@@ -36,7 +36,7 @@ function Waveform() {
 }
 
 export function HomeHub() {
-  const { user, loading } = useAuth();
+  const { user, loading, authError } = useAuth();
   const [tab, setTab] = useState<Tab>("cousins");
   const band = useMemo(() => getTimeBand(new Date()), []);
 
@@ -186,6 +186,13 @@ export function HomeHub() {
           <span className="hub-guest">Guest mode — search works without an account</span>
           <LoginButton className="btn-lg" />
         </div>
+      )}
+
+      {authError && (
+        <p className="error hub-auth-error">
+          Spotify login failed: {authError}. Try again, or make sure your account is allowlisted in the
+          Spotify Developer app (Development Mode).
+        </p>
       )}
 
       {user?.logged_in && (
